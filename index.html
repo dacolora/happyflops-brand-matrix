@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Flops — Brand Matrix</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&family=Helvetica+Neue:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #fdf8ef;
+    --sand: #f4ead9;
+    --beige: #e9dcc3;
+    --ink: #2b2620;
+    --muted: #7a7266;
+    --yellow-a: #fdb716;
+    --yellow-b: #fecd0a;
+    --blue-a: #4797c9;
+    --blue-b: #6bacd5;
+    --card: #ffffff;
+    --border: #e7dcc8;
+    --shadow: 0 10px 30px rgba(43, 38, 32, .08);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+  }
+  h1, h2, h3, .display { font-family: "Sniglet", cursive; }
+  h1 { font-weight: 800; }
+  h2, h3 { font-weight: 400; }
+
+  header {
+    padding: 3rem 2rem 2.5rem;
+    background: linear-gradient(135deg, var(--yellow-a), var(--yellow-b));
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: radial-gradient(600px 300px at 90% -20%, rgba(71,151,201,.25), transparent 60%);
+  }
+  header .eyebrow {
+    position: relative;
+    font-size: .78rem; letter-spacing: .12em; text-transform: uppercase;
+    font-weight: 700; color: rgba(43,38,32,.65); margin-bottom: .6rem;
+  }
+  header h1 { position: relative; font-size: clamp(2.2rem, 6vw, 3.4rem); margin: 0 0 .5rem; text-transform: uppercase; }
+  header .tagline { position: relative; font-size: 1.05rem; color: rgba(43,38,32,.75); max-width: 46ch; margin: 0 auto; }
+  header .meta { position: relative; margin-top: 1.2rem; font-size: .8rem; color: rgba(43,38,32,.6); }
+
+  main { max-width: 980px; margin: 0 auto; padding: 2.5rem 1.5rem 5rem; }
+
+  section { margin-bottom: 3.2rem; }
+  section > h2 {
+    font-size: 1.5rem; margin: 0 0 1.2rem;
+    display: flex; align-items: center; gap: .6rem;
+  }
+  section > h2::before {
+    content: ""; width: 22px; height: 22px; border-radius: 7px;
+    background: linear-gradient(135deg, var(--yellow-a), var(--blue-a));
+    display: inline-block; flex: 0 0 auto;
+  }
+  .lead { color: var(--muted); max-width: 62ch; margin: -.6rem 0 1.4rem; }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+  }
+
+  .hero-def {
+    padding: 1.6rem 1.8rem;
+    font-size: 1.15rem;
+  }
+  .hero-def strong { color: var(--blue-a); }
+
+  .chip-row { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .6rem; }
+  .chip {
+    padding: .35rem .85rem; border-radius: 999px; font-size: .82rem; font-weight: 500;
+    background: var(--sand); border: 1px solid var(--border);
+  }
+  .chip.yes { background: #eaf6ee; border-color: #cdead6; color: #2c7a4b; }
+  .chip.no { background: #fbeaea; border-color: #f0cccc; color: #a83c3c; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; }
+
+  .invariantes { display: grid; gap: .8rem; }
+  .invariante {
+    display: flex; gap: 1rem; padding: 1.1rem 1.3rem;
+  }
+  .invariante .num {
+    flex: 0 0 auto; width: 34px; height: 34px; border-radius: 10px;
+    background: linear-gradient(135deg, var(--yellow-a), var(--yellow-b));
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Sniglet", cursive; font-weight: 800; color: var(--ink);
+  }
+  .invariante .nombre { font-weight: 700; text-transform: capitalize; margin-bottom: .2rem; }
+  .invariante .regla { color: var(--muted); font-size: .92rem; }
+
+  table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+  th, td { text-align: left; padding: .65rem .8rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+
+  .categoria { padding: 1.3rem 1.4rem; }
+  .categoria .titulo { font-family: "Sniglet"; font-size: 1.15rem; margin-bottom: .35rem; }
+  .categoria .desc { color: var(--muted); font-size: .88rem; }
+  .categoria.lifestyle { border-top: 4px solid var(--yellow-a); }
+  .categoria.photoshoot { border-top: 4px solid var(--blue-a); }
+  .categoria.render_3d { border-top: 4px solid #b98ad1; }
+
+  .swatch-row { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: .6rem; }
+  .swatch { text-align: center; }
+  .swatch .box { width: 64px; height: 64px; border-radius: 12px; box-shadow: var(--shadow); }
+  .swatch .label { font-size: .72rem; color: var(--muted); margin-top: .35rem; }
+
+  .voz-ejemplos { display: grid; gap: .5rem; }
+  .voz-ejemplo {
+    padding: .8rem 1rem; font-style: italic; font-size: .95rem;
+  }
+
+  .open-items { display: grid; gap: .6rem; }
+  .open-item { display: flex; gap: .8rem; align-items: flex-start; padding: .9rem 1.1rem; }
+  .estado-badge {
+    flex: 0 0 auto; font-size: .68rem; font-weight: 700; text-transform: uppercase;
+    padding: .25rem .55rem; border-radius: 999px; letter-spacing: .03em;
+  }
+  .estado-blocked { background: #fbeaea; color: #a83c3c; }
+  .estado-needed { background: #fff3d6; color: #966600; }
+  .estado-proposed { background: #e6f0fb; color: #2b6ca8; }
+  .estado-done { background: #eaf6ee; color: #2c7a4b; }
+
+  details { padding: 1.1rem 1.3rem; }
+  summary { cursor: pointer; font-weight: 700; }
+  pre {
+    white-space: pre-wrap; font-family: ui-monospace, monospace; font-size: .8rem;
+    background: var(--sand); padding: .9rem; border-radius: 10px; margin-top: .8rem;
+    color: var(--ink);
+  }
+
+  footer {
+    text-align: center; padding: 2.5rem 1.5rem; color: var(--muted); font-size: .85rem;
+  }
+
+  #cargando, #error { max-width: 640px; margin: 4rem auto; text-align: center; color: var(--muted); }
+  #error { color: #a83c3c; display: none; }
+
+  @media (max-width: 700px) {
+    .grid-2 { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Brand Matrix — fuente de verdad</div>
+  <h1 id="marca-nombre">Happy Flops</h1>
+  <p class="tagline" id="marca-tagline">Cargando…</p>
+  <div class="meta" id="marca-meta"></div>
+</header>
+
+<main>
+  <div id="cargando">Leyendo root.json…</div>
+  <div id="error">No pude cargar root.json. Si estás abriendo este archivo directo desde el Finder (file://), ábrelo con un servidor local o por GitHub Pages — los navegadores bloquean leer JSON local sin uno.</div>
+  <div id="contenido" style="display:none;"></div>
+</main>
+
+<footer id="pie"></footer>
+
+<script>
+async function cargar() {
+  let root;
+  try {
+    const resp = await fetch('./root.json', { cache: 'no-store' });
+    root = await resp.json();
+  } catch (e) {
+    document.getElementById('cargando').style.display = 'none';
+    document.getElementById('error').style.display = 'block';
+    return;
+  }
+  document.getElementById('cargando').style.display = 'none';
+  document.getElementById('contenido').style.display = 'block';
+  render(root);
+}
+
+function el(html) {
+  const t = document.createElement('template');
+  t.innerHTML = html.trim();
+  return t.content;
+}
+
+function render(root) {
+  const brand = root.brand || {};
+  const tech = (root.technology || {}).smiletech || {};
+  const voice = root.voice || {};
+  const colour = root.colour_system || {};
+  const categories = root.categories || {};
+  const openItems = root.open_items || [];
+  const invariants = root.invariants || [];
+  const freeVars = root.free_variables || {};
+  const blocks = root.prompt_blocks || {};
+  const review = root.review_cadence || {};
+
+  document.getElementById('marca-nombre').textContent = brand.name || 'Brand Matrix';
+  document.getElementById('marca-tagline').textContent = voice.hero_tagline || '';
+  document.getElementById('marca-meta').textContent =
+    `v${root.version || '?'} · actualizado ${root.updated || '?'} · owner: ${root.owner || '?'}`;
+
+  const contenido = document.getElementById('contenido');
+  contenido.innerHTML = '';
+
+  // --- Definición / hero ---
+  contenido.appendChild(el(`
+    <section>
+      <h2>Qué es la marca</h2>
+      <div class="card hero-def">
+        <div><strong>${brand.name}</strong> ${brand.definition || ''}</div>
+        <div style="margin-top:.8rem;color:var(--muted);font-size:.92rem;">${brand.promise || ''}</div>
+        ${brand.origin_story ? `<div style="margin-top:.8rem;font-size:.88rem;color:var(--muted);">Origen: ${brand.origin_story}</div>` : ''}
+      </div>
+      <div class="grid-2" style="margin-top:1rem;">
+        <div class="card" style="padding:1.1rem 1.3rem;">
+          <div style="font-weight:700;margin-bottom:.5rem;">Somos</div>
+          <div class="chip-row">${(brand.we_are || []).map(v => `<span class="chip yes">${v}</span>`).join('')}</div>
+        </div>
+        <div class="card" style="padding:1.1rem 1.3rem;">
+          <div style="font-weight:700;margin-bottom:.5rem;">No somos</div>
+          <div class="chip-row">${(brand.we_are_not || []).map(v => `<span class="chip no">${v}</span>`).join('')}</div>
+        </div>
+      </div>
+    </section>
+  `));
+
+  // --- Invariantes ---
+  contenido.appendChild(el(`
+    <section>
+      <h2>Los ${invariants.length} invariantes (inmutables)</h2>
+      <p class="lead">Ningún submundo, proyecto ni fecha límite los puede pisar. El schema los hace cumplir, no solo los describe.</p>
+      <div class="invariantes">
+        ${invariants.map(inv => `
+          <div class="card invariante">
+            <div class="num">${inv.id}</div>
+            <div>
+              <div class="nombre">${(inv.name || '').replace(/_/g, ' ')}</div>
+              <div class="regla">${inv.rule}</div>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </section>
+  `));
+
+  // --- Variables libres ---
+  const filasVars = Object.entries(freeVars).map(([k, v]) => {
+    let rango = v.description || (v.values ? v.values.join(' · ') : '') || (v.default ? `default: ${v.default}` : '') || '';
+    return `<tr><td style="font-weight:600;">${k}</td><td>${rango}</td></tr>`;
+  }).join('');
+  contenido.appendChild(el(`
+    <section>
+      <h2>Variables libres</h2>
+      <p class="lead">Todo esto SÍ puede cambiar — es donde vive la variedad.</p>
+      <div class="card" style="padding:.5rem 1.3rem;">
+        <table>${filasVars}</table>
+      </div>
+    </section>
+  `));
+
+  // --- Categorías ---
+  const catInfo = {
+    lifestyle: { titulo: '🏡 Lifestyle — la vida', clase: 'lifestyle' },
+    photoshoot: { titulo: '📸 Photoshoot — el puente', clase: 'photoshoot' },
+    render_3d: { titulo: '🎨 3D Render — la imaginación', clase: 'render_3d' },
+  };
+  const catsHtml = Object.entries(categories).filter(([k]) => catInfo[k]).map(([k, v]) => `
+    <div class="card categoria ${catInfo[k].clase}">
+      <div class="titulo">${catInfo[k].titulo}</div>
+      <div class="desc">${v.is || ''}</div>
+      ${v.note ? `<div class="desc" style="margin-top:.5rem;">${v.note}</div>` : ''}
+    </div>
+  `).join('');
+  contenido.appendChild(el(`
+    <section>
+      <h2>Las tres categorías</h2>
+      <p class="lead">${categories.note || ''}</p>
+      <div class="grid-3">${catsHtml}</div>
+    </section>
+  `));
+
+  // --- Color system ---
+  const swatches = [];
+  if (colour.yellow_gradient) swatches.push({ nombre: 'Amarillo — ' + (colour.yellow_gradient.role || ''), color: colour.yellow_gradient.from });
+  if (colour.blue_gradient) swatches.push({ nombre: 'Azul — ' + (colour.blue_gradient.role || ''), color: colour.blue_gradient.from });
+  (colour.neutrals || []).forEach(n => swatches.push({ nombre: n, color: null }));
+  contenido.appendChild(el(`
+    <section>
+      <h2>Sistema de color</h2>
+      <p class="lead">${colour.held_together_by || ''}</p>
+      <div class="swatch-row">
+        ${swatches.map(s => `
+          <div class="swatch">
+            <div class="box" style="background:${s.color || 'var(--sand)'};border:1px solid var(--border);"></div>
+            <div class="label">${s.nombre}</div>
+          </div>
+        `).join('')}
+      </div>
+      ${(colour.forbidden || []).length ? `<div class="chip-row" style="margin-top:1rem;">${colour.forbidden.map(f => `<span class="chip no">${f}</span>`).join('')}</div>` : ''}
+    </section>
+  `));
+
+  // --- Voz ---
+  contenido.appendChild(el(`
+    <section>
+      <h2>Voz</h2>
+      <p class="lead">${voice.core_rule || ''}</p>
+      <div class="voz-ejemplos">
+        ${(voice.canonical_examples || []).map(e => `<div class="card voz-ejemplo">"${e}"</div>`).join('')}
+      </div>
+      <div style="margin-top:1rem;font-weight:700;">Nunca usar</div>
+      <div class="chip-row">${(voice.banned_vocabulary || []).map(w => `<span class="chip no">${w}</span>`).join('')}</div>
+    </section>
+  `));
+
+  // --- SmileTech ---
+  if (tech.name) {
+    contenido.appendChild(el(`
+      <section>
+        <h2>${tech.name}</h2>
+        <div class="card" style="padding:1.2rem 1.4rem;">
+          <div>${tech.what_it_is || ''}</div>
+          <div style="margin-top:.6rem;color:var(--muted);font-size:.9rem;">${tech.visual_signature || ''}</div>
+          <div style="margin-top:.8rem;font-weight:700;">Nunca decir</div>
+          <div class="chip-row">${(tech.never_say || []).map(w => `<span class="chip no">${w}</span>`).join('')}</div>
+        </div>
+      </section>
+    `));
+  }
+
+  // --- Open items ---
+  if (openItems.length) {
+    contenido.appendChild(el(`
+      <section>
+        <h2>Pendientes abiertos</h2>
+        <div class="open-items">
+          ${openItems.map(i => `
+            <div class="card open-item">
+              <span class="estado-badge estado-${i.status}">${i.status}</span>
+              <div>
+                <div style="font-weight:600;">${i.id}</div>
+                <div style="color:var(--muted);font-size:.88rem;">${i.note || ''}</div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </section>
+    `));
+  }
+
+  // --- Prompt blocks (referencia técnica) ---
+  if (blocks.invariant_block || blocks.negative_prompt) {
+    contenido.appendChild(el(`
+      <section>
+        <h2>Bloques de prompt (uso técnico)</h2>
+        <details class="card">
+          <summary>invariant_block</summary>
+          <pre>${blocks.invariant_block || ''}</pre>
+        </details>
+        <details class="card" style="margin-top:.8rem;">
+          <summary>negative_prompt</summary>
+          <pre>${blocks.negative_prompt || ''}</pre>
+        </details>
+      </section>
+    `));
+  }
+
+  document.getElementById('pie').textContent =
+    `Revisión ${review.frequency || 'periódica'} · próxima: ${review.next_review || '?'} — un documento vivo que nadie abre es un documento muerto con mejor nombre.`;
+}
+
+cargar();
+</script>
+</body>
+</html>
