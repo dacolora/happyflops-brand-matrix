@@ -166,9 +166,11 @@ encima es el trabajo mecánico alrededor de ese criterio:
   ```
 - **`index.html`** — una vista visual de `root.json`, en vivo (lee el archivo cada
   vez que se abre, así que si `root.json` cambia, la página se actualiza sola sin
-  que nadie tenga que editar dos lugares). Ábrela con GitHub Pages (Settings →
-  Pages → deploy from `main` / `/root`) para tener una URL real que compartir, o
-  local con `python3 -m http.server` desde esta carpeta y entra a
+  que nadie tenga que editar dos lugares). Publicada en GitHub Pages en
+  **https://dacolora.github.io/happyflops-brand-matrix/** — una URL real para
+  compartir con quien sea, sin depender de acceso de invitado a Notion. Se
+  actualiza sola con cada `git push` a `main`. También se puede ver local con
+  `python3 -m http.server` desde esta carpeta y entrando a
   `http://localhost:8000`.
 - **`servidor_editor.py`** — la misma página de arriba, pero editable: corré
   `python3 servidor_editor.py` en vez de `python3 -m http.server` y en
@@ -186,9 +188,13 @@ encima es el trabajo mecánico alrededor de ese criterio:
 1. Abre esta carpeta con **Claude Code** (`claude` en la terminal, o la app). Ya
    sabe cómo funciona todo este sistema por el `CLAUDE.md` — no hace falta
    explicarle nada de cero cada vez, a diferencia de abrir un chat nuevo.
-2. Sube tus imágenes de referencia donde te resulte más cómodo (o pídele a Claude
-   Code que las describa) y dile qué quieres cambiar o agregar — un submundo nuevo,
-   ajustar un invariante, lo que sea.
+2. Sube tus imágenes de referencia a Google Drive, como ya haces naturalmente —
+   no hace falta bajarlas ni subirlas a este repo. Cuando tengas una carpeta
+   lista, dile a Claude Code "las fotos de tal colección están en esta carpeta
+   de Drive" y las lee directo de ahí (Claude Code ya tiene un conector de
+   Drive activo en esta sesión — nada nuevo que instalar ni autorizar). Después
+   dile qué quieres cambiar o agregar — un submundo nuevo, ajustar un
+   invariante, lo que sea.
 3. Antes de dar algo por bueno, corre `python validar_marca.py --todos` — si algo
    rompe una regla, te dice exactamente cuál y por qué.
 4. Guarda los cambios (commit + push). Si no quieres tocar la terminal para eso,
