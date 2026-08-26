@@ -1,3 +1,4 @@
+import http.client
 import json
 import os
 import tempfile
@@ -81,6 +82,57 @@ class ServidorEditorTest(unittest.TestCase):
         with self.assertRaises(urllib.error.HTTPError) as ctx:
             urllib.request.urlopen(req)
         self.assertEqual(ctx.exception.code, 400)
+
+    def test_origen_no_permitido_devuelve_403(self):
+        cuerpo = json.dumps({"key": "brand", "value": {"name": "Hackeado"}}).encode()
+        req = urllib.request.Request(
+            self._url("/api/root"), data=cuerpo, method="POST",
+            headers={"Content-Type": "application/json", "Origin": "http://evil.example"},
+        )
+        with self.assertRaises(urllib.error.HTTPError) as ctx:
+            urllib.request.urlopen(req)
+        self.assertEqual(ctx.exception.code, 403)
+        with open(self.root_path, encoding="utf-8") as f:
+            self.assertEqual(json.load(f)["brand"], {"name": "Happy Flops"})
+
+    def test_origen_localhost_permitido(self):
+        cuerpo = json.dumps({"key": "brand", "value": {"name": "Nuevo Nombre"}}).encode()
+        req = urllib.request.Request(
+            self._url("/api/root"), data=cuerpo, method="POST",
+            headers={
+                "Content-Type": "application/json",
+                "Origin": f"http://localhost:{self.puerto}",
+            },
+        )
+        with urllib.request.urlopen(req) as resp:
+            self.assertEqual(resp.status, 200)
+
+    def test_content_length_valido_rechaza_negativos_y_excesivos(self):
+        self.assertFalse(servidor_editor.content_length_valido(-1))
+        self.assertFalse(servidor_editor.content_length_valido(servidor_editor.CONTENT_LENGTH_MAXIMO + 1))
+        self.assertTrue(servidor_editor.content_length_valido(0))
+        self.assertTrue(servidor_editor.content_length_valido(servidor_editor.CONTENT_LENGTH_MAXIMO))
+
+    def test_content_length_excesivo_devuelve_400(self):
+        # Declaramos un Content-Length enorme (por encima del límite) sin
+        # mandar realmente ese volumen de datos: el handler tiene que
+        # rechazar por el header antes de intentar leer el cuerpo, así que
+        # nunca debería bloquearse esperando bytes que no llegan.
+        conn = http.client.HTTPConnection("localhost", self.puerto)
+        try:
+            cuerpo = b"{}"
+            conn.putrequest("POST", "/api/root")
+            conn.putheader("Content-Type", "application/json")
+            conn.putheader("Content-Length", str(servidor_editor.CONTENT_LENGTH_MAXIMO + 1))
+            conn.endheaders()
+            conn.send(cuerpo)
+            resp = conn.getresponse()
+            self.assertEqual(resp.status, 400)
+            resp.read()
+        finally:
+            conn.close()
+        with open(self.root_path, encoding="utf-8") as f:
+            self.assertEqual(json.load(f)["brand"], {"name": "Happy Flops"})
 
     def test_guardar_brand_actualiza_archivo_y_crea_backup(self):
         cuerpo = json.dumps({"key": "brand", "value": {"name": "Nuevo Nombre"}}).encode()

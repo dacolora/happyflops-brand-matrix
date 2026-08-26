@@ -165,6 +165,7 @@
       `).join('');
       return `
         <form class="form-edit" data-key="invariants">
+          <div style="color:var(--muted);font-size:.82rem;margin-bottom:.8rem;">Nota: esto no actualiza <code>prompt_blocks.invariant_block</code> en root.json ni la página de Notion — si cambiás una regla acá, actualizalos a mano.</div>
           ${filas}
           <div class="form-actions">
             <button type="submit" class="btn-guardar">Guardar</button>
@@ -361,6 +362,7 @@
       const blue = colour.blue_gradient || {};
       return `
         <form class="form-edit" data-key="colour_system">
+          <div style="color:var(--muted);font-size:.82rem;margin-bottom:.8rem;">Nota: esto no actualiza <code>prompt_blocks.negative_prompt</code> en root.json ni la página de Notion — si cambiás los colores prohibidos acá, actualizalos a mano.</div>
           <div class="grid-2">
             <div>
               <label>Amarillo — desde</label>

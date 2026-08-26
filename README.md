@@ -176,7 +176,10 @@ encima es el trabajo mecánico alrededor de ese criterio:
   variables libres, categorías, colores) tiene un botón "Editar" que guarda
   directo en `root.json`, con una copia de respaldo automática en
   `root.backups/` antes de cada guardado. Publicada en GitHub Pages, la misma
-  página sigue siendo de solo lectura — no hay servidor ahí atrás.
+  página sigue siendo de solo lectura — no hay servidor ahí atrás. Ojo: editar
+  invariantes o colores acá no actualiza `prompt_blocks` (`invariant_block`,
+  `negative_prompt`) dentro de `root.json` ni la página de Notion — eso hay
+  que actualizarlo a mano.
 
 ## Cómo se trabaja aquí
 
