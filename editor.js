@@ -180,7 +180,7 @@
   function formularioInvariante(nombre, regla) {
     return `
       <form class="form-edit" data-key="invariants">
-        <div style="color:var(--muted);font-size:.82rem;margin-bottom:.6rem;">Nota: esto no actualiza <code>prompt_blocks.invariant_block</code> en root.json ni la página de Notion — si cambiás una regla acá, actualizalos a mano.</div>
+        <div style="color:var(--muted);font-size:.82rem;margin-bottom:.6rem;">Nota: esto no actualiza <code>prompt_blocks.invariant_block</code> solo — si cambiás una regla acá, andá a editarlo también en "Bloques de prompt" más abajo, y no te olvides de Notion.</div>
         <label>Nombre</label>
         <input type="text" name="name" value="${escapeAttr(nombre)}">
         <label style="margin-top:.5rem;">Regla</label>
@@ -433,7 +433,7 @@
       const blue = colour.blue_gradient || {};
       return `
         <form class="form-edit" data-key="colour_system">
-          <div style="color:var(--muted);font-size:.82rem;margin-bottom:.8rem;">Nota: esto no actualiza <code>prompt_blocks.negative_prompt</code> en root.json ni la página de Notion — si cambiás los colores prohibidos acá, actualizalos a mano.</div>
+          <div style="color:var(--muted);font-size:.82rem;margin-bottom:.8rem;">Nota: esto no actualiza <code>prompt_blocks.negative_prompt</code> solo — si cambiás los colores prohibidos acá, andá a editarlo también en "Bloques de prompt" más abajo, y no te olvides de Notion.</div>
           <div class="grid-2">
             <div>
               <label>Amarillo — desde</label>
@@ -512,6 +512,41 @@
     });
   }
 
+  function setupPromptBlocks(root) {
+    const section = document.querySelector('section[data-section="prompt_blocks"]');
+    if (!section) return;
+    attachEditButton(section, () => {
+      const blocks = (window.__lastRoot || root).prompt_blocks || {};
+      return `
+        <form class="form-edit" data-key="prompt_blocks">
+          <div>
+            <label>invariant_block</label>
+            <textarea name="invariant_block" style="min-height:9rem;">${escapeHtml(blocks.invariant_block)}</textarea>
+          </div>
+          <div>
+            <label>negative_prompt</label>
+            <textarea name="negative_prompt" style="min-height:9rem;">${escapeHtml(blocks.negative_prompt)}</textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn-guardar">Guardar</button>
+            <button type="button" class="btn-cancelar">Cancelar</button>
+            <span class="form-error"></span>
+          </div>
+        </form>
+      `;
+    }, (form) => {
+      form.addEventListener('submit', (ev) => {
+        ev.preventDefault();
+        const blocksActual = (window.__lastRoot || root).prompt_blocks || {};
+        const blocks = Object.assign({}, blocksActual, {
+          invariant_block: form.invariant_block.value.trim(),
+          negative_prompt: form.negative_prompt.value.trim(),
+        });
+        guardarSeccion('prompt_blocks', blocks, form);
+      });
+    });
+  }
+
   function attachEditControls(root) {
     if (!editApiDisponible) return;
     setupBrand(root);
@@ -520,6 +555,7 @@
     setupCategories(root);
     setupColour(root);
     setupVoice(root);
+    setupPromptBlocks(root);
   }
 
   async function initEdicion() {

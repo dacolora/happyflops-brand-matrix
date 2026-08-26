@@ -9,7 +9,7 @@ import glob
 import os
 import shutil
 
-ALLOWED_KEYS = {"brand", "invariants", "free_variables", "categories", "colour_system", "voice"}
+ALLOWED_KEYS = {"brand", "invariants", "free_variables", "categories", "colour_system", "voice", "prompt_blocks"}
 
 
 class ActualizacionInvalida(ValueError):

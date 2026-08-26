@@ -460,16 +460,18 @@ function render(root) {
   // --- Prompt blocks (referencia técnica) ---
   if (blocks.invariant_block || blocks.negative_prompt) {
     contenido.appendChild(el(`
-      <section>
-        <h2>Bloques de prompt (uso técnico)</h2>
-        <details class="card">
-          <summary>invariant_block</summary>
-          <pre>${blocks.invariant_block || ''}</pre>
-        </details>
-        <details class="card" style="margin-top:.8rem;">
-          <summary>negative_prompt</summary>
-          <pre>${blocks.negative_prompt || ''}</pre>
-        </details>
+      <section data-section="prompt_blocks">
+        <div class="section-head"><h2>Bloques de prompt (uso técnico)</h2><span class="edit-slot"></span></div>
+        <div class="section-body">
+          <details class="card">
+            <summary>invariant_block</summary>
+            <pre>${blocks.invariant_block || ''}</pre>
+          </details>
+          <details class="card" style="margin-top:.8rem;">
+            <summary>negative_prompt</summary>
+            <pre>${blocks.negative_prompt || ''}</pre>
+          </details>
+        </div>
       </section>
     `));
   }

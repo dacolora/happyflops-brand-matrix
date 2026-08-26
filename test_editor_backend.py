@@ -18,6 +18,9 @@ class ValidarActualizacionTest(unittest.TestCase):
     def test_voice_es_clave_permitida(self):
         eb.validar_actualizacion("voice", {"core_rule": "Habla simple."})
 
+    def test_prompt_blocks_es_clave_permitida(self):
+        eb.validar_actualizacion("prompt_blocks", {"invariant_block": "x", "negative_prompt": "y"})
+
     def test_valor_de_forma_incorrecta_rechazado(self):
         with self.assertRaises(eb.ActualizacionInvalida):
             eb.validar_actualizacion("brand", "esto no es un objeto")
