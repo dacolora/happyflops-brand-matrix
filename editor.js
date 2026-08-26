@@ -149,9 +149,48 @@
     });
   }
 
+  function setupInvariants(root) {
+    const section = document.querySelector('section[data-section="invariants"]');
+    if (!section) return;
+    attachEditButton(section, () => {
+      const invariants = (window.__lastRoot || root).invariants || [];
+      const filas = invariants.map(inv => `
+        <div class="variable-block">
+          <div style="font-weight:700;margin-bottom:.4rem;">#${inv.id}</div>
+          <label>Nombre</label>
+          <input type="text" data-id="${inv.id}" data-campo="name" value="${escapeAttr(inv.name)}">
+          <label style="margin-top:.5rem;">Regla</label>
+          <textarea data-id="${inv.id}" data-campo="rule">${escapeHtml(inv.rule)}</textarea>
+        </div>
+      `).join('');
+      return `
+        <form class="form-edit" data-key="invariants">
+          ${filas}
+          <div class="form-actions">
+            <button type="submit" class="btn-guardar">Guardar</button>
+            <button type="button" class="btn-cancelar">Cancelar</button>
+            <span class="form-error"></span>
+          </div>
+        </form>
+      `;
+    }, (form) => {
+      form.addEventListener('submit', (ev) => {
+        ev.preventDefault();
+        const original = (window.__lastRoot || root).invariants || [];
+        const value = original.map(inv => ({
+          ...inv,
+          name: form.querySelector(`[data-id="${inv.id}"][data-campo="name"]`).value.trim(),
+          rule: form.querySelector(`[data-id="${inv.id}"][data-campo="rule"]`).value.trim(),
+        }));
+        guardarSeccion('invariants', value, form);
+      });
+    });
+  }
+
   function attachEditControls(root) {
     if (!editApiDisponible) return;
     setupBrand(root);
+    setupInvariants(root);
   }
 
   async function initEdicion() {

@@ -282,19 +282,21 @@ function render(root) {
 
   // --- Invariantes ---
   contenido.appendChild(el(`
-    <section>
-      <h2>Los ${invariants.length} invariantes (inmutables)</h2>
-      <p class="lead">Ningún submundo, proyecto ni fecha límite los puede pisar. El schema los hace cumplir, no solo los describe.</p>
-      <div class="invariantes">
-        ${invariants.map(inv => `
-          <div class="card invariante">
-            <div class="num">${inv.id}</div>
-            <div>
-              <div class="nombre">${(inv.name || '').replace(/_/g, ' ')}</div>
-              <div class="regla">${inv.rule}</div>
+    <section data-section="invariants">
+      <div class="section-head"><h2>Los ${invariants.length} invariantes (inmutables)</h2><span class="edit-slot"></span></div>
+      <div class="section-body">
+        <p class="lead">Ningún submundo, proyecto ni fecha límite los puede pisar. El schema los hace cumplir, no solo los describe.</p>
+        <div class="invariantes">
+          ${invariants.map(inv => `
+            <div class="card invariante">
+              <div class="num">${inv.id}</div>
+              <div>
+                <div class="nombre">${(inv.name || '').replace(/_/g, ' ')}</div>
+                <div class="regla">${inv.rule}</div>
+              </div>
             </div>
-          </div>
-        `).join('')}
+          `).join('')}
+        </div>
       </div>
     </section>
   `));
