@@ -170,6 +170,13 @@ encima es el trabajo mecánico alrededor de ese criterio:
   Pages → deploy from `main` / `/root`) para tener una URL real que compartir, o
   local con `python3 -m http.server` desde esta carpeta y entra a
   `http://localhost:8000`.
+- **`servidor_editor.py`** — la misma página de arriba, pero editable: corré
+  `python3 servidor_editor.py` en vez de `python3 -m http.server` y en
+  `http://localhost:8000` cada sección (qué es la marca, las 11 invariantes,
+  variables libres, categorías, colores) tiene un botón "Editar" que guarda
+  directo en `root.json`, con una copia de respaldo automática en
+  `root.backups/` antes de cada guardado. Publicada en GitHub Pages, la misma
+  página sigue siendo de solo lectura — no hay servidor ahí atrás.
 
 ## Cómo se trabaja aquí
 

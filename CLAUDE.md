@@ -18,7 +18,9 @@ updated too.
 python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt
 python validar_marca.py submundos/<archivo>.json   # validate one submundo
 python validar_marca.py --todos                     # validate everything in submundos/
-python3 -m http.server                               # serve index.html locally to preview
+python3 -m http.server                               # serve index.html locally to preview (read-only)
+python3 servidor_editor.py                           # same page, but editable — saves to root.json
+python3 -m unittest discover -p "test_*.py"          # run the editor's test suite
 ```
 
 There is no test suite beyond the schema validator above — it *is* the test suite for
