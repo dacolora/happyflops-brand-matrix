@@ -187,10 +187,116 @@
     });
   }
 
+  let fvContador = 0;
+
+  function bloqueVariable(nombre, v, id) {
+    v = v || { type: 'string' };
+    return `
+      <div class="variable-block" data-fv-id="${id}">
+        <label>Nombre de la variable</label>
+        <input type="text" class="fv-key" value="${escapeAttr(nombre)}">
+        <label>Tipo</label>
+        <select class="fv-tipo">
+          <option value="string" ${v.type === 'string' ? 'selected' : ''}>Texto libre</option>
+          <option value="enum" ${v.type === 'enum' ? 'selected' : ''}>Lista cerrada (enum)</option>
+          <option value="object" ${v.type === 'object' ? 'selected' : ''}>Objeto con forma fija</option>
+        </select>
+        <div class="fv-campos-string" style="${v.type === 'string' ? '' : 'display:none'}">
+          <label>Descripción</label>
+          <input type="text" class="fv-description" value="${escapeAttr(v.description)}">
+          <label>Valor por defecto (opcional)</label>
+          <input type="text" class="fv-default" value="${escapeAttr(v.default)}">
+        </div>
+        <div class="fv-campos-enum" style="${v.type === 'enum' ? '' : 'display:none'}">
+          ${campoLista('Valores posibles', v.values, 'fv-values-' + id, 'valor')}
+        </div>
+        <div class="fv-campos-object" style="${v.type === 'object' ? '' : 'display:none'}">
+          <label>Forma (una línea por campo, formato clave:tipo)</label>
+          <textarea class="fv-shape">${Object.entries(v.shape || {}).map(([sk, sv]) => sk + ':' + sv).join('\n')}</textarea>
+        </div>
+        <button type="button" class="btn-remove" data-action="quitar-variable" style="margin-top:.6rem;">Quitar esta variable</button>
+      </div>
+    `;
+  }
+
+  function wireBloqueVariable(bloque) {
+    const select = bloque.querySelector('.fv-tipo');
+    select.addEventListener('change', () => {
+      bloque.querySelector('.fv-campos-string').style.display = select.value === 'string' ? '' : 'none';
+      bloque.querySelector('.fv-campos-enum').style.display = select.value === 'enum' ? '' : 'none';
+      bloque.querySelector('.fv-campos-object').style.display = select.value === 'object' ? '' : 'none';
+    });
+    bloque.querySelector('[data-action="quitar-variable"]').addEventListener('click', () => bloque.remove());
+    wireListas(bloque);
+  }
+
+  function leerFreeVariables(form) {
+    const resultado = {};
+    form.querySelectorAll('.variable-block').forEach(bloque => {
+      const key = bloque.querySelector('.fv-key').value.trim();
+      if (!key) return;
+      const tipo = bloque.querySelector('.fv-tipo').value;
+      if (tipo === 'string') {
+        const description = bloque.querySelector('.fv-description').value.trim();
+        const def = bloque.querySelector('.fv-default').value.trim();
+        resultado[key] = Object.assign(
+          { type: 'string' },
+          description ? { description } : {},
+          def ? { default: def } : {}
+        );
+      } else if (tipo === 'enum') {
+        const id = bloque.getAttribute('data-fv-id');
+        resultado[key] = { type: 'enum', values: leerLista(form, 'fv-values-' + id) };
+      } else {
+        const shape = {};
+        bloque.querySelector('.fv-shape').value.split('\n').forEach(linea => {
+          const [sk, sv] = linea.split(':').map(s => (s || '').trim());
+          if (sk) shape[sk] = sv || 'string';
+        });
+        resultado[key] = { type: 'object', shape };
+      }
+    });
+    return resultado;
+  }
+
+  function setupFreeVariables(root) {
+    const section = document.querySelector('section[data-section="free_variables"]');
+    if (!section) return;
+    attachEditButton(section, () => {
+      const fv = (window.__lastRoot || root).free_variables || {};
+      const bloques = Object.entries(fv)
+        .map((entry, idx) => bloqueVariable(entry[0], entry[1], 'fv' + idx))
+        .join('');
+      return `
+        <form class="form-edit" data-key="free_variables">
+          <div class="variables-lista">${bloques}</div>
+          <button type="button" class="btn-add" data-action="agregar-variable">+ Agregar variable</button>
+          <div class="form-actions">
+            <button type="submit" class="btn-guardar">Guardar</button>
+            <button type="button" class="btn-cancelar">Cancelar</button>
+            <span class="form-error"></span>
+          </div>
+        </form>
+      `;
+    }, (form) => {
+      const lista = form.querySelector('.variables-lista');
+      lista.querySelectorAll('.variable-block').forEach(wireBloqueVariable);
+      form.querySelector('[data-action="agregar-variable"]').addEventListener('click', () => {
+        lista.insertAdjacentHTML('beforeend', bloqueVariable('', { type: 'string' }, 'nueva' + (fvContador++)));
+        wireBloqueVariable(lista.lastElementChild);
+      });
+      form.addEventListener('submit', (ev) => {
+        ev.preventDefault();
+        guardarSeccion('free_variables', leerFreeVariables(form), form);
+      });
+    });
+  }
+
   function attachEditControls(root) {
     if (!editApiDisponible) return;
     setupBrand(root);
     setupInvariants(root);
+    setupFreeVariables(root);
   }
 
   async function initEdicion() {

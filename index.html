@@ -307,11 +307,13 @@ function render(root) {
     return `<tr><td style="font-weight:600;">${k}</td><td>${rango}</td></tr>`;
   }).join('');
   contenido.appendChild(el(`
-    <section>
-      <h2>Variables libres</h2>
+    <section data-section="free_variables">
+      <div class="section-head"><h2>Variables libres</h2><span class="edit-slot"></span></div>
       <p class="lead">Todo esto SÍ puede cambiar — es donde vive la variedad.</p>
-      <div class="card" style="padding:.5rem 1.3rem;">
-        <table>${filasVars}</table>
+      <div class="section-body">
+        <div class="card" style="padding:.5rem 1.3rem;">
+          <table>${filasVars}</table>
+        </div>
       </div>
     </section>
   `));
