@@ -910,6 +910,7 @@ git commit -m "feat: editor en vivo para las 11 invariantes"
 ## Task 5: sección editable — variables libres (alta, edición y baja)
 
 **Files:**
+- Modify: `index.html` (sección "Variables libres")
 - Modify: `editor.js`
 
 **Interfaces:**
@@ -917,7 +918,47 @@ git commit -m "feat: editor en vivo para las 11 invariantes"
   `escapeHtml`, `escapeAttr` (Task 3).
 - Produces: `setupFreeVariables(root)`, llamada agregada dentro de `attachEditControls`.
 
-- [ ] **Step 1: Agregar `setupFreeVariables` y sus helpers en `editor.js`**
+**Nota de corrección (surgida en Task 4):** Task 3 solo envolvió la sección "marca" con
+`data-section`/`.section-head`/`.section-body` — el plan original no incluía ese mismo
+envoltorio para las otras 4 secciones, así que `document.querySelector('section[data-section="..."]')`
+no encontraría nada sin este paso. Task 4 lo descubrió al implementar invariantes y lo
+corrigió por su cuenta seguiendo el mismo patrón exacto de Task 3 (correcto). Este plan
+queda actualizado para que Tasks 5-7 lo hagan como Step 1 explícito, en vez de que cada
+implementador tenga que volver a descubrirlo.
+
+- [ ] **Step 1: Envolver la sección "Variables libres" con `data-section` y `.section-body`**
+
+Buscar en `index.html` (alrededor de la línea 309):
+
+```html
+  contenido.appendChild(el(`
+    <section>
+      <h2>Variables libres</h2>
+      <p class="lead">Todo esto SÍ puede cambiar — es donde vive la variedad.</p>
+      <div class="card" style="padding:.5rem 1.3rem;">
+        <table>${filasVars}</table>
+      </div>
+    </section>
+  `));
+```
+
+Reemplazar por:
+
+```html
+  contenido.appendChild(el(`
+    <section data-section="free_variables">
+      <div class="section-head"><h2>Variables libres</h2><span class="edit-slot"></span></div>
+      <p class="lead">Todo esto SÍ puede cambiar — es donde vive la variedad.</p>
+      <div class="section-body">
+        <div class="card" style="padding:.5rem 1.3rem;">
+          <table>${filasVars}</table>
+        </div>
+      </div>
+    </section>
+  `));
+```
+
+- [ ] **Step 2: Agregar `setupFreeVariables` y sus helpers en `editor.js`**
 
 Justo antes de `attachEditControls`, agregar:
 
@@ -1040,7 +1081,7 @@ Y en `attachEditControls`, agregar la llamada:
   }
 ```
 
-- [ ] **Step 2: Probar manualmente en el navegador**
+- [ ] **Step 3: Probar manualmente en el navegador**
 
 Run: `python3 servidor_editor.py`
 
@@ -1054,10 +1095,10 @@ aparece con la forma esperada (`{"type": "string", "description": "..."}`) y que
 variables existentes no cambiaron. Volver a editar y quitar `prueba_tmp` con su botón
 "Quitar esta variable", Guardar de nuevo, confirmar que desapareció del archivo.
 
-- [ ] **Step 3: Commit**
+- [ ] **Step 4: Commit**
 
 ```bash
-git add editor.js
+git add index.html editor.js
 git commit -m "feat: editor en vivo para variables libres (alta, edición y baja)"
 ```
 
@@ -1066,6 +1107,7 @@ git commit -m "feat: editor en vivo para variables libres (alta, edición y baja
 ## Task 6: sección editable — las 3 categorías
 
 **Files:**
+- Modify: `index.html` (sección "Las tres categorías")
 - Modify: `editor.js`
 
 **Interfaces:**
@@ -1073,7 +1115,35 @@ git commit -m "feat: editor en vivo para variables libres (alta, edición y baja
   `escapeHtml` (Task 3).
 - Produces: `setupCategories(root)`, llamada agregada dentro de `attachEditControls`.
 
-- [ ] **Step 1: Agregar `setupCategories` en `editor.js`**
+- [ ] **Step 1: Envolver la sección "Las tres categorías" con `data-section` y `.section-body`**
+
+Buscar en `index.html` (alrededor de la línea 332):
+
+```html
+  contenido.appendChild(el(`
+    <section>
+      <h2>Las tres categorías</h2>
+      <p class="lead">${categories.note || ''}</p>
+      <div class="grid-3">${catsHtml}</div>
+    </section>
+  `));
+```
+
+Reemplazar por:
+
+```html
+  contenido.appendChild(el(`
+    <section data-section="categories">
+      <div class="section-head"><h2>Las tres categorías</h2><span class="edit-slot"></span></div>
+      <p class="lead">${categories.note || ''}</p>
+      <div class="section-body">
+        <div class="grid-3">${catsHtml}</div>
+      </div>
+    </section>
+  `));
+```
+
+- [ ] **Step 2: Agregar `setupCategories` en `editor.js`**
 
 Justo antes de `attachEditControls`, agregar:
 
@@ -1152,7 +1222,7 @@ Y en `attachEditControls`, agregar la llamada:
   }
 ```
 
-- [ ] **Step 2: Probar manualmente en el navegador**
+- [ ] **Step 3: Probar manualmente en el navegador**
 
 Run: `python3 servidor_editor.py`
 
@@ -1164,10 +1234,10 @@ Confirmar con `git diff root.json` que `categories.photoshoot.subcategories_exam
 incluye `"temporal"` y que `categories.lifestyle`/`categories.render_3d` no cambiaron.
 Quitar `temporal` y Guardar de nuevo para dejar todo como estaba.
 
-- [ ] **Step 3: Commit**
+- [ ] **Step 4: Commit**
 
 ```bash
-git add editor.js
+git add index.html editor.js
 git commit -m "feat: editor en vivo para las 3 categorías"
 ```
 
@@ -1176,6 +1246,7 @@ git commit -m "feat: editor en vivo para las 3 categorías"
 ## Task 7: sección editable — sistema de color
 
 **Files:**
+- Modify: `index.html` (sección "Sistema de color")
 - Modify: `editor.js`
 
 **Interfaces:**
@@ -1183,7 +1254,51 @@ git commit -m "feat: editor en vivo para las 3 categorías"
   `escapeAttr` (Task 3).
 - Produces: `setupColour(root)`, llamada agregada dentro de `attachEditControls`.
 
-- [ ] **Step 1: Agregar `setupColour` en `editor.js`**
+- [ ] **Step 1: Envolver la sección "Sistema de color" con `data-section` y `.section-body`**
+
+Buscar en `index.html` (alrededor de la línea 345):
+
+```html
+  contenido.appendChild(el(`
+    <section>
+      <h2>Sistema de color</h2>
+      <p class="lead">${colour.held_together_by || ''}</p>
+      <div class="swatch-row">
+        ${swatches.map(s => `
+          <div class="swatch">
+            <div class="box" style="background:${s.color || 'var(--sand)'};border:1px solid var(--border);"></div>
+            <div class="label">${s.nombre}</div>
+          </div>
+        `).join('')}
+      </div>
+      ${(colour.forbidden || []).length ? `<div class="chip-row" style="margin-top:1rem;">${colour.forbidden.map(f => `<span class="chip no">${f}</span>`).join('')}</div>` : ''}
+    </section>
+  `));
+```
+
+Reemplazar por:
+
+```html
+  contenido.appendChild(el(`
+    <section data-section="colour_system">
+      <div class="section-head"><h2>Sistema de color</h2><span class="edit-slot"></span></div>
+      <p class="lead">${colour.held_together_by || ''}</p>
+      <div class="section-body">
+        <div class="swatch-row">
+          ${swatches.map(s => `
+            <div class="swatch">
+              <div class="box" style="background:${s.color || 'var(--sand)'};border:1px solid var(--border);"></div>
+              <div class="label">${s.nombre}</div>
+            </div>
+          `).join('')}
+        </div>
+        ${(colour.forbidden || []).length ? `<div class="chip-row" style="margin-top:1rem;">${colour.forbidden.map(f => `<span class="chip no">${f}</span>`).join('')}</div>` : ''}
+      </div>
+    </section>
+  `));
+```
+
+- [ ] **Step 2: Agregar `setupColour` en `editor.js`**
 
 Justo antes de `attachEditControls`, agregar:
 
@@ -1255,7 +1370,7 @@ Y en `attachEditControls`, agregar la llamada final:
   }
 ```
 
-- [ ] **Step 2: Probar manualmente en el navegador**
+- [ ] **Step 3: Probar manualmente en el navegador**
 
 Run: `python3 servidor_editor.py`
 
@@ -1265,10 +1380,10 @@ listas de neutros/prohibidos editables. Agregar un color prohibido de prueba `"p
 Guardar. Confirmar con `git diff root.json` que solo `colour_system.forbidden` cambió.
 Quitarlo y Guardar de nuevo para dejar todo como estaba.
 
-- [ ] **Step 3: Commit**
+- [ ] **Step 4: Commit**
 
 ```bash
-git add editor.js
+git add index.html editor.js
 git commit -m "feat: editor en vivo para el sistema de color"
 ```
 
