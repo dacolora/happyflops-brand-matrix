@@ -332,10 +332,12 @@ function render(root) {
     </div>
   `).join('');
   contenido.appendChild(el(`
-    <section>
-      <h2>Las tres categorías</h2>
+    <section data-section="categories">
+      <div class="section-head"><h2>Las tres categorías</h2><span class="edit-slot"></span></div>
       <p class="lead">${categories.note || ''}</p>
-      <div class="grid-3">${catsHtml}</div>
+      <div class="section-body">
+        <div class="grid-3">${catsHtml}</div>
+      </div>
     </section>
   `));
 

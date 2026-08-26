@@ -292,11 +292,72 @@
     });
   }
 
+  function setupCategories(root) {
+    const section = document.querySelector('section[data-section="categories"]');
+    if (!section) return;
+    attachEditButton(section, () => {
+      const categories = (window.__lastRoot || root).categories || {};
+      const claves = ['lifestyle', 'photoshoot', 'render_3d'];
+      const bloques = claves.map(k => {
+        const cat = categories[k] || {};
+        const subNombres = k === 'lifestyle'
+          ? Object.keys(cat.subcategories || {})
+          : (cat.subcategories_examples || []);
+        return `
+          <div class="variable-block" data-cat="${k}">
+            <div style="font-weight:700;margin-bottom:.4rem;text-transform:capitalize;">${k.replace('_', ' ')}</div>
+            <label>Descripción (is)</label>
+            <textarea class="cat-is">${escapeHtml(cat.is)}</textarea>
+            <label>Nota</label>
+            <textarea class="cat-note">${escapeHtml(cat.note)}</textarea>
+            ${campoLista('Subcategorías', subNombres, 'sub-' + k, 'subcategoría')}
+          </div>
+        `;
+      }).join('');
+      return `
+        <form class="form-edit" data-key="categories">
+          ${bloques}
+          <div class="form-actions">
+            <button type="submit" class="btn-guardar">Guardar</button>
+            <button type="button" class="btn-cancelar">Cancelar</button>
+            <span class="form-error"></span>
+          </div>
+        </form>
+      `;
+    }, (form) => {
+      wireListas(form);
+      form.addEventListener('submit', (ev) => {
+        ev.preventDefault();
+        const categoriesActuales = (window.__lastRoot || root).categories || {};
+        const nuevo = Object.assign({}, categoriesActuales);
+        ['lifestyle', 'photoshoot', 'render_3d'].forEach(k => {
+          const bloque = form.querySelector(`[data-cat="${k}"]`);
+          const is = bloque.querySelector('.cat-is').value.trim();
+          const note = bloque.querySelector('.cat-note').value.trim();
+          const nombresSub = leerLista(form, 'sub-' + k);
+          const catOriginal = categoriesActuales[k] || {};
+          if (k === 'lifestyle') {
+            const subOriginal = catOriginal.subcategories || {};
+            const subcategories = {};
+            nombresSub.forEach(nombre => {
+              subcategories[nombre] = subOriginal[nombre] || { seasons: true, note: '' };
+            });
+            nuevo[k] = Object.assign({}, catOriginal, { is, note, subcategories });
+          } else {
+            nuevo[k] = Object.assign({}, catOriginal, { is, note, subcategories_examples: nombresSub });
+          }
+        });
+        guardarSeccion('categories', nuevo, form);
+      });
+    });
+  }
+
   function attachEditControls(root) {
     if (!editApiDisponible) return;
     setupBrand(root);
     setupInvariants(root);
     setupFreeVariables(root);
+    setupCategories(root);
   }
 
   async function initEdicion() {
