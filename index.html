@@ -59,7 +59,7 @@
 
   section { margin-bottom: 3.2rem; }
   section > h2 {
-    font-size: 1.5rem; margin: 0 0 1.2rem;
+    font-size: 1.5rem; margin: 0 0 .6rem;
     display: flex; align-items: center; gap: .6rem;
   }
   section > h2::before {
@@ -67,7 +67,7 @@
     background: linear-gradient(135deg, var(--yellow-a), var(--blue-a));
     display: inline-block; flex: 0 0 auto;
   }
-  .lead { color: var(--muted); max-width: 62ch; margin: -.6rem 0 1.4rem; }
+  .lead { color: var(--muted); max-width: 62ch; margin: 0 0 1.4rem; }
 
   .card {
     background: var(--card);
@@ -111,7 +111,7 @@
   th { font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
 
   .categoria { padding: 1.3rem 1.4rem; }
-  .categoria .titulo { font-family: "Sniglet"; font-size: 1.15rem; margin-bottom: .35rem; }
+  .categoria .titulo { font-weight: 700; margin-bottom: .35rem; }
   .categoria .desc { color: var(--muted); font-size: .88rem; }
   .categoria.lifestyle { border-top: 4px solid var(--yellow-a); }
   .categoria.photoshoot { border-top: 4px solid var(--blue-a); }
@@ -193,7 +193,7 @@
   .variable-block { border: 1px solid var(--border); border-radius: 10px; padding: .8rem; margin-bottom: .6rem; }
   .subseccion { margin-top: 1rem; }
   .subseccion:first-child { margin-top: 0; }
-  .subtitulo { font-family: "Sniglet", cursive; font-size: 1.05rem; }
+  .subtitulo { font-weight: 700; }
   .acciones-invariante { display: flex; align-items: center; gap: .5rem; }
 
   @media (max-width: 700px) {
@@ -276,20 +276,20 @@ function render(root) {
       </div>
       <div class="grid-2" style="margin-top:1rem;">
         <div class="subseccion card" data-subseccion="somos" style="padding:1.1rem 1.3rem;">
-          <div class="section-head"><div class="subtitulo" style="font-weight:700;">Somos</div><span class="edit-slot"></span></div>
+          <div class="section-head"><div class="subtitulo">Somos</div><span class="edit-slot"></span></div>
           <div class="section-body">
             <div class="chip-row">${(brand.we_are || []).map(v => `<span class="chip yes">${v}</span>`).join('')}</div>
           </div>
         </div>
         <div class="subseccion card" data-subseccion="no_somos" style="padding:1.1rem 1.3rem;">
-          <div class="section-head"><div class="subtitulo" style="font-weight:700;">No somos</div><span class="edit-slot"></span></div>
+          <div class="section-head"><div class="subtitulo">No somos</div><span class="edit-slot"></span></div>
           <div class="section-body">
             <div class="chip-row">${(brand.we_are_not || []).map(v => `<span class="chip no">${v}</span>`).join('')}</div>
           </div>
         </div>
       </div>
       <div class="subseccion card" data-subseccion="valores" style="margin-top:1rem;padding:1.1rem 1.3rem;">
-        <div class="section-head"><div class="subtitulo" style="font-weight:700;">Valores</div><span class="edit-slot"></span></div>
+        <div class="section-head"><div class="subtitulo">Valores</div><span class="edit-slot"></span></div>
         <div class="section-body">
           <div class="chip-row">${(brand.values || []).map(v => `<span class="chip yes">${v}</span>`).join('')}</div>
         </div>
@@ -384,7 +384,7 @@ function render(root) {
           `).join('')}
         </div>
         ${(colour.forbidden || []).length ? `
-          <div style="margin-top:1rem;font-weight:700;">Prohibidos</div>
+          <div class="subtitulo" style="margin-top:1rem;">Prohibidos</div>
           <div class="chip-row" style="margin-top:.4rem;">${colour.forbidden.map(f => `<span class="chip no">${f}</span>`).join('')}</div>
         ` : ''}
       </div>
@@ -400,7 +400,7 @@ function render(root) {
         <div class="voz-ejemplos">
           ${(voice.canonical_examples || []).map(e => `<div class="card voz-ejemplo">"${e}"</div>`).join('')}
         </div>
-        <div style="margin-top:1rem;font-weight:700;">Nunca usar</div>
+        <div class="subtitulo" style="margin-top:1rem;">Nunca usar</div>
         <div class="chip-row">${(voice.banned_vocabulary || []).map(w => `<span class="chip no">${w}</span>`).join('')}</div>
       </div>
     </section>
@@ -414,7 +414,7 @@ function render(root) {
         <div class="card" style="padding:1.2rem 1.4rem;">
           <div>${tech.what_it_is || ''}</div>
           <div style="margin-top:.6rem;color:var(--muted);font-size:.9rem;">${tech.visual_signature || ''}</div>
-          <div style="margin-top:.8rem;font-weight:700;">Nunca decir</div>
+          <div class="subtitulo" style="margin-top:.8rem;">Nunca decir</div>
           <div class="chip-row">${(tech.never_say || []).map(w => `<span class="chip no">${w}</span>`).join('')}</div>
         </div>
       </section>
@@ -431,7 +431,7 @@ function render(root) {
             <div class="card open-item">
               <span class="estado-badge estado-${i.status}">${i.status}</span>
               <div>
-                <div style="font-weight:600;">${i.id}</div>
+                <div class="subtitulo">${i.id}</div>
                 <div style="color:var(--muted);font-size:.88rem;">${i.note || ''}</div>
               </div>
             </div>
