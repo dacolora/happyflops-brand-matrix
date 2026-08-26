@@ -347,18 +347,20 @@ function render(root) {
   if (colour.blue_gradient) swatches.push({ nombre: 'Azul — ' + (colour.blue_gradient.role || ''), color: colour.blue_gradient.from });
   (colour.neutrals || []).forEach(n => swatches.push({ nombre: n, color: null }));
   contenido.appendChild(el(`
-    <section>
-      <h2>Sistema de color</h2>
+    <section data-section="colour_system">
+      <div class="section-head"><h2>Sistema de color</h2><span class="edit-slot"></span></div>
       <p class="lead">${colour.held_together_by || ''}</p>
-      <div class="swatch-row">
-        ${swatches.map(s => `
-          <div class="swatch">
-            <div class="box" style="background:${s.color || 'var(--sand)'};border:1px solid var(--border);"></div>
-            <div class="label">${s.nombre}</div>
-          </div>
-        `).join('')}
+      <div class="section-body">
+        <div class="swatch-row">
+          ${swatches.map(s => `
+            <div class="swatch">
+              <div class="box" style="background:${s.color || 'var(--sand)'};border:1px solid var(--border);"></div>
+              <div class="label">${s.nombre}</div>
+            </div>
+          `).join('')}
+        </div>
+        ${(colour.forbidden || []).length ? `<div class="chip-row" style="margin-top:1rem;">${colour.forbidden.map(f => `<span class="chip no">${f}</span>`).join('')}</div>` : ''}
       </div>
-      ${(colour.forbidden || []).length ? `<div class="chip-row" style="margin-top:1rem;">${colour.forbidden.map(f => `<span class="chip no">${f}</span>`).join('')}</div>` : ''}
     </section>
   `));
 

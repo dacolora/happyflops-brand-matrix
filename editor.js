@@ -352,12 +352,65 @@
     });
   }
 
+  function setupColour(root) {
+    const section = document.querySelector('section[data-section="colour_system"]');
+    if (!section) return;
+    attachEditButton(section, () => {
+      const colour = (window.__lastRoot || root).colour_system || {};
+      const yellow = colour.yellow_gradient || {};
+      const blue = colour.blue_gradient || {};
+      return `
+        <form class="form-edit" data-key="colour_system">
+          <div class="grid-2">
+            <div>
+              <label>Amarillo — desde</label>
+              <input type="color" name="yellow_from" value="${escapeAttr(yellow.from || '#fdb716')}">
+              <label style="margin-top:.5rem;">Amarillo — hasta</label>
+              <input type="color" name="yellow_to" value="${escapeAttr(yellow.to || '#fecd0a')}">
+            </div>
+            <div>
+              <label>Azul — desde</label>
+              <input type="color" name="blue_from" value="${escapeAttr(blue.from || '#4797c9')}">
+              <label style="margin-top:.5rem;">Azul — hasta</label>
+              <input type="color" name="blue_to" value="${escapeAttr(blue.to || '#6bacd5')}">
+            </div>
+          </div>
+          ${campoLista('Neutros', colour.neutrals, 'neutrals', 'color neutro')}
+          ${campoLista('Prohibidos', colour.forbidden, 'forbidden', 'término prohibido')}
+          <div class="form-actions">
+            <button type="submit" class="btn-guardar">Guardar</button>
+            <button type="button" class="btn-cancelar">Cancelar</button>
+            <span class="form-error"></span>
+          </div>
+        </form>
+      `;
+    }, (form) => {
+      wireListas(form);
+      form.addEventListener('submit', (ev) => {
+        ev.preventDefault();
+        const colourActual = (window.__lastRoot || root).colour_system || {};
+        const value = Object.assign({}, colourActual, {
+          yellow_gradient: Object.assign({}, colourActual.yellow_gradient, {
+            from: form.yellow_from.value, to: form.yellow_to.value,
+          }),
+          blue_gradient: Object.assign({}, colourActual.blue_gradient, {
+            from: form.blue_from.value, to: form.blue_to.value,
+          }),
+          neutrals: leerLista(form, 'neutrals'),
+          forbidden: leerLista(form, 'forbidden'),
+        });
+        guardarSeccion('colour_system', value, form);
+      });
+    });
+  }
+
   function attachEditControls(root) {
     if (!editApiDisponible) return;
     setupBrand(root);
     setupInvariants(root);
     setupFreeVariables(root);
     setupCategories(root);
+    setupColour(root);
   }
 
   async function initEdicion() {
