@@ -23,9 +23,9 @@ python3 servidor_editor.py                           # same page, but editable â
 python3 -m unittest discover -p "test_*.py"          # run the editor's test suite
 ```
 
-There is no test suite beyond the schema validator above â€” it *is* the test suite for
-this repo. Always run it after creating or editing a submundo file, before treating the
-change as done.
+Two test suites live in this repo: `validar_marca.py` validates submundos against the
+schema, and `python3 -m unittest discover` tests the editor backend (editor_backend.py,
+servidor_editor.py). Run the relevant one before treating a change as done.
 
 ## The core rule (do not violate this when writing or editing anything here)
 
