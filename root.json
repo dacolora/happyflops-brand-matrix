@@ -289,6 +289,12 @@
       "sand",
       "off-white"
     ],
+    "neutral_hex": {
+      "beige": "#e9dcc3",
+      "cream": "#fdf8ef",
+      "sand": "#f4ead9",
+      "off-white": "#f7f5f0"
+    },
     "forbidden": [
       "desaturated",
       "grey",

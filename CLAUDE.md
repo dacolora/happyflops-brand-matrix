@@ -42,11 +42,17 @@ something to route around quietly — write it into the submundo's `root_feedbac
 leave `decision: "pending"`. Laura decides root changes; a submundo can flag, never
 override.
 
+The count of invariants is not frozen — Laura can add or remove one from `root.json`
+itself (via `servidor_editor.py`'s UI or directly). What's immutable is the boundary:
+no submundo can ever touch them, however many there are. Existing invariant ids are
+never renumbered when one is removed, so a future trunk reference to "invariant #3"
+stays valid even if #2 gets deleted later.
+
 ## The tree (six levels, precedence bottom bit wins: content_type > subcategory >
 category > trunk > root)
 
 ```
-RAIZ (root.json)              — the 100 questions, 11 invariants, brand DNA
+RAIZ (root.json)              — the 100 questions, the invariants, brand DNA
   → TRONCO (trunk.*)          — evidence collections: luz, felicidad, poses, modelos,
                                  imperfecciones, material. A trunk node's `references[]`
                                  IS the node — no references, no node. Each reference

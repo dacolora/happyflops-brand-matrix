@@ -191,6 +191,10 @@
   }
   .form-error { color: #a83c3c; font-size: .85rem; }
   .variable-block { border: 1px solid var(--border); border-radius: 10px; padding: .8rem; margin-bottom: .6rem; }
+  .subseccion { margin-top: 1rem; }
+  .subseccion:first-child { margin-top: 0; }
+  .subtitulo { font-family: "Sniglet", cursive; font-size: 1.05rem; }
+  .acciones-invariante { display: flex; align-items: center; gap: .5rem; }
 
   @media (max-width: 700px) {
     .grid-2 { grid-template-columns: 1fr; }
@@ -259,22 +263,35 @@ function render(root) {
   // --- Definición / hero ---
   contenido.appendChild(el(`
     <section data-section="brand">
-      <div class="section-head"><h2>Qué es la marca</h2><span class="edit-slot"></span></div>
-      <div class="section-body">
-        <div class="card hero-def">
-          <div><strong>${brand.name}</strong> ${brand.definition || ''}</div>
-          <div style="margin-top:.8rem;color:var(--muted);font-size:.92rem;">${brand.promise || ''}</div>
-          ${brand.origin_story ? `<div style="margin-top:.8rem;font-size:.88rem;color:var(--muted);">Origen: ${brand.origin_story}</div>` : ''}
+      <h2>Qué es la marca</h2>
+      <div class="subseccion" data-subseccion="definicion">
+        <div class="section-head"><div class="subtitulo">Definición</div><span class="edit-slot"></span></div>
+        <div class="section-body">
+          <div class="card hero-def">
+            <div><strong>${brand.name}</strong> ${brand.definition || ''}</div>
+            <div style="margin-top:.8rem;color:var(--muted);font-size:.92rem;">${brand.promise || ''}</div>
+            ${brand.origin_story ? `<div style="margin-top:.8rem;font-size:.88rem;color:var(--muted);">Origen: ${brand.origin_story}</div>` : ''}
+          </div>
         </div>
-        <div class="grid-2" style="margin-top:1rem;">
-          <div class="card" style="padding:1.1rem 1.3rem;">
-            <div style="font-weight:700;margin-bottom:.5rem;">Somos</div>
+      </div>
+      <div class="grid-2" style="margin-top:1rem;">
+        <div class="subseccion card" data-subseccion="somos" style="padding:1.1rem 1.3rem;">
+          <div class="section-head"><div class="subtitulo" style="font-weight:700;">Somos</div><span class="edit-slot"></span></div>
+          <div class="section-body">
             <div class="chip-row">${(brand.we_are || []).map(v => `<span class="chip yes">${v}</span>`).join('')}</div>
           </div>
-          <div class="card" style="padding:1.1rem 1.3rem;">
-            <div style="font-weight:700;margin-bottom:.5rem;">No somos</div>
+        </div>
+        <div class="subseccion card" data-subseccion="no_somos" style="padding:1.1rem 1.3rem;">
+          <div class="section-head"><div class="subtitulo" style="font-weight:700;">No somos</div><span class="edit-slot"></span></div>
+          <div class="section-body">
             <div class="chip-row">${(brand.we_are_not || []).map(v => `<span class="chip no">${v}</span>`).join('')}</div>
           </div>
+        </div>
+      </div>
+      <div class="subseccion card" data-subseccion="valores" style="margin-top:1rem;padding:1.1rem 1.3rem;">
+        <div class="section-head"><div class="subtitulo" style="font-weight:700;">Valores</div><span class="edit-slot"></span></div>
+        <div class="section-body">
+          <div class="chip-row">${(brand.values || []).map(v => `<span class="chip yes">${v}</span>`).join('')}</div>
         </div>
       </div>
     </section>
@@ -283,21 +300,28 @@ function render(root) {
   // --- Invariantes ---
   contenido.appendChild(el(`
     <section data-section="invariants">
-      <div class="section-head"><h2>Los ${invariants.length} invariantes (inmutables)</h2><span class="edit-slot"></span></div>
-      <div class="section-body">
-        <p class="lead">Ningún submundo, proyecto ni fecha límite los puede pisar. El schema los hace cumplir, no solo los describe.</p>
-        <div class="invariantes">
-          ${invariants.map(inv => `
-            <div class="card invariante">
-              <div class="num">${inv.id}</div>
-              <div>
+      <h2>Los ${invariants.length} invariantes</h2>
+      <p class="lead">Ningún submundo, proyecto ni fecha límite los puede pisar. El schema los hace cumplir, no solo los describe.</p>
+      <div class="invariantes">
+        ${invariants.map(inv => `
+          <div class="card invariante" data-invariante-id="${inv.id}">
+            <div class="num">${inv.id}</div>
+            <div style="flex:1 1 auto;">
+              <div class="section-head">
                 <div class="nombre">${(inv.name || '').replace(/_/g, ' ')}</div>
+                <span class="acciones-invariante">
+                  <span class="edit-slot"></span>
+                  <button type="button" class="btn-remove" data-action="quitar-invariante" data-id="${inv.id}" title="Quitar esta invariante">×</button>
+                </span>
+              </div>
+              <div class="section-body">
                 <div class="regla">${inv.rule}</div>
               </div>
             </div>
-          `).join('')}
-        </div>
+          </div>
+        `).join('')}
       </div>
+      <button type="button" class="btn-add" id="btn-agregar-invariante" style="margin-top:.8rem;">+ Agregar invariante</button>
     </section>
   `));
 
@@ -345,7 +369,7 @@ function render(root) {
   const swatches = [];
   if (colour.yellow_gradient) swatches.push({ nombre: 'Amarillo — ' + (colour.yellow_gradient.role || ''), color: colour.yellow_gradient.from });
   if (colour.blue_gradient) swatches.push({ nombre: 'Azul — ' + (colour.blue_gradient.role || ''), color: colour.blue_gradient.from });
-  (colour.neutrals || []).forEach(n => swatches.push({ nombre: n, color: null }));
+  (colour.neutrals || []).forEach(n => swatches.push({ nombre: n, color: (colour.neutral_hex || {})[n] || null }));
   contenido.appendChild(el(`
     <section data-section="colour_system">
       <div class="section-head"><h2>Sistema de color</h2><span class="edit-slot"></span></div>
@@ -359,21 +383,26 @@ function render(root) {
             </div>
           `).join('')}
         </div>
-        ${(colour.forbidden || []).length ? `<div class="chip-row" style="margin-top:1rem;">${colour.forbidden.map(f => `<span class="chip no">${f}</span>`).join('')}</div>` : ''}
+        ${(colour.forbidden || []).length ? `
+          <div style="margin-top:1rem;font-weight:700;">Prohibidos</div>
+          <div class="chip-row" style="margin-top:.4rem;">${colour.forbidden.map(f => `<span class="chip no">${f}</span>`).join('')}</div>
+        ` : ''}
       </div>
     </section>
   `));
 
   // --- Voz ---
   contenido.appendChild(el(`
-    <section>
-      <h2>Voz</h2>
-      <p class="lead">${voice.core_rule || ''}</p>
-      <div class="voz-ejemplos">
-        ${(voice.canonical_examples || []).map(e => `<div class="card voz-ejemplo">"${e}"</div>`).join('')}
+    <section data-section="voice">
+      <div class="section-head"><h2>Voz</h2><span class="edit-slot"></span></div>
+      <div class="section-body">
+        <p class="lead">${voice.core_rule || ''}</p>
+        <div class="voz-ejemplos">
+          ${(voice.canonical_examples || []).map(e => `<div class="card voz-ejemplo">"${e}"</div>`).join('')}
+        </div>
+        <div style="margin-top:1rem;font-weight:700;">Nunca usar</div>
+        <div class="chip-row">${(voice.banned_vocabulary || []).map(w => `<span class="chip no">${w}</span>`).join('')}</div>
       </div>
-      <div style="margin-top:1rem;font-weight:700;">Nunca usar</div>
-      <div class="chip-row">${(voice.banned_vocabulary || []).map(w => `<span class="chip no">${w}</span>`).join('')}</div>
     </section>
   `));
 

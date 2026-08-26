@@ -9,7 +9,7 @@ import glob
 import os
 import shutil
 
-ALLOWED_KEYS = {"brand", "invariants", "free_variables", "categories", "colour_system"}
+ALLOWED_KEYS = {"brand", "invariants", "free_variables", "categories", "colour_system", "voice"}
 
 
 class ActualizacionInvalida(ValueError):
@@ -22,15 +22,28 @@ def validar_actualizacion(key, value):
             f"'{key}' no es una sección editable. Las válidas son: {sorted(ALLOWED_KEYS)}."
         )
     if key == "invariants":
-        if not isinstance(value, list) or len(value) != 11:
-            raise ActualizacionInvalida("Las invariantes tienen que seguir siendo exactamente 11.")
-        ids = [item.get("id") for item in value if isinstance(item, dict)]
-        if ids != list(range(1, 12)):
-            raise ActualizacionInvalida(
-                "Las invariantes tienen que mantener sus ids 1 a 11 en orden, sin agregar ni quitar ninguna."
-            )
+        _validar_invariantes(value)
     elif not isinstance(value, dict):
         raise ActualizacionInvalida(f"'{key}' tiene que ser un objeto JSON, no {type(value).__name__}.")
+
+
+def _validar_invariantes(value):
+    if not isinstance(value, list) or len(value) < 1:
+        raise ActualizacionInvalida("Tiene que quedar al menos una invariante.")
+    ids_vistos = set()
+    for item in value:
+        if not isinstance(item, dict):
+            raise ActualizacionInvalida("Cada invariante tiene que ser un objeto.")
+        id_ = item.get("id")
+        if not isinstance(id_, int) or isinstance(id_, bool) or id_ < 1:
+            raise ActualizacionInvalida("Cada invariante necesita un id entero positivo.")
+        if id_ in ids_vistos:
+            raise ActualizacionInvalida(f"El id {id_} está repetido — los ids tienen que ser únicos.")
+        ids_vistos.add(id_)
+        if not item.get("name"):
+            raise ActualizacionInvalida("Cada invariante necesita un nombre.")
+        if not item.get("rule"):
+            raise ActualizacionInvalida("Cada invariante necesita una regla.")
 
 
 def aplicar_actualizacion(root_data, key, value):

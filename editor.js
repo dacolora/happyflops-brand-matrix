@@ -60,8 +60,8 @@
   }
 
   async function guardarSeccion(key, value, form) {
-    const errorEl = form.querySelector('.form-error');
-    errorEl.textContent = '';
+    const errorEl = form ? form.querySelector('.form-error') : null;
+    if (errorEl) errorEl.textContent = '';
     try {
       const resp = await fetch('/api/root', {
         method: 'POST',
@@ -70,12 +70,14 @@
       });
       if (!resp.ok) {
         const data = await resp.json().catch(() => ({}));
-        errorEl.textContent = data.error || ('No se pudo guardar (error ' + resp.status + ').');
+        const mensaje = data.error || ('No se pudo guardar (error ' + resp.status + ').');
+        if (errorEl) errorEl.textContent = mensaje; else alert(mensaje);
         return;
       }
       window.cargar();
     } catch (e) {
-      errorEl.textContent = 'No se pudo conectar con el servidor. ¿Sigue corriendo servidor_editor.py?';
+      const mensaje = 'No se pudo conectar con el servidor. ¿Sigue corriendo servidor_editor.py?';
+      if (errorEl) errorEl.textContent = mensaje; else alert(mensaje);
     }
   }
 
@@ -100,10 +102,10 @@
     slot.appendChild(btn);
   }
 
-  function setupBrand(root) {
-    const section = document.querySelector('section[data-section="brand"]');
-    if (!section) return;
-    attachEditButton(section, () => {
+  function setupBrandDefinicion(root) {
+    const bloque = document.querySelector('[data-subseccion="definicion"]');
+    if (!bloque) return;
+    attachEditButton(bloque, () => {
       const brand = (window.__lastRoot || root).brand || {};
       return `
         <form class="form-edit" data-key="brand">
@@ -119,11 +121,35 @@
             <label>Historia de origen</label>
             <textarea name="origin_story">${escapeHtml(brand.origin_story)}</textarea>
           </div>
-          <div class="grid-2">
-            ${campoLista('Somos', brand.we_are, 'we_are', 'rasgo')}
-            ${campoLista('No somos', brand.we_are_not, 'we_are_not', 'rasgo')}
+          <div class="form-actions">
+            <button type="submit" class="btn-guardar">Guardar</button>
+            <button type="button" class="btn-cancelar">Cancelar</button>
+            <span class="form-error"></span>
           </div>
-          ${campoLista('Valores', brand.values, 'values', 'valor')}
+        </form>
+      `;
+    }, (form) => {
+      form.addEventListener('submit', (ev) => {
+        ev.preventDefault();
+        const brandActual = (window.__lastRoot || root).brand || {};
+        const brand = Object.assign({}, brandActual, {
+          definition: form.definition.value.trim(),
+          promise: form.promise.value.trim(),
+          origin_story: form.origin_story.value.trim(),
+        });
+        guardarSeccion('brand', brand, form);
+      });
+    });
+  }
+
+  function setupBrandLista(root, subseccion, campo, etiqueta, itemLabel) {
+    const bloque = document.querySelector(`[data-subseccion="${subseccion}"]`);
+    if (!bloque) return;
+    attachEditButton(bloque, () => {
+      const brand = (window.__lastRoot || root).brand || {};
+      return `
+        <form class="form-edit" data-key="brand">
+          ${campoLista(etiqueta, brand[campo], campo, itemLabel)}
           <div class="form-actions">
             <button type="submit" class="btn-guardar">Guardar</button>
             <button type="button" class="btn-cancelar">Cancelar</button>
@@ -137,55 +163,100 @@
         ev.preventDefault();
         const brandActual = (window.__lastRoot || root).brand || {};
         const brand = Object.assign({}, brandActual, {
-          definition: form.definition.value.trim(),
-          promise: form.promise.value.trim(),
-          origin_story: form.origin_story.value.trim(),
-          we_are: leerLista(form, 'we_are'),
-          we_are_not: leerLista(form, 'we_are_not'),
-          values: leerLista(form, 'values'),
+          [campo]: leerLista(form, campo),
         });
         guardarSeccion('brand', brand, form);
       });
     });
   }
 
+  function setupBrand(root) {
+    setupBrandDefinicion(root);
+    setupBrandLista(root, 'somos', 'we_are', 'Rasgos que somos', 'rasgo');
+    setupBrandLista(root, 'no_somos', 'we_are_not', 'Rasgos que no somos', 'rasgo');
+    setupBrandLista(root, 'valores', 'values', 'Valores', 'valor');
+  }
+
+  function formularioInvariante(nombre, regla) {
+    return `
+      <form class="form-edit" data-key="invariants">
+        <div style="color:var(--muted);font-size:.82rem;margin-bottom:.6rem;">Nota: esto no actualiza <code>prompt_blocks.invariant_block</code> en root.json ni la página de Notion — si cambiás una regla acá, actualizalos a mano.</div>
+        <label>Nombre</label>
+        <input type="text" name="name" value="${escapeAttr(nombre)}">
+        <label style="margin-top:.5rem;">Regla</label>
+        <textarea name="rule">${escapeHtml(regla)}</textarea>
+        <div class="form-actions">
+          <button type="submit" class="btn-guardar">Guardar</button>
+          <button type="button" class="btn-cancelar">Cancelar</button>
+          <span class="form-error"></span>
+        </div>
+      </form>
+    `;
+  }
+
   function setupInvariants(root) {
     const section = document.querySelector('section[data-section="invariants"]');
     if (!section) return;
-    attachEditButton(section, () => {
-      const invariants = (window.__lastRoot || root).invariants || [];
-      const filas = invariants.map(inv => `
-        <div class="variable-block">
-          <div style="font-weight:700;margin-bottom:.4rem;">#${inv.id}</div>
-          <label>Nombre</label>
-          <input type="text" data-id="${inv.id}" data-campo="name" value="${escapeAttr(inv.name)}">
-          <label style="margin-top:.5rem;">Regla</label>
-          <textarea data-id="${inv.id}" data-campo="rule">${escapeHtml(inv.rule)}</textarea>
-        </div>
-      `).join('');
-      return `
-        <form class="form-edit" data-key="invariants">
-          <div style="color:var(--muted);font-size:.82rem;margin-bottom:.8rem;">Nota: esto no actualiza <code>prompt_blocks.invariant_block</code> en root.json ni la página de Notion — si cambiás una regla acá, actualizalos a mano.</div>
-          ${filas}
-          <div class="form-actions">
-            <button type="submit" class="btn-guardar">Guardar</button>
-            <button type="button" class="btn-cancelar">Cancelar</button>
-            <span class="form-error"></span>
-          </div>
-        </form>
-      `;
-    }, (form) => {
-      form.addEventListener('submit', (ev) => {
-        ev.preventDefault();
-        const original = (window.__lastRoot || root).invariants || [];
-        const value = original.map(inv => ({
-          ...inv,
-          name: form.querySelector(`[data-id="${inv.id}"][data-campo="name"]`).value.trim(),
-          rule: form.querySelector(`[data-id="${inv.id}"][data-campo="rule"]`).value.trim(),
-        }));
-        guardarSeccion('invariants', value, form);
+
+    (root.invariants || []).forEach(inv => {
+      const card = section.querySelector(`[data-invariante-id="${inv.id}"]`);
+      if (!card) return;
+      attachEditButton(card, () => {
+        const actual = ((window.__lastRoot || root).invariants || []).find(i => i.id === inv.id) || inv;
+        return formularioInvariante(actual.name, actual.rule);
+      }, (form) => {
+        form.addEventListener('submit', (ev) => {
+          ev.preventDefault();
+          const lista = (window.__lastRoot || root).invariants || [];
+          const nueva = lista.map(item => item.id === inv.id
+            ? Object.assign({}, item, { name: form.name.value.trim(), rule: form.rule.value.trim() })
+            : item);
+          guardarSeccion('invariants', nueva, form);
+        });
       });
     });
+
+    section.querySelectorAll('[data-action="quitar-invariante"]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = Number(btn.getAttribute('data-id'));
+        const lista = (window.__lastRoot || root).invariants || [];
+        if (lista.length <= 1) {
+          alert('Tiene que quedar al menos una invariante.');
+          return;
+        }
+        if (!confirm('¿Seguro que querés quitar esta invariante? Se guarda al instante.')) return;
+        guardarSeccion('invariants', lista.filter(item => item.id !== id), null);
+      });
+    });
+
+    const listaEl = section.querySelector('.invariantes');
+    const btnAgregar = section.querySelector('#btn-agregar-invariante');
+    if (listaEl && btnAgregar) {
+      btnAgregar.addEventListener('click', () => {
+        const lista = (window.__lastRoot || root).invariants || [];
+        const siguienteId = lista.reduce((max, item) => Math.max(max, item.id || 0), 0) + 1;
+        const tarjetaHtml = `
+          <div class="card invariante">
+            <div class="num">${siguienteId}</div>
+            <div style="flex:1 1 auto;">${formularioInvariante('', '')}</div>
+          </div>
+        `;
+        listaEl.insertAdjacentHTML('beforeend', tarjetaHtml);
+        const nuevaTarjeta = listaEl.lastElementChild;
+        const form = nuevaTarjeta.querySelector('form');
+        form.querySelector('.btn-cancelar').addEventListener('click', () => nuevaTarjeta.remove());
+        form.addEventListener('submit', (ev) => {
+          ev.preventDefault();
+          const listaActual = (window.__lastRoot || root).invariants || [];
+          const nueva = listaActual.concat([{
+            id: siguienteId,
+            name: form.name.value.trim(),
+            rule: form.rule.value.trim(),
+          }]);
+          guardarSeccion('invariants', nueva, form);
+        });
+      });
+    }
   }
 
   let fvContador = 0;
@@ -406,6 +477,41 @@
     });
   }
 
+  function setupVoice(root) {
+    const section = document.querySelector('section[data-section="voice"]');
+    if (!section) return;
+    attachEditButton(section, () => {
+      const voice = (window.__lastRoot || root).voice || {};
+      return `
+        <form class="form-edit" data-key="voice">
+          <div>
+            <label>Regla central</label>
+            <textarea name="core_rule">${escapeHtml(voice.core_rule)}</textarea>
+          </div>
+          ${campoLista('Ejemplos de tono', voice.canonical_examples, 'canonical_examples', 'ejemplo')}
+          ${campoLista('Nunca usar', voice.banned_vocabulary, 'banned_vocabulary', 'palabra')}
+          <div class="form-actions">
+            <button type="submit" class="btn-guardar">Guardar</button>
+            <button type="button" class="btn-cancelar">Cancelar</button>
+            <span class="form-error"></span>
+          </div>
+        </form>
+      `;
+    }, (form) => {
+      wireListas(form);
+      form.addEventListener('submit', (ev) => {
+        ev.preventDefault();
+        const voiceActual = (window.__lastRoot || root).voice || {};
+        const voice = Object.assign({}, voiceActual, {
+          core_rule: form.core_rule.value.trim(),
+          canonical_examples: leerLista(form, 'canonical_examples'),
+          banned_vocabulary: leerLista(form, 'banned_vocabulary'),
+        });
+        guardarSeccion('voice', voice, form);
+      });
+    });
+  }
+
   function attachEditControls(root) {
     if (!editApiDisponible) return;
     setupBrand(root);
@@ -413,6 +519,7 @@
     setupFreeVariables(root);
     setupCategories(root);
     setupColour(root);
+    setupVoice(root);
   }
 
   async function initEdicion() {

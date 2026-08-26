@@ -15,23 +15,54 @@ class ValidarActualizacionTest(unittest.TestCase):
     def test_clave_permitida_no_falla(self):
         eb.validar_actualizacion("brand", {"name": "Happy Flops"})
 
+    def test_voice_es_clave_permitida(self):
+        eb.validar_actualizacion("voice", {"core_rule": "Habla simple."})
+
     def test_valor_de_forma_incorrecta_rechazado(self):
         with self.assertRaises(eb.ActualizacionInvalida):
             eb.validar_actualizacion("brand", "esto no es un objeto")
 
-    def test_invariantes_con_menos_de_once_rechazadas(self):
-        value = [{"id": i, "name": "x", "rule": "y"} for i in range(1, 11)]
+    def test_invariantes_vacias_rechazadas(self):
+        with self.assertRaises(eb.ActualizacionInvalida):
+            eb.validar_actualizacion("invariants", [])
+
+    def test_invariantes_con_id_duplicado_rechazadas(self):
+        value = [
+            {"id": 1, "name": "x", "rule": "y"},
+            {"id": 1, "name": "z", "rule": "w"},
+        ]
         with self.assertRaises(eb.ActualizacionInvalida):
             eb.validar_actualizacion("invariants", value)
 
-    def test_invariantes_con_ids_desordenados_rechazadas(self):
-        value = [{"id": i, "name": "x", "rule": "y"} for i in range(1, 12)]
-        value[0], value[1] = value[1], value[0]
+    def test_invariantes_sin_nombre_rechazadas(self):
+        value = [{"id": 1, "name": "", "rule": "y"}]
         with self.assertRaises(eb.ActualizacionInvalida):
             eb.validar_actualizacion("invariants", value)
 
-    def test_invariantes_completas_y_en_orden_no_fallan(self):
-        value = [{"id": i, "name": "x", "rule": "y"} for i in range(1, 12)]
+    def test_invariantes_sin_regla_rechazadas(self):
+        value = [{"id": 1, "name": "x", "rule": ""}]
+        with self.assertRaises(eb.ActualizacionInvalida):
+            eb.validar_actualizacion("invariants", value)
+
+    def test_invariantes_con_id_no_entero_rechazadas(self):
+        value = [{"id": "uno", "name": "x", "rule": "y"}]
+        with self.assertRaises(eb.ActualizacionInvalida):
+            eb.validar_actualizacion("invariants", value)
+
+    def test_invariantes_con_una_sola_no_falla(self):
+        eb.validar_actualizacion("invariants", [{"id": 1, "name": "x", "rule": "y"}])
+
+    def test_invariantes_con_doce_no_falla(self):
+        value = [{"id": i, "name": "x", "rule": "y"} for i in range(1, 13)]
+        eb.validar_actualizacion("invariants", value)
+
+    def test_invariantes_con_ids_no_consecutivos_no_falla(self):
+        # Si se borra la del medio, las que quedan conservan su id original —
+        # nunca se renumeran, para no romper referencias futuras a "invariante #3".
+        value = [
+            {"id": 1, "name": "x", "rule": "y"},
+            {"id": 5, "name": "z", "rule": "w"},
+        ]
         eb.validar_actualizacion("invariants", value)
 
 

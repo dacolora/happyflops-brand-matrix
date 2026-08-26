@@ -61,11 +61,8 @@ class ServidorEditorTest(unittest.TestCase):
         with open(self.root_path, encoding="utf-8") as f:
             self.assertNotIn("schema_version", json.load(f))
 
-    def test_guardar_invariantes_incompletas_devuelve_400(self):
-        cuerpo = json.dumps({
-            "key": "invariants",
-            "value": [{"id": i, "name": "x", "rule": "y"} for i in range(1, 11)],
-        }).encode()
+    def test_guardar_invariantes_vacias_devuelve_400(self):
+        cuerpo = json.dumps({"key": "invariants", "value": []}).encode()
         req = urllib.request.Request(
             self._url("/api/root"), data=cuerpo, method="POST",
             headers={"Content-Type": "application/json"},
@@ -73,6 +70,21 @@ class ServidorEditorTest(unittest.TestCase):
         with self.assertRaises(urllib.error.HTTPError) as ctx:
             urllib.request.urlopen(req)
         self.assertEqual(ctx.exception.code, 400)
+
+    def test_guardar_invariantes_con_cantidad_distinta_de_once_no_falla(self):
+        # La cantidad de invariantes ya no es fija — se puede agregar o quitar.
+        cuerpo = json.dumps({
+            "key": "invariants",
+            "value": [{"id": i, "name": "x", "rule": "y"} for i in range(1, 13)],
+        }).encode()
+        req = urllib.request.Request(
+            self._url("/api/root"), data=cuerpo, method="POST",
+            headers={"Content-Type": "application/json"},
+        )
+        with urllib.request.urlopen(req) as resp:
+            self.assertEqual(resp.status, 200)
+        with open(self.root_path, encoding="utf-8") as f:
+            self.assertEqual(len(json.load(f)["invariants"]), 12)
 
     def test_cuerpo_no_json_devuelve_400(self):
         req = urllib.request.Request(
