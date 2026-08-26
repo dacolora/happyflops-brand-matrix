@@ -81,6 +81,10 @@
     font-size: 1.15rem;
   }
   .hero-def strong { color: var(--blue-a); }
+  .etiqueta-campo {
+    font-size: .72rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .04em; color: var(--muted); margin-bottom: .25rem;
+  }
 
   .chip-row { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .6rem; }
   .chip {
@@ -255,7 +259,8 @@ function render(root) {
   document.getElementById('marca-nombre').textContent = brand.name || 'Brand Matrix';
   document.getElementById('marca-tagline').textContent = voice.hero_tagline || '';
   document.getElementById('marca-meta').textContent =
-    `v${root.version || '?'} · actualizado ${root.updated || '?'} · owner: ${root.owner || '?'}`;
+    `v${root.version || '?'} · actualizado ${root.updated || '?'} · owner: ${root.owner || '?'}` +
+    (root.developer ? ` · developer: ${root.developer}` : '');
 
   const contenido = document.getElementById('contenido');
   contenido.innerHTML = '';
@@ -265,12 +270,23 @@ function render(root) {
     <section data-section="brand">
       <h2>Qué es la marca</h2>
       <div class="subseccion" data-subseccion="definicion">
-        <div class="section-head"><div class="subtitulo">Definición</div><span class="edit-slot"></span></div>
+        <div class="section-head"><div class="subtitulo">Sobre la marca</div><span class="edit-slot"></span></div>
         <div class="section-body">
           <div class="card hero-def">
-            <div><strong>${brand.name}</strong> ${brand.definition || ''}</div>
-            <div style="margin-top:.8rem;color:var(--muted);font-size:.92rem;">${brand.promise || ''}</div>
-            ${brand.origin_story ? `<div style="margin-top:.8rem;font-size:.88rem;color:var(--muted);">Origen: ${brand.origin_story}</div>` : ''}
+            <div class="campo-etiquetado">
+              <div class="etiqueta-campo">Definición</div>
+              <div><strong>${brand.name}</strong> ${brand.definition || ''}</div>
+            </div>
+            <div class="campo-etiquetado" style="margin-top:1rem;">
+              <div class="etiqueta-campo">Promesa</div>
+              <div style="color:var(--muted);font-size:.92rem;">${brand.promise || ''}</div>
+            </div>
+            ${brand.origin_story ? `
+              <div class="campo-etiquetado" style="margin-top:1rem;">
+                <div class="etiqueta-campo">Origen</div>
+                <div style="font-size:.88rem;color:var(--muted);">${brand.origin_story}</div>
+              </div>
+            ` : ''}
           </div>
         </div>
       </div>

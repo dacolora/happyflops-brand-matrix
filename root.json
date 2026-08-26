@@ -1,9 +1,10 @@
 {
   "id": "happyflops.root",
   "type": "root_matrix",
-  "version": "0.10.1",
-  "updated": "2026-08-20",
+  "version": "0.0.1",
+  "updated": "2026-08-26",
   "owner": "Laura Vanegas",
+  "developer": "Daniel Colorado",
   "note": "Root matrix for Happy Flops. Sub-worlds (submundos) inherit from this and may override free_variables only. Invariants are immutable at every layer.",
   "brand": {
     "name": "Happy Flops",
