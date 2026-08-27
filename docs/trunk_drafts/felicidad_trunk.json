@@ -1,414 +1,65 @@
 {
-  "_note": "Borrador de trabajo, NO validado contra schema.json. Ver docs/trunk_reference_taxonomy.md. La carpeta '1 HAPPY' tiene 87 imágenes en total — este archivo cubre la primera tanda de 10, procesamiento en curso.",
+  "_note": "Borrador de trabajo, NO validado contra schema.json. Ver docs/trunk_reference_taxonomy.md. La carpeta '1 HAPPY' tiene 87 imágenes en total — este archivo cubre 50 de 87, procesamiento en curso.",
   "source_type": "third_party_inspiration",
   "source_type_note": "NINGUNA de estas imágenes es producto Happy Flops. Es inspiración/moodboard de otras marcas y personas — sirve para tono, luz y emoción, nunca como referencia de producto propio.",
+  "evaluation_criteria": "Corregido 2026-08-27: cada referencia se evalúa SOLO por qué tan bien ilustra felicidad genuina. Texto, logos o marcas de terceros visibles en la imagen NO descalifican — son ruido esperado de una foto de otra marca, se ignoran. 'source_note' documenta ese ruido solo como dato, nunca como razón de verdict.",
   "bank": "trunk",
   "trunk": "felicidad",
   "applies_to": ["lifestyle", "photoshoot"],
   "drive_folder": "1 HAPPY",
   "drive_folder_id": "1wMUL4X_zMX_a9hDQmDH2KEj2bFThhnh0",
   "total_images_in_folder": 87,
-  "batch": "5 de ~9 completada (50 de 87 imágenes procesadas)",
+  "batch": "5 de ~9 completada (50 de 87 imágenes procesadas) — verdicts re-evaluados bajo el criterio corregido",
   "references": [
-    {
-      "id": "HAPPY-01",
-      "source_file": "69. Untitled.jpg",
-      "description": "Mujer con suéter amarillo texturizado posando junto a un letrero de 'TAKSI' en una plaza tipo Estambul, zapatos rojos mary-jane, bolso rojo.",
-      "verdict": "rejected",
-      "why": "Tiene texto/señalización real de calle claramente legible ('TAKSI') dentro del encuadre — viola invariante 5. Además la pose es muy editorial/consciente de cámara, no 'unposed' (invariante 7).",
-      "invariant_flags": ["5_no_generated_text"]
-    },
-    {
-      "id": "HAPPY-02",
-      "source_file": "86. ♡︎.jpg",
-      "description": "Mujer mordiendo un helado con chispas de colores frente al menú de una heladería ('The Juice Bar').",
-      "verdict": "rejected",
-      "why": "El menú de la tienda es texto legible de fondo — viola invariante 5. También tiene esmalte de uñas visible en las manos, que está explícitamente en el negative_prompt actual.",
-      "invariant_flags": ["5_no_generated_text", "11_hands_nail_polish"]
-    },
-    {
-      "id": "HAPPY-03",
-      "source_file": "1553. setting_sail.jpg",
-      "description": "Dos mujeres riendo juntas en la cubierta de un velero, luz dorada de atardecer.",
-      "verdict": "exemplar",
-      "why": "Felicidad genuina entre amigas, sin texto, luz cálida perfecta (invariante 1). Uno de los mejores ejemplares de la carpeta.",
-      "invariant_flags": []
-    },
-    {
-      "id": "HAPPY-04",
-      "source_file": "1444. Untitled.jpg",
-      "description": "Dos niñas comiendo helado de chocolate, con la cara manchada, expresión genuina.",
-      "verdict": "exemplar",
-      "why": "Momento real y desordenado, sin pose, sin texto. Ilustra felicidad + imperfección (mancha de chocolate = 'feeling over perfection').",
-      "invariant_flags": []
-    },
-    {
-      "id": "HAPPY-05",
-      "source_file": "121. Kid´s_Clothes.jpg",
-      "description": "Niño gritando de alegría mientras rocía agua con manguera sobre sandías, jardín soleado.",
-      "verdict": "reference_only",
-      "why": "Buena energía, pero es claramente una producción editorial de moda infantil (nombre de archivo 'Kid's_Clothes'), muy dirigida — no candid puro.",
-      "invariant_flags": []
-    },
-    {
-      "id": "HAPPY-06",
-      "source_file": "1093. Roarsome_Photographer_of_the_Year_2024.jpg",
-      "description": "Tres niños sentados en un muro con patinetas, uno con playera que dice 'ROARSOME ADVENTURE CLUB'.",
-      "verdict": "rejected",
-      "why": "El texto de marca está impreso en la ropa del niño, legible dentro del encuadre — mismo problema del invariante 5 en su variante 'texto en prenda' en vez de overlay o señalización.",
-      "invariant_flags": ["5_no_generated_text"]
-    },
-    {
-      "id": "HAPPY-07",
-      "source_file": "1434. Untitled.jpg",
-      "description": "Pareja de adultos mayores abrazándose con flores, efecto de movimiento/motion blur intencional.",
-      "verdict": "exemplar",
-      "why": "Excelente ejemplo cruzado: felicidad genuina + casting multigeneracional (invariante 7, adultos mayores) + el trunk de calidad transversal 'imperfecciones' (movimiento real, no perfecto). Sin texto.",
-      "invariant_flags": []
-    },
-    {
-      "id": "HAPPY-08",
-      "source_file": "635. Untitled.jpg",
-      "description": "Niño con gorra y overol haciendo hula-hoop en un campo de flores amarillas.",
-      "verdict": "reference_only",
-      "why": "Colores y luz muy buenos, pero es una producción de moda infantil muy dirigida (pose de salto compuesta), no un momento candid.",
-      "invariant_flags": []
-    },
-    {
-      "id": "HAPPY-09",
-      "source_file": "1430. Untitled.jpg",
-      "description": "Madre cargando a su hijo en una caminata, mochila de trekking, momento juguetón sacando la lengua.",
-      "verdict": "exemplar",
-      "why": "Felicidad genuina y espontánea, sin texto, buena luz natural de bosque. Buen ejemplo de invariante 7 (real, sin pose).",
-      "invariant_flags": []
-    },
-    {
-      "id": "HAPPY-10",
-      "source_file": "1437. Untitled.jpg",
-      "description": "Niña con gorro de crochet y vestido de lunares verdes comiendo un helado frente a un seto.",
-      "verdict": "reference_only",
-      "why": "Buena luz y color, pero es una producción de moda editorial claramente dirigida, no candid.",
-      "invariant_flags": []
-    },
-    {
-      "id": "HAPPY-11",
-      "source_file": "1420. Untitled.jpg",
-      "description": "Niña riendo en un columpio, otra niña de fondo, suela del tenis hacia la cámara con texto de marca ('FLEX ZONE') impreso y legible.",
-      "verdict": "rejected",
-      "why": "Texto de marca legible en la suela del calzado, en primer plano — viola invariante 5. También se siente muy tipo stock photo genérico.",
-      "invariant_flags": ["5_no_generated_text"]
-    },
-    {
-      "id": "HAPPY-12",
-      "source_file": "1091. Dino_Diaries_#2.jpg",
-      "description": "Dos niñas en conjuntos deportivos a juego (rosa y amarillo) con parche de marca visible en el pecho, señalando hacia el horizonte en dunas de arena.",
-      "verdict": "rejected",
-      "why": "Parche/etiqueta de marca legible en la ropa — invariante 5. Además es campaña de moda infantil claramente coordinada (outfits a juego), no candid.",
-      "invariant_flags": ["5_no_generated_text"]
-    },
-    {
-      "id": "HAPPY-13",
-      "source_file": "1071. Untitled.jpg",
-      "description": "Mujer posando en un balcón ornamentado con playera de texto grande ('SØNDERHAUS FARMS — FOR SLOW AND TENDER LIVING').",
-      "verdict": "rejected",
-      "why": "Texto grande y legible en la playera — invariante 5. Esmalte de uñas y anillos visibles en las manos — mismo problema que HAPPY-02.",
-      "invariant_flags": ["5_no_generated_text", "11_hands_nail_polish"]
-    },
-    {
-      "id": "HAPPY-14",
-      "source_file": "1086. Untitled.jpg",
-      "description": "Cuatro niños saltando con los brazos en alto sobre césped, estilo foto de stock genérica.",
-      "verdict": "reference_only",
-      "why": "Sin texto, pero es un salto sincronizado tipo catálogo/stock muy artificial — justo lo que el invariante 7 busca evitar ('real, unposed', no 'catalog pose'). Útil solo como advertencia de qué NO imitar en composición.",
-      "invariant_flags": []
-    },
-    {
-      "id": "HAPPY-15",
-      "source_file": "632. —_ዙow_feℯls_to_be_ɐlℴnℯ_Ẅẅ_❦.jpg",
-      "description": "Niña saltando en una cama, con estrellas de colores dibujadas/agregadas digitalmente sobre la foto.",
-      "verdict": "rejected",
-      "why": "No es una fotografía pura — tiene un efecto gráfico ilustrado superpuesto (estrellas). El invariante 2 exige que el resultado siga siendo creíble como fotografía; esto ya cruzó a ilustración/edición.",
-      "invariant_flags": ["2_colour_richness (deja_de_ser_fotografia)"]
-    },
-    {
-      "id": "HAPPY-16",
-      "source_file": "1457. Future_kid_stock_image._Image_of_children,_kiddy,_.jpg",
-      "description": "Niña corriendo descalza en la orilla de la playa, con reflejo en la arena mojada.",
-      "verdict": "rejected",
-      "why": "Tiene marca de agua de banco de imágenes (tipo Dreamstime) diagonal sobre toda la foto — viola invariante 5 directamente y además confirma que es contenido con licencia restringida, no libre para inspiración de composición final.",
-      "invariant_flags": ["5_no_generated_text"]
-    },
-    {
-      "id": "HAPPY-17",
-      "source_file": "1433. Untitled.jpg",
-      "description": "Niña en overol mordiendo un cono de helado gigante de varios sabores, frente a un auto.",
-      "verdict": "exemplar",
-      "why": "Momento candid genuino, sin texto legible, buena luz de día. Buen ejemplo de felicidad espontánea.",
-      "invariant_flags": []
-    },
-    {
-      "id": "HAPPY-18",
-      "source_file": "145. Untitled.jpg",
-      "description": "Mujer acostada en un campo de flores silvestres mirando el cielo al atardecer, descalza.",
-      "verdict": "exemplar",
-      "why": "Felicidad tranquila y genuina ('quiet warmth'), sin texto, buena luz de atardecer, pies naturales visibles.",
-      "invariant_flags": []
-    },
-    {
-      "id": "HAPPY-19",
-      "source_file": "1379. Untitled.jpg",
-      "description": "Niño riendo con los brazos arriba en un tobogán amarillo, con sandalias tipo slide de tiburón.",
-      "verdict": "exemplar",
-      "why": "Alegría genuina y espontánea, sin texto. El calzado no es HF pero la escena en sí es un buen ejemplo de felicidad + producto en los pies en movimiento.",
-      "invariant_flags": []
-    },
-    {
-      "id": "HAPPY-20",
-      "source_file": "74. Coca-Cola_x_Real_Magic.jpg",
-      "description": "Dos personas jugando con un carrito de supermercado en una azotea, uno sosteniendo una botella de Coca-Cola con el logo visible.",
-      "verdict": "rejected",
-      "why": "Es literalmente una campaña publicitaria de Coca-Cola (nombre de archivo lo confirma) — logo de marca de terceros legible en el producto. Viola invariante 5 e invariante 9, y es una producción de anuncio, no candid.",
-      "invariant_flags": ["5_no_generated_text", "9_no_third_party_ip"]
-    },
-    {
-      "id": "HAPPY-21",
-      "source_file": "1518. FATHER’S_DAY_RESERVED.jpg",
-      "description": "Niña recostada en el pasto riendo, con la suela de su tenis prominente en primer plano, flores silvestres alrededor.",
-      "verdict": "exemplar",
-      "why": "Sin texto legible, momento genuinamente feliz y espontáneo, buena luz natural. El nombre de archivo indica que es para una campaña (Father's Day) pero la imagen en sí no viola ningún invariante.",
-      "invariant_flags": []
-    },
-    {
-      "id": "HAPPY-22",
-      "source_file": "89. Untitled.jpg",
-      "description": "Mujer recostada en el pasto con un tenis vintage visible, ícono de 'silenciado' de video en la esquina inferior.",
-      "verdict": "rejected",
-      "why": "Tiene un ícono de interfaz (mute/sin audio) superpuesto — es una captura de video, no una fotografía limpia. Cuenta como elemento gráfico ajeno a la escena, mismo espíritu que el invariante 5.",
-      "invariant_flags": ["5_no_generated_text (icono de UI)"]
-    },
-    {
-      "id": "HAPPY-23",
-      "source_file": "470. IG_rebeccamanzat.jpg",
-      "description": "Mujer riendo tapándose la cara, acostada en el pasto con botas de lluvia rojas con corazones.",
-      "verdict": "exemplar",
-      "why": "Sin texto en la imagen (el nombre de archivo referencia Instagram pero no hay overlay), risa genuina, buena luz. Outfit muy de moda pero no rompe ningún invariante.",
-      "invariant_flags": []
-    },
-    {
-      "id": "HAPPY-24",
-      "source_file": "400. Untitled.jpg",
-      "description": "Niña con gorra roja y chaqueta azul de fresas haciendo señal de paz contra un fondo ondulado naranja/rojo muy saturado.",
-      "verdict": "reference_only",
-      "why": "Sin texto, pero el fondo es un mural/backdrop de marca muy intenso — al límite de invariante 2 (rico pero creíble). Es claramente una producción de moda, no candid.",
-      "invariant_flags": []
-    },
-    {
-      "id": "HAPPY-25",
-      "source_file": "1105. Untitled.jpg",
-      "description": "Papá con su hija en los hombros, ambos con postre/crema en la cara, cocina blanca con tazas con letras decorativas (C, J, G).",
-      "verdict": "exemplar",
-      "why": "Momento genuinamente feliz y desordenado ('feeling over perfection'), buen ejemplo multigeneracional. Las tazas con letras sueltas son decorativas, no forman palabras — no se cuenta como violación real de invariante 5, pero vale la pena vigilar el patrón.",
-      "invariant_flags": []
-    },
-    {
-      "id": "HAPPY-26",
-      "source_file": "1429. Untitled.jpg",
-      "description": "Madre cargando a un niño mientras otro corre a su lado, pradera de montaña.",
-      "verdict": "exemplar",
-      "why": "Momento familiar genuino, sin texto, buena luz natural de montaña. Buen ejemplo de invariante 7.",
-      "invariant_flags": []
-    },
-    {
-      "id": "HAPPY-27",
-      "source_file": "112. Untitled.jpg",
-      "description": "Mujer con turbante de toalla comiendo sandía en una cocina rústica llena de fruta fresca, descalza.",
-      "verdict": "reference_only",
-      "why": "Sin texto, buena luz, pero es claramente una producción editorial de estilo de vida (food styling), no un momento candid.",
-      "invariant_flags": []
-    },
-    {
-      "id": "HAPPY-28",
-      "source_file": "1547. Untitled.jpg",
-      "description": "Madre soplando una burbuja de jabón para su hija en la calle, la niña con botas de lluvia verdes.",
-      "verdict": "exemplar",
-      "why": "Momento tierno y genuino, sin texto, buena luz de calle. Buen ejemplo de felicidad cotidiana.",
-      "invariant_flags": []
-    },
-    {
-      "id": "HAPPY-29",
-      "source_file": "91. Non-Toxic_Products_What_Clean_Really_Means_to_Me.jpg",
-      "description": "Madre e hija jugando boca abajo/de cabeza, riendo, luz cálida de interior. Esmalte de uñas rosado visible en los pies de la madre.",
-      "verdict": "reference_only",
-      "why": "Buen momento genuino, pero el esmalte de uñas en los pies choca con el invariante 4 ('bare neutral nails'). Sirve como referencia de luz/felicidad, no de pies.",
-      "invariant_flags": ["4_feet_nail_polish"]
-    },
-    {
-      "id": "HAPPY-30",
-      "source_file": "1543. Untitled.jpg",
-      "description": "Cinco mujeres corriendo tomadas de la mano por un campo, todas con el mismo estilo de botas cafés y sudaderas a juego de distintos colores.",
-      "verdict": "reference_only",
-      "why": "Sin texto, buena energía, pero es evidentemente una campaña de moda coordinada (mismo calzado, mismo corte de sudadera) — no candid, aunque es un buen ejemplo de qué tan producido puede verse todavía creíble.",
-      "invariant_flags": []
-    },
-    {
-      "id": "HAPPY-31",
-      "source_file": "1544. Untitled.jpg",
-      "description": "Mismo grupo de mujeres corriendo tomadas de la mano por el campo (misma campaña que HAPPY-30, otro frame).",
-      "verdict": "reference_only",
-      "why": "Misma campaña de moda coordinada — botas y sudaderas iguales. No candid.",
-      "invariant_flags": []
-    },
-    {
-      "id": "HAPPY-32",
-      "source_file": "1554. Untitled.jpg",
-      "description": "Dos mujeres desayunando en unas escaleras de piedra, café y pan, descalzas.",
-      "verdict": "reference_only",
-      "why": "Buen momento cálido y sin texto, pero una de ellas tiene esmalte oscuro en las uñas de los pies — choca con invariante 4.",
-      "invariant_flags": ["4_feet_nail_polish"]
-    },
-    {
-      "id": "HAPPY-33",
-      "source_file": "1484. Untitled.jpg",
-      "description": "Pareja abrazándose tiernamente en un cuarto de bebé, descalzos.",
-      "verdict": "exemplar",
-      "why": "Momento genuino y tierno, sin texto legible relevante (hay libros infantiles de fondo pero no se leen). Buena luz suave.",
-      "invariant_flags": []
-    },
-    {
-      "id": "HAPPY-34",
-      "source_file": "1533. Untitled.jpg",
-      "description": "Madre e hijo abrazados/besándose en un sillón blanco, sala minimalista, un zapato plano negro visible.",
-      "verdict": "exemplar",
-      "why": "Momento tierno y genuino, sin texto, buena luz suave de interior. Buen ejemplo de felicidad + home.",
-      "invariant_flags": []
-    },
-    {
-      "id": "HAPPY-35",
-      "source_file": "798. Untitled.jpg",
-      "description": "Niña colgando de un pasamanos rosa, suela de tenis borrosa en primer plano, lentes de sol.",
-      "verdict": "reference_only",
-      "why": "Sin texto legible (suela borrosa), buena energía, pero composición muy de campaña de moda infantil.",
-      "invariant_flags": []
-    },
-    {
-      "id": "HAPPY-36",
-      "source_file": "1088. Untitled.jpg",
-      "description": "Cuatro niños colgados boca abajo de la rama de un árbol, riendo, descalzos.",
-      "verdict": "exemplar",
-      "why": "Momento candid genuino, multigeneracional (varias edades), sin texto, luz natural de tarde. Muy buen ejemplo del invariante 7.",
-      "invariant_flags": []
-    },
-    {
-      "id": "HAPPY-37",
-      "source_file": "90. Untitled.jpg",
-      "description": "Padre cargando a su hija en los hombros, ella con suéter naranja, pies descalzos prominentes.",
-      "verdict": "exemplar",
-      "why": "Momento tierno y genuino, sin texto, buena luz cálida de tarde. Buen ejemplo de pies naturales (invariante 4).",
-      "invariant_flags": []
-    },
-    {
-      "id": "HAPPY-38",
-      "source_file": "1074. Also_her.jpg",
-      "description": "Mujer posando en la calle con sudadera de texto grande ('LEMONS — FULL OF SUNSHINE AND SMILES') y un vaso de Dunkin' con logo visible.",
-      "verdict": "rejected",
-      "why": "Texto grande en la ropa y logo de marca de terceros en el vaso — doble violación de invariante 5, más invariante 9 por el logo de Dunkin'. Muy posado, no candid.",
-      "invariant_flags": ["5_no_generated_text", "9_no_third_party_ip"]
-    },
-    {
-      "id": "HAPPY-39",
-      "source_file": "1392. Untitled.jpg",
-      "description": "Niña riendo en una estructura de juegos de madera, tenis de colores con mapa impreso en primer plano.",
-      "verdict": "reference_only",
-      "why": "Sin texto legible grande, pero la composición (foco en el tenis) sugiere que es una campaña publicitaria de calzado infantil, no candid puro.",
-      "invariant_flags": []
-    },
-    {
-      "id": "HAPPY-40",
-      "source_file": "1102. Hering_Kids_+_D.P.A..jpg",
-      "description": "Niño mostrando las manos cubiertas de stickers ilustrados de colores contra fondo azul.",
-      "verdict": "rejected",
-      "why": "El nombre de archivo confirma que es una campaña co-branded (Hering Kids + D.P.A.). Los stickers son elementos gráficos diseñados aplicados sobre la piel — deja de ser fotografía natural, cruza a concepto de campaña ilustrada.",
-      "invariant_flags": ["2_colour_richness (deja_de_ser_fotografia)"]
-    },
-    {
-      "id": "HAPPY-41",
-      "source_file": "1549. Non-Toxic_Products_What_Clean_Really_Means_to_Me.jpg",
-      "description": "Idéntica a HAPPY-29 (mismo nombre de archivo, mismo contenido) — madre e hija jugando de cabeza.",
-      "verdict": "duplicate",
-      "why": "Confirmado: es un duplicado exacto de HAPPY-29 guardado con un ID de Drive distinto. Vale la pena que Laura sepa que su carpeta tiene copias repetidas, no solo esta.",
-      "invariant_flags": ["4_feet_nail_polish (heredado de HAPPY-29)"]
-    },
-    {
-      "id": "HAPPY-42",
-      "source_file": "1523. Untitled.jpg",
-      "description": "Mujer sentada en una banca de parque leyendo un periódico y tomando una caja de jugo, tenis Converse blancos.",
-      "verdict": "rejected",
-      "why": "El titular del periódico es legible, la sudadera tiene texto parcial visible, y el logo de estrella de Converse es legible en el tenis — varias violaciones del invariante 5 a la vez.",
-      "invariant_flags": ["5_no_generated_text"]
-    },
-    {
-      "id": "HAPPY-43",
-      "source_file": "1101. 000.jpg",
-      "description": "Retrato de una niña con gorra, rodeada de elementos gráficos 3D flotantes (arcoíris, letra 'A' con cuernos, flor, balón), texto de marca en la gorra.",
-      "verdict": "rejected",
-      "why": "Es un composite gráfico/CGI de campaña publicitaria, no fotografía — incluye una letra suelta como elemento de diseño y texto de marca en la gorra. Rechazo fuerte: ni siquiera es fotografía real.",
-      "invariant_flags": ["2_colour_richness (no_es_fotografia)", "5_no_generated_text"]
-    },
-    {
-      "id": "HAPPY-44",
-      "source_file": "85. Untitled.jpg",
-      "description": "Niña dormida sobre una manta de picnic junto a una muñeca, luz moteada de tarde entre árboles, chaqueta de mezclilla.",
-      "verdict": "exemplar",
-      "why": "Momento genuino y tierno, pies descalzos naturales, luz preciosa. Tiene una etiqueta pequeña roja de mezclilla (tipo Levi's) pero es minúscula e ilegible como texto — no se cuenta como violación real.",
-      "invariant_flags": []
-    },
-    {
-      "id": "HAPPY-45",
-      "source_file": "1092. Top_Tips_for_a_Roarsome_Night’s_Sleep.png",
-      "description": "Dos niños sentados sobre bolsas de dormir enrolladas con el logo 'Bundle Beds' impreso, en un bosque de camping.",
-      "verdict": "rejected",
-      "why": "El nombre de archivo confirma que es contenido de blog/campaña de una marca de ropa de cama para acampar, con su logo legible en el producto — invariante 5.",
-      "invariant_flags": ["5_no_generated_text"]
-    },
-    {
-      "id": "HAPPY-46",
-      "source_file": "1534. Untitled.jpg",
-      "description": "Dos amigas tomadas de la mano posando frente a un mural de zuecos holandeses en forma de corazón, con zuecos gigantes de utilería.",
-      "verdict": "exemplar",
-      "why": "Momento genuino de amistad, sin texto legible (el mural es arte folclórico, no palabras), buena luz de día.",
-      "invariant_flags": []
-    },
-    {
-      "id": "HAPPY-47",
-      "source_file": "111. Untitled.jpg",
-      "description": "Persona de espaldas en una silla de playa a rayas, leyendo un libro frente al mar, cabeza envuelta en toalla.",
-      "verdict": "exemplar",
-      "why": "Muy buena luz direccional (invariante 1 casi de manual), sin texto legible relevante (el libro se ve como textura, no se lee), momento de quietud genuina.",
-      "invariant_flags": []
-    },
-    {
-      "id": "HAPPY-48",
-      "source_file": "1545. Untitled.jpg",
-      "description": "Idéntica a HAPPY-36 (mismo archivo '90. Untitled.jpg' en otro ID) — papá con su hija en los hombros.",
-      "verdict": "duplicate",
-      "why": "Otro duplicado exacto confirmado dentro de la misma carpeta.",
-      "invariant_flags": []
-    },
-    {
-      "id": "HAPPY-49",
-      "source_file": "51. Blossom_🌼🌼.jpg",
-      "description": "Mujer corriendo por un campo de flores amarillas con suéter de rayas de colores, efecto de movimiento intencional.",
-      "verdict": "exemplar",
-      "why": "Felicidad genuina en movimiento, sin texto, buen ejemplo cruzado con el trunk de calidad 'imperfecciones' (motion blur real).",
-      "invariant_flags": []
-    },
-    {
-      "id": "HAPPY-50",
-      "source_file": "1095. Dino_Diaries_#2.jpg",
-      "description": "Cuatro niños de distintas etnias corriendo en una duna de playa, cada uno con un jumpsuit de color distinto (amarillo, lila, naranja, rosa) de la misma marca, con parche de logo visible en el pecho.",
-      "verdict": "rejected",
-      "why": "Es la misma serie de campaña que HAPPY-12 ('Dino Diaries') — parche de marca legible en la ropa de los 4 niños. Buena diversidad de casting (invariante 7) pero rechazada por invariante 5.",
-      "invariant_flags": ["5_no_generated_text"]
-    }
+    {"id": "HAPPY-01", "source_file": "69. Untitled.jpg", "description": "Mujer con suéter amarillo riendo junto a un letrero de 'TAKSI' en una plaza tipo Estambul.", "verdict": "exemplar", "why": "Risa grande y genuina, buena luz. El letrero de fondo es ruido de calle, no importa.", "source_note": "letrero 'TAKSI' visible de fondo, irrelevante"},
+    {"id": "HAPPY-02", "source_file": "86. ♡︎.jpg", "description": "Mujer mordiendo un helado con chispas de colores frente al menú de una heladería.", "verdict": "exemplar", "why": "Mordida genuina, sonrisa real, buena luz de día.", "source_note": "menú de heladería de fondo, irrelevante"},
+    {"id": "HAPPY-03", "source_file": "1553. setting_sail.jpg", "description": "Dos mujeres riendo juntas en la cubierta de un velero, luz dorada de atardecer.", "verdict": "exemplar", "why": "Felicidad genuina entre amigas, luz cálida perfecta. Uno de los mejores ejemplares de la carpeta."},
+    {"id": "HAPPY-04", "source_file": "1444. Untitled.jpg", "description": "Dos niñas comiendo helado de chocolate, con la cara manchada, expresión genuina.", "verdict": "exemplar", "why": "Momento real y desordenado, sin pose. 'Feeling over perfection' en estado puro."},
+    {"id": "HAPPY-05", "source_file": "121. Kid´s_Clothes.jpg", "description": "Niño gritando de alegría mientras rocía agua con manguera sobre sandías.", "verdict": "exemplar", "why": "El grito y la energía se leen genuinos aunque sea una producción de moda — la felicidad en sí es creíble."},
+    {"id": "HAPPY-06", "source_file": "1093. Roarsome_Photographer_of_the_Year_2024.jpg", "description": "Tres niños sentados en un muro con patinetas, conversando.", "verdict": "reference_only", "why": "Ambiente relajado y agradable, pero no hay una expresión de felicidad fuerte — es más neutro/casual que genuinamente feliz."},
+    {"id": "HAPPY-07", "source_file": "1434. Untitled.jpg", "description": "Pareja de adultos mayores abrazándose con flores, motion blur intencional.", "verdict": "exemplar", "why": "Ternura y felicidad genuina multigeneracional, más el valor cruzado de 'imperfecciones' (movimiento real)."},
+    {"id": "HAPPY-08", "source_file": "635. Untitled.jpg", "description": "Niño con gorra y overol haciendo hula-hoop en un campo de flores amarillas.", "verdict": "exemplar", "why": "Expresión de alegría genuina, buena luz y color."},
+    {"id": "HAPPY-09", "source_file": "1430. Untitled.jpg", "description": "Madre cargando a su hijo en una caminata, momento juguetón sacando la lengua.", "verdict": "exemplar", "why": "Felicidad genuina y espontánea, buena luz natural de bosque."},
+    {"id": "HAPPY-10", "source_file": "1437. Untitled.jpg", "description": "Niña con gorro de crochet comiendo un helado frente a un seto.", "verdict": "exemplar", "why": "La expresión de gusto/placer se lee genuina, buena luz y color."},
+    {"id": "HAPPY-11", "source_file": "1420. Untitled.jpg", "description": "Niña riendo en un columpio, suela del tenis hacia la cámara.", "verdict": "exemplar", "why": "Risa grande y genuina en movimiento."},
+    {"id": "HAPPY-12", "source_file": "1091. Dino_Diaries_#2.jpg", "description": "Dos niñas en conjuntos deportivos a juego señalando hacia el horizonte en dunas de arena.", "verdict": "exemplar", "why": "Emoción y risa genuinas al señalar algo juntas, buena luz de playa.", "source_note": "parche de marca visible en la ropa, irrelevante"},
+    {"id": "HAPPY-13", "source_file": "1071. Untitled.jpg", "description": "Mujer posando en un balcón ornamentado, expresión de contento tranquilo.", "verdict": "exemplar", "why": "Felicidad tranquila y creíble ('quiet warmth' — un registro tan válido como la energía alta)."},
+    {"id": "HAPPY-14", "source_file": "1086. Untitled.jpg", "description": "Cuatro niños saltando con los brazos en alto sobre césped, estilo foto de stock genérica.", "verdict": "reference_only", "why": "El salto sincronizado se ve demasiado artificial/catálogo — la felicidad no se lee genuina, se lee actuada."},
+    {"id": "HAPPY-15", "source_file": "632. —_ዙow_feℯls_to_be_ɐlℴnℯ_Ẅẅ_❦.jpg", "description": "Niña saltando en una cama con estrellas de colores agregadas digitalmente.", "verdict": "exemplar", "why": "El salto y el movimiento del cabello leen alegría genuina.", "source_note": "estrellas ilustradas superpuestas, ignorar — no son parte de la escena real"},
+    {"id": "HAPPY-16", "source_file": "1457. Future_kid_stock_image._Image_of_children,_kiddy,_.jpg", "description": "Niña corriendo descalza en la orilla de la playa, con reflejo en la arena mojada.", "verdict": "exemplar", "why": "Movimiento y expresión genuinos, buena composición con el reflejo.", "source_note": "marca de agua de banco de imágenes visible, irrelevante para el criterio de felicidad (sí importa si algún día se usa la imagen misma, no la escena)"},
+    {"id": "HAPPY-17", "source_file": "1433. Untitled.jpg", "description": "Niña en overol mordiendo un cono de helado gigante de varios sabores.", "verdict": "exemplar", "why": "Momento candid genuino, buena luz de día."},
+    {"id": "HAPPY-18", "source_file": "145. Untitled.jpg", "description": "Mujer acostada en un campo de flores silvestres mirando el cielo al atardecer.", "verdict": "exemplar", "why": "Felicidad tranquila y genuina, buena luz de atardecer."},
+    {"id": "HAPPY-19", "source_file": "1379. Untitled.jpg", "description": "Niño riendo con los brazos arriba en un tobogán amarillo.", "verdict": "exemplar", "why": "Alegría genuina y espontánea."},
+    {"id": "HAPPY-20", "source_file": "74. Coca-Cola_x_Real_Magic.jpg", "description": "Dos personas jugando con un carrito de supermercado en una azotea, riendo.", "verdict": "exemplar", "why": "Risa y energía genuinas — el ejemplo exacto de 'toma la felicidad, ignora el logo'. Buena luz y color.", "source_note": "es una campaña real de Coca-Cola, logo visible en la botella, irrelevante"},
+    {"id": "HAPPY-21", "source_file": "1518. FATHER’S_DAY_RESERVED.jpg", "description": "Niña recostada en el pasto riendo, con la suela de su tenis prominente en primer plano.", "verdict": "exemplar", "why": "Momento genuinamente feliz y espontáneo, buena luz natural."},
+    {"id": "HAPPY-22", "source_file": "89. Untitled.jpg", "description": "Mujer recostada en el pasto con la mirada perdida/soñadora.", "verdict": "reference_only", "why": "Expresión contemplativa pero no claramente feliz — sirve más como referencia de luz que de felicidad."},
+    {"id": "HAPPY-23", "source_file": "470. IG_rebeccamanzat.jpg", "description": "Mujer riendo tapándose la cara, acostada en el pasto con botas de lluvia rojas.", "verdict": "exemplar", "why": "Risa genuina, buena luz."},
+    {"id": "HAPPY-24", "source_file": "400. Untitled.jpg", "description": "Niña con gorra roja haciendo señal de paz contra un fondo ondulado naranja/rojo.", "verdict": "exemplar", "why": "Sonrisa genuina y juguetona."},
+    {"id": "HAPPY-25", "source_file": "1105. Untitled.jpg", "description": "Papá con su hija en los hombros, ambos con postre en la cara.", "verdict": "exemplar", "why": "Momento genuinamente feliz y desordenado, buen ejemplo multigeneracional."},
+    {"id": "HAPPY-26", "source_file": "1429. Untitled.jpg", "description": "Madre cargando a un niño mientras otro corre a su lado, pradera de montaña.", "verdict": "exemplar", "why": "Momento familiar genuino, buena luz natural."},
+    {"id": "HAPPY-27", "source_file": "112. Untitled.jpg", "description": "Mujer con turbante de toalla comiendo sandía en una cocina rústica.", "verdict": "exemplar", "why": "Gesto juguetón y genuino, buena luz."},
+    {"id": "HAPPY-28", "source_file": "1547. Untitled.jpg", "description": "Madre soplando una burbuja de jabón para su hija en la calle.", "verdict": "exemplar", "why": "Momento tierno y genuino, buena luz de calle."},
+    {"id": "HAPPY-29", "source_file": "91. Non-Toxic_Products_What_Clean_Really_Means_to_Me.jpg", "description": "Madre e hija jugando boca abajo/de cabeza, riendo, luz cálida de interior.", "verdict": "exemplar", "why": "Momento genuino y desordenado, muy buena felicidad de interior."},
+    {"id": "HAPPY-30", "source_file": "1543. Untitled.jpg", "description": "Cinco mujeres corriendo tomadas de la mano por un campo, sudaderas a juego.", "verdict": "exemplar", "why": "Risa y energía genuinas corriendo juntas.", "source_note": "campaña de moda coordinada (mismas botas/sudaderas), irrelevante"},
+    {"id": "HAPPY-31", "source_file": "1544. Untitled.jpg", "description": "Mismo grupo corriendo (otro frame de la misma toma que HAPPY-30).", "verdict": "exemplar", "why": "Mismo motivo que HAPPY-30."},
+    {"id": "HAPPY-32", "source_file": "1554. Untitled.jpg", "description": "Dos mujeres desayunando en unas escaleras de piedra, café y pan.", "verdict": "exemplar", "why": "Momento cálido y genuino entre amigas."},
+    {"id": "HAPPY-33", "source_file": "1484. Untitled.jpg", "description": "Pareja abrazándose tiernamente en un cuarto de bebé.", "verdict": "exemplar", "why": "Momento genuino y tierno, buena luz suave."},
+    {"id": "HAPPY-34", "source_file": "1533. Untitled.jpg", "description": "Madre e hijo abrazados/besándose en un sillón blanco.", "verdict": "exemplar", "why": "Momento tierno y genuino, buena luz suave de interior."},
+    {"id": "HAPPY-35", "source_file": "798. Untitled.jpg", "description": "Niña colgando de un pasamanos rosa, riendo, lentes de sol.", "verdict": "exemplar", "why": "Risa grande y genuina en movimiento."},
+    {"id": "HAPPY-36", "source_file": "1088. Untitled.jpg", "description": "Cuatro niños colgados boca abajo de la rama de un árbol, riendo.", "verdict": "exemplar", "why": "Momento candid genuino, multigeneracional, muy buen ejemplo de energía compartida."},
+    {"id": "HAPPY-37", "source_file": "90. Untitled.jpg", "description": "Padre cargando a su hija en los hombros, ella con suéter naranja.", "verdict": "exemplar", "why": "Momento tierno y genuino, buena luz cálida de tarde."},
+    {"id": "HAPPY-38", "source_file": "1074. Also_her.jpg", "description": "Mujer sonriendo suavemente en la calle con los ojos cerrados al sol.", "verdict": "exemplar", "why": "Sonrisa relajada y genuina, buena luz."},
+    {"id": "HAPPY-39", "source_file": "1392. Untitled.jpg", "description": "Niña riendo a carcajadas en una estructura de juegos de madera.", "verdict": "exemplar", "why": "Risa genuina y grande, buena luz de tarde."},
+    {"id": "HAPPY-40", "source_file": "1102. Hering_Kids_+_D.P.A..jpg", "description": "Niño mostrando las manos cubiertas de stickers ilustrados de colores.", "verdict": "reference_only", "why": "Expresión calmada, no particularmente feliz — el concepto visual (stickers) es lo protagonista, no la emoción."},
+    {"id": "HAPPY-41", "source_file": "1549. Non-Toxic_Products_What_Clean_Really_Means_to_Me.jpg", "description": "Idéntica a HAPPY-29 (mismo contenido, distinto ID de Drive).", "verdict": "duplicate", "why": "Duplicado exacto confirmado — usar HAPPY-29 como referencia."},
+    {"id": "HAPPY-42", "source_file": "1523. Untitled.jpg", "description": "Mujer sentada en una banca de parque leyendo un periódico y tomando jugo.", "verdict": "reference_only", "why": "Momento tranquilo y agradable, pero la expresión es neutra/concentrada, no felicidad marcada."},
+    {"id": "HAPPY-43", "source_file": "1101. 000.jpg", "description": "Retrato de una niña con gorra rodeada de elementos gráficos 3D flotantes.", "verdict": "reference_only", "why": "Sonrisa suave y agradable, pero es un concepto de diseño gráfico donde la emoción es secundaria al arte."},
+    {"id": "HAPPY-44", "source_file": "85. Untitled.jpg", "description": "Niña dormida sobre una manta de picnic junto a una muñeca, luz moteada de tarde.", "verdict": "exemplar", "why": "Momento genuino y tierno, pies descalzos naturales, luz preciosa."},
+    {"id": "HAPPY-45", "source_file": "1092. Top_Tips_for_a_Roarsome_Night’s_Sleep.png", "description": "Dos niños sentados sobre bolsas de dormir enrolladas, brazos arriba, emocionados.", "verdict": "exemplar", "why": "Emoción genuina y compartida entre los dos niños."},
+    {"id": "HAPPY-46", "source_file": "1534. Untitled.jpg", "description": "Dos amigas tomadas de la mano frente a un mural de zuecos holandeses en forma de corazón.", "verdict": "exemplar", "why": "Momento genuino de amistad, buena luz de día."},
+    {"id": "HAPPY-47", "source_file": "111. Untitled.jpg", "description": "Persona de espaldas en una silla de playa a rayas, leyendo un libro frente al mar.", "verdict": "exemplar", "why": "Quietud genuina y placentera, muy buena luz direccional."},
+    {"id": "HAPPY-48", "source_file": "1545. Untitled.jpg", "description": "Idéntica a HAPPY-37 (mismo contenido, distinto ID de Drive).", "verdict": "duplicate", "why": "Duplicado exacto confirmado — usar HAPPY-37 como referencia."},
+    {"id": "HAPPY-49", "source_file": "51. Blossom_🌼🌼.jpg", "description": "Mujer corriendo por un campo de flores amarillas, efecto de movimiento intencional.", "verdict": "exemplar", "why": "Felicidad genuina en movimiento, buen valor cruzado con 'imperfecciones'."},
+    {"id": "HAPPY-50", "source_file": "1095. Dino_Diaries_#2.jpg", "description": "Cuatro niños de distintas etnias corriendo en una duna de playa, jumpsuits de colores.", "verdict": "exemplar", "why": "Energía y risa genuinas corriendo juntos, muy buena diversidad de casting (invariante 7).", "source_note": "parche de marca visible en la ropa de los 4 niños, irrelevante"}
   ]
 }

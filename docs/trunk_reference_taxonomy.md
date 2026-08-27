@@ -26,6 +26,27 @@ Esta distinción importa para no confundir "de dónde sacamos el tono/luz/emoci�
 (inspiración de terceros, válida) con "así se ve el producto que vendemos"
 (invariante 6, `product_fidelity` — solo puede venir de fotografía propia).
 
+## Cómo se juzga cada referencia (corrección importante, 2026-08-27)
+
+**El texto, los logos y las marcas de terceros que aparecen DENTRO de una imagen
+de inspiración no descalifican esa imagen.** Es inspiración de otra marca — por
+supuesto que trae su propio logo, su propia tipografía, su propio producto. Eso
+es ruido esperado, no una violación. Los invariantes 5 (no lettering) y 9 (no IP
+de terceros) son reglas para lo que Happy Flops **genera y publica**, no un
+filtro para lo que Happy Flops **mira como inspiración**.
+
+La única pregunta al evaluar una referencia es: **¿esto ilustra bien la
+cualidad específica que representa su carpeta?** — felicidad genuina para
+`1 HAPPY`, calidad de luz para `1 LIGHTNING`, calidez de interior para
+`1 HOUSE`, etc. Si una campaña de Coca-Cola muestra dos personas riendo de
+verdad mientras juegan con un carrito de supermercado, eso es un buen ejemplo
+de felicidad — el logo de Coca-Cola en la botella es irrelevante y se ignora,
+no se rechaza la imagen por él.
+
+Antes de esta corrección se rechazaron varias referencias solo por tener texto
+o logo visible. Se re-evaluaron todas bajo este criterio correcto — ver el
+campo `verdict` actualizado en cada archivo de `docs/trunk_drafts/`.
+
 ## El problema que resuelve
 
 Las referencias que Laura ya tiene organizadas en Drive responden a **dos preguntas

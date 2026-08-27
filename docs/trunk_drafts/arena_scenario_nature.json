@@ -1,65 +1,53 @@
 {
-  "_note": "Borrador de trabajo, NO validado contra schema.json. Vive fuera de submundos/ a propósito hasta que se apruebe el schema v0.4 para archivos de trunk/variable libre (ver docs/trunk_reference_taxonomy.md). Analizado campo por campo a partir de las imágenes reales descargadas de Drive.",
+  "_note": "Borrador de trabajo, NO validado contra schema.json. Ver docs/trunk_reference_taxonomy.md. Verdicts corregidos 2026-08-27: texto/logo de terceros dentro de una foto de inspiración ya NO descalifica — solo importa qué tan bien ilustra el escenario 'nature' (tono, luz, tono cálido de playa).",
   "source_type": "third_party_inspiration",
-  "source_type_note": "NINGUNA de estas imágenes es producto Happy Flops. Es inspiración/moodboard de otras marcas y personas — sirve para tono, luz, composición y emoción, nunca como referencia de cómo se ve el producto propio (eso es invariante 6, product_fidelity, y llega en un envío aparte).",
+  "source_type_note": "NINGUNA de estas imágenes es producto Happy Flops. Es inspiración de otras marcas para tono/luz/ambiente de playa, nunca referencia de producto propio.",
   "bank": "free_variable",
   "variable": "scenario",
   "value": "nature",
   "drive_folder": "ARENA",
   "drive_folder_id": "1EMrAcwoBxsJsZUVN1KpCmnhHy_30Wt4O",
   "total_images_in_folder": 5,
-  "coverage_verdict": "insuficiente — 5 imágenes en total, y de esas solo 2 son evidencia usable de tono/luz; las otras 2 son antipatrones de invariante 5/9, no ejemplares",
+  "coverage_verdict": "volumen insuficiente (solo 5 imágenes), pero de calidad razonable en tono/luz una vez corregido el criterio de evaluación",
   "references": [
     {
       "id": "ARENA-01",
       "source_file": "1608. Untitled.jpg",
-      "description": "Flatlay sobre arena: sandalias de cuero café (mules, no thong/flip-flop), bolso de crochet café, productos de skincare de otras marcas (Naturium, Rhode) visibles con su empaque.",
-      "light": "Suave, difusa, cálida — consistente con invariante 1.",
-      "product_visible": "No es producto Happy Flops. Sandalias de otra marca, silueta distinta (mule cruzado, no flip-flop).",
-      "verdict": "reference_only",
-      "why": "Sirve como referencia de tono de arena/luz/paleta cálida para el escenario 'nature', pero no como ejemplo de producto ni de invariante 6 (product_fidelity) porque no es HF.",
-      "invariant_flags": []
+      "description": "Flatlay sobre arena: sandalias de cuero café, bolso de crochet, productos de skincare de otras marcas.",
+      "verdict": "exemplar",
+      "why": "Buena luz suave y cálida, buena paleta de tono para el escenario 'nature'.",
+      "source_note": "productos de otras marcas visibles (Naturium, Rhode), irrelevante para el criterio de tono/luz"
     },
     {
       "id": "ARENA-02",
       "source_file": "1662. Summer.jpg",
-      "description": "Producto de labial (Rhode) sobre arena, con la palabra de la marca escrita/moldeada a mano en la arena detrás del producto.",
-      "light": "Suave, cálida, buena calidad de luz en sí misma.",
-      "product_visible": "No es producto Happy Flops.",
-      "verdict": "rejected",
-      "why": "La arena tiene letras escritas a propósito ('rhode') — es literalmente texto/lettering dentro de la imagen. Choca directo con el invariante 5 (no generated text/lettering... ever). Sirve como ejemplo de qué NO replicar, no de qué imitar.",
-      "invariant_flags": ["5_no_generated_text"]
+      "description": "Producto de labial (Rhode) sobre arena, con la palabra de la marca escrita a mano en la arena detrás.",
+      "verdict": "exemplar",
+      "why": "Buena calidad de luz cálida y textura de arena, útil como referencia de tono.",
+      "source_note": "palabra 'rhode' escrita en la arena, irrelevante — es el logo de otra marca, no algo que Happy Flops vaya a replicar"
     },
     {
       "id": "ARENA-03",
       "source_file": "1744. Untitled.jpg",
-      "description": "Pies caminando en arena con tenis blancos, huellas detrás marcadas con el logo 'PRADA' en relieve (producto real de sandalias/tenis que dejan esa marca al pisar).",
-      "light": "Dura, sol alto de mediodía — no coincide con invariante 1 (luz suave y direccional).",
-      "product_visible": "Tenis de otra marca, no sandalias HF. Pies presentes pero el foco es el logo en la arena.",
-      "verdict": "rejected",
-      "why": "El logo 'PRADA' queda impreso como texto/marca dentro de la imagen — viola invariante 5 (no lettering/logos) e invariante 9 (no third-party IP). Doble antipatrón, útil solo como ejemplo de qué evitar.",
-      "invariant_flags": ["5_no_generated_text", "9_no_third_party_ip"]
+      "description": "Pies caminando en arena con tenis blancos, huellas con el logo 'PRADA' en relieve.",
+      "verdict": "reference_only",
+      "why": "La luz es dura y de mediodía, no el tipo de luz suave/direccional que buscamos como referencia — esa es la única razón real para no usarla como ejemplar.",
+      "source_note": "logo 'PRADA' en las huellas, irrelevante para el criterio de luz"
     },
     {
       "id": "ARENA-04",
       "source_file": "1609. Untitled.jpg",
-      "description": "Vista cenital: sandalias café de correas cruzadas sobre toalla de playa a rayas, libro abierto, lentes de sol, bebida, y una persona de espaldas (hombro/brazo/nuca visibles) leyendo.",
-      "light": "Suave, cálida, buena.",
-      "product_visible": "Sandalias de otra marca (silueta parecida a HF pero no confirmable sin reference pack).",
+      "description": "Vista cenital: sandalias sobre toalla de playa a rayas, libro, lentes de sol, persona leyendo de espaldas.",
       "verdict": "exemplar",
-      "why": "El mejor de los 5 — momento real y creíble ('quiet warmth', invariante 7 'real, unposed'), sin texto ni logos visibles, luz correcta. Es el tipo de composición que sí sirve como modelo para 'nature' + felicidad tranquila.",
-      "invariant_flags": []
+      "why": "El mejor de los 5 — momento real y creíble, luz suave y cálida correcta. Buen modelo de composición para 'nature' + felicidad tranquila."
     },
     {
       "id": "ARENA-05",
       "source_file": "1610. Untitled.jpg",
-      "description": "Flatlay sobre arena: gorra café ('Vintage'), bolso tejido, sandalias tipo slide color arena (silueta Yeezy-slide, una sola correa ancha).",
-      "light": "Suave, buena, ligeramente fría/neutra comparada con las demás.",
-      "product_visible": "No es producto Happy Flops. Silueta de slide de una correa, distinta a un flip-flop clásico.",
-      "verdict": "reference_only",
-      "why": "Composición y paleta limpias, útil como referencia de estilo/tono, pero no de producto — y la silueta del calzado no es la de HF.",
-      "invariant_flags": []
+      "description": "Flatlay sobre arena: gorra, bolso tejido, sandalias tipo slide color arena.",
+      "verdict": "exemplar",
+      "why": "Composición y paleta limpias, buena referencia de tono neutro cálido para 'nature'."
     }
   ],
-  "summary_for_laura": "De las 5 imágenes en ARENA: 1 es un ejemplar fuerte (ARENA-04), 2 son referencia de tono/luz pero sin producto HF (ARENA-01, ARENA-05), y 2 son antipatrones reales que muestran texto/logos incrustados en la arena — algo que los invariantes 5 y 9 prohíben explícitamente (ARENA-02, ARENA-03). Ninguna de las 5 muestra un producto identificable como Happy Flops. Antes de dar por buena la cobertura de 'nature', hace falta: (a) más volumen, y (b) al menos algunas imágenes con el producto real puesto, no solo estética de playa."
+  "summary_for_laura": "De las 5 imágenes en ARENA, 4 son buena referencia de tono/luz para el escenario 'nature' (ARENA-01, 02, 04, 05) y 1 tiene luz demasiado dura de mediodía (ARENA-03). El problema real de esta carpeta sigue siendo volumen — 5 imágenes es poco — no calidad."
 }
