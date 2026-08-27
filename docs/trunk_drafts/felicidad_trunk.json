@@ -9,7 +9,7 @@
   "drive_folder": "1 HAPPY",
   "drive_folder_id": "1wMUL4X_zMX_a9hDQmDH2KEj2bFThhnh0",
   "total_images_in_folder": 87,
-  "batch": "7 de ~9 completada (70 de 87 imágenes procesadas)",
+  "batch": "8 de ~9 completada (80 de 87 imágenes procesadas)",
   "references": [
     {"id": "HAPPY-01", "source_file": "69. Untitled.jpg", "description": "Mujer con suéter amarillo riendo junto a un letrero de 'TAKSI' en una plaza tipo Estambul.", "verdict": "exemplar", "why": "Risa grande y genuina, buena luz. El letrero de fondo es ruido de calle, no importa.", "source_note": "letrero 'TAKSI' visible de fondo, irrelevante"},
     {"id": "HAPPY-02", "source_file": "86. ♡︎.jpg", "description": "Mujer mordiendo un helado con chispas de colores frente al menú de una heladería.", "verdict": "exemplar", "why": "Mordida genuina, sonrisa real, buena luz de día.", "source_note": "menú de heladería de fondo, irrelevante"},
@@ -80,6 +80,16 @@
     {"id": "HAPPY-67", "source_file": "634. Blossom_🌼🌼.jpg", "description": "Idéntica a HAPPY-49 (mismo contenido, distinto ID de Drive).", "verdict": "duplicate", "why": "Duplicado exacto confirmado — usar HAPPY-49 como referencia."},
     {"id": "HAPPY-68", "source_file": "1551. Untitled.jpg", "description": "Idéntica a HAPPY-27 (mismo contenido, distinto ID de Drive) — mujer con turbante de toalla comiendo sandía.", "verdict": "duplicate", "why": "Duplicado exacto confirmado — usar HAPPY-27 como referencia."},
     {"id": "HAPPY-69", "source_file": "88. Untitled.jpg", "description": "Idéntica a HAPPY-42 (mismo contenido, distinto ID de Drive) — mujer en banca de parque con periódico.", "verdict": "duplicate", "why": "Duplicado exacto confirmado — usar HAPPY-42 como referencia."},
-    {"id": "HAPPY-70", "source_file": "1548. Untitled.jpg", "description": "Madre e hijo acostados boca arriba con las piernas apoyadas en la pared, calcetines a juego.", "verdict": "exemplar", "why": "Momento de calidez tranquila genuina, buena composición casera."}
+    {"id": "HAPPY-70", "source_file": "1548. Untitled.jpg", "description": "Madre e hijo acostados boca arriba con las piernas apoyadas en la pared, calcetines a juego.", "verdict": "exemplar", "why": "Momento de calidez tranquila genuina, buena composición casera."},
+    {"id": "HAPPY-71", "source_file": "1456. DIY_Origami_Paper_Kites_for_Kids_–_Fold,_Decorate,.jpg", "description": "Tres niñas corriendo con cometas de papel en un campo, riendo.", "verdict": "exemplar", "why": "Alegría genuina y compartida, buena luz de tarde."},
+    {"id": "HAPPY-72", "source_file": "803. Untitled.jpg", "description": "Pareja de adultos mayores bailando/abrazándose en una plaza de piedra, vista cenital, con flores.", "verdict": "exemplar", "why": "Ternura genuina multigeneracional, buena composición."},
+    {"id": "HAPPY-73", "source_file": "1511. Untitled.jpg", "description": "Mujer sentada en un umbral tomando un jugo verde, expresión relajada y sonriente.", "verdict": "exemplar", "why": "Contento genuino y relajado ('quiet warmth')."},
+    {"id": "HAPPY-74", "source_file": "1516. Untitled.jpg", "description": "Niño rubio recostado boca arriba en un camastro naranja con las piernas hacia arriba, sonriendo.", "verdict": "exemplar", "why": "Alegría juguetona genuina."},
+    {"id": "HAPPY-75", "source_file": "134. Untitled.jpg", "description": "Dos niños corriendo con red de mariposas en un campo, vistos de espaldas.", "verdict": "exemplar", "why": "Energía de juego genuina en el lenguaje corporal, buen cielo despejado.", "source_note": "código QR y texto en chino superpuestos (material publicitario), irrelevante"},
+    {"id": "HAPPY-76", "source_file": "633. Untitled.jpg", "description": "Niña recostada en el pasto con dulce y un gameboy, rodeada de estrellas de colores agregadas digitalmente.", "verdict": "reference_only", "why": "Expresión posada para cámara tipo 'estética', no felicidad genuina marcada — es más una composición de vibe que un momento de alegría real."},
+    {"id": "HAPPY-77", "source_file": "123. Untitled.jpg", "description": "Tres mujeres abrazadas tiernamente en una banca junto a un lago en otoño, suéteres cálidos.", "verdict": "exemplar", "why": "Uno de los mejores ejemplares — ternura genuina, muy buena luz otoñal dorada."},
+    {"id": "HAPPY-78", "source_file": "120. Untitled.jpg", "description": "Dos niños de distintas etnias cargando juntos una tabla de surf en la playa, sonriendo ampliamente.", "verdict": "exemplar", "why": "Sonrisas genuinas y compartidas, buena diversidad de casting (invariante 7)."},
+    {"id": "HAPPY-79", "source_file": "1070. Untitled.jpg", "description": "Selfie de espejo con texto 'cute outfit today' superpuesto, mujer posando con un conjunto a rayas.", "verdict": "reference_only", "why": "Es principalmente contenido de moda/outfit, la expresión es una sonrisa suave posada, no felicidad marcada."},
+    {"id": "HAPPY-80", "source_file": "1552. 💌_@𝐡𝐚𝐧𝐧𝐚𝐡𝐱𝐬𝐜𝐨𝐭𝐭.jpg", "description": "Tres mujeres bailando y celebrando en una terraza junto al mar al atardecer, riendo con los brazos arriba.", "verdict": "exemplar", "why": "Felicidad genuina y compartida, luz de atardecer preciosa."}
   ]
 }
