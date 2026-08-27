@@ -1,5 +1,7 @@
 {
   "_note": "Borrador de trabajo, NO validado contra schema.json. Vive fuera de submundos/ a propósito hasta que se apruebe el schema v0.4 para archivos de trunk/variable libre (ver docs/trunk_reference_taxonomy.md). Analizado campo por campo a partir de las imágenes reales descargadas de Drive.",
+  "source_type": "third_party_inspiration",
+  "source_type_note": "NINGUNA de estas imágenes es producto Happy Flops. Es inspiración/moodboard de otras marcas y personas — sirve para tono, luz, composición y emoción, nunca como referencia de cómo se ve el producto propio (eso es invariante 6, product_fidelity, y llega en un envío aparte).",
   "bank": "free_variable",
   "variable": "scenario",
   "value": "nature",

@@ -7,6 +7,25 @@ mientras se resuelve la aprobación del schema v0.4 para archivos de trunk (ver
 documento es la base para convertir las carpetas de Drive en archivos reales de
 `submundos/` (o donde termine viviendo el trunk).
 
+## Aclaración crítica: inspiración de terceros vs. producto propio
+
+**Todas las carpetas de Drive analizadas hasta ahora son inspiración/moodboard de
+otras marcas y otras personas — ninguna contiene fotografía del producto real de
+Happy Flops.** Cuando una referencia muestra un logo, silueta de calzado o producto
+de otra marca (Prada, Rhode, Salomon, Yeezy, etc.), eso es normal y esperado — es
+material de inspiración, no algo que deba tratarse como "así se ve nuestro
+producto". Ninguna carpeta de este documento debe leerse como reference pack de HF.
+
+Laura enviará por separado, más adelante, las referencias que sí son fotografía real
+del producto propio (cómo se pone, cómo se ve en cada temporada, etc.). Cuando eso
+llegue, cada entrada debe marcarse con un campo `source_type` explícito:
+- `source_type: third_party_inspiration` — todo lo documentado hasta ahora.
+- `source_type: own_product` — lo que llegue después, evidencia real de HF.
+
+Esta distinción importa para no confundir "de dónde sacamos el tono/luz/emoción"
+(inspiración de terceros, válida) con "así se ve el producto que vendemos"
+(invariante 6, `product_fidelity` — solo puede venir de fotografía propia).
+
 ## El problema que resuelve
 
 Las referencias que Laura ya tiene organizadas en Drive responden a **dos preguntas

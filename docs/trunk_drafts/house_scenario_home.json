@@ -1,5 +1,7 @@
 {
   "_note": "Borrador de trabajo, NO validado contra schema.json. Ver docs/trunk_reference_taxonomy.md. Muestra de 10 imágenes de la carpeta '1 HOUSE' (la carpeta tiene más — la paginación de Drive repitió resultados al intentar traer una segunda página, así que esta es una muestra representativa, no el conteo completo).",
+  "source_type": "third_party_inspiration",
+  "source_type_note": "NINGUNA de estas imágenes es producto Happy Flops. Es inspiración/moodboard de otras marcas y personas — sirve para tono, luz, composición y emoción, nunca como referencia de cómo se ve el producto propio (eso es invariante 6, product_fidelity, y llega en un envío aparte).",
   "bank": "free_variable",
   "variable": "scenario",
   "value": "home",
