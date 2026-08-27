@@ -8,7 +8,7 @@
   "drive_folder": "1 HAPPY",
   "drive_folder_id": "1wMUL4X_zMX_a9hDQmDH2KEj2bFThhnh0",
   "total_images_in_folder": 87,
-  "batch": "3 de ~9 completada (30 de 87 imágenes procesadas)",
+  "batch": "4 de ~9 completada (40 de 87 imágenes procesadas)",
   "references": [
     {
       "id": "HAPPY-01",
@@ -249,6 +249,86 @@
       "verdict": "reference_only",
       "why": "Sin texto, buena energía, pero es evidentemente una campaña de moda coordinada (mismo calzado, mismo corte de sudadera) — no candid, aunque es un buen ejemplo de qué tan producido puede verse todavía creíble.",
       "invariant_flags": []
+    },
+    {
+      "id": "HAPPY-31",
+      "source_file": "1544. Untitled.jpg",
+      "description": "Mismo grupo de mujeres corriendo tomadas de la mano por el campo (misma campaña que HAPPY-30, otro frame).",
+      "verdict": "reference_only",
+      "why": "Misma campaña de moda coordinada — botas y sudaderas iguales. No candid.",
+      "invariant_flags": []
+    },
+    {
+      "id": "HAPPY-32",
+      "source_file": "1554. Untitled.jpg",
+      "description": "Dos mujeres desayunando en unas escaleras de piedra, café y pan, descalzas.",
+      "verdict": "reference_only",
+      "why": "Buen momento cálido y sin texto, pero una de ellas tiene esmalte oscuro en las uñas de los pies — choca con invariante 4.",
+      "invariant_flags": ["4_feet_nail_polish"]
+    },
+    {
+      "id": "HAPPY-33",
+      "source_file": "1484. Untitled.jpg",
+      "description": "Pareja abrazándose tiernamente en un cuarto de bebé, descalzos.",
+      "verdict": "exemplar",
+      "why": "Momento genuino y tierno, sin texto legible relevante (hay libros infantiles de fondo pero no se leen). Buena luz suave.",
+      "invariant_flags": []
+    },
+    {
+      "id": "HAPPY-34",
+      "source_file": "1533. Untitled.jpg",
+      "description": "Madre e hijo abrazados/besándose en un sillón blanco, sala minimalista, un zapato plano negro visible.",
+      "verdict": "exemplar",
+      "why": "Momento tierno y genuino, sin texto, buena luz suave de interior. Buen ejemplo de felicidad + home.",
+      "invariant_flags": []
+    },
+    {
+      "id": "HAPPY-35",
+      "source_file": "798. Untitled.jpg",
+      "description": "Niña colgando de un pasamanos rosa, suela de tenis borrosa en primer plano, lentes de sol.",
+      "verdict": "reference_only",
+      "why": "Sin texto legible (suela borrosa), buena energía, pero composición muy de campaña de moda infantil.",
+      "invariant_flags": []
+    },
+    {
+      "id": "HAPPY-36",
+      "source_file": "1088. Untitled.jpg",
+      "description": "Cuatro niños colgados boca abajo de la rama de un árbol, riendo, descalzos.",
+      "verdict": "exemplar",
+      "why": "Momento candid genuino, multigeneracional (varias edades), sin texto, luz natural de tarde. Muy buen ejemplo del invariante 7.",
+      "invariant_flags": []
+    },
+    {
+      "id": "HAPPY-37",
+      "source_file": "90. Untitled.jpg",
+      "description": "Padre cargando a su hija en los hombros, ella con suéter naranja, pies descalzos prominentes.",
+      "verdict": "exemplar",
+      "why": "Momento tierno y genuino, sin texto, buena luz cálida de tarde. Buen ejemplo de pies naturales (invariante 4).",
+      "invariant_flags": []
+    },
+    {
+      "id": "HAPPY-38",
+      "source_file": "1074. Also_her.jpg",
+      "description": "Mujer posando en la calle con sudadera de texto grande ('LEMONS — FULL OF SUNSHINE AND SMILES') y un vaso de Dunkin' con logo visible.",
+      "verdict": "rejected",
+      "why": "Texto grande en la ropa y logo de marca de terceros en el vaso — doble violación de invariante 5, más invariante 9 por el logo de Dunkin'. Muy posado, no candid.",
+      "invariant_flags": ["5_no_generated_text", "9_no_third_party_ip"]
+    },
+    {
+      "id": "HAPPY-39",
+      "source_file": "1392. Untitled.jpg",
+      "description": "Niña riendo en una estructura de juegos de madera, tenis de colores con mapa impreso en primer plano.",
+      "verdict": "reference_only",
+      "why": "Sin texto legible grande, pero la composición (foco en el tenis) sugiere que es una campaña publicitaria de calzado infantil, no candid puro.",
+      "invariant_flags": []
+    },
+    {
+      "id": "HAPPY-40",
+      "source_file": "1102. Hering_Kids_+_D.P.A..jpg",
+      "description": "Niño mostrando las manos cubiertas de stickers ilustrados de colores contra fondo azul.",
+      "verdict": "rejected",
+      "why": "El nombre de archivo confirma que es una campaña co-branded (Hering Kids + D.P.A.). Los stickers son elementos gráficos diseñados aplicados sobre la piel — deja de ser fotografía natural, cruza a concepto de campaña ilustrada.",
+      "invariant_flags": ["2_colour_richness (deja_de_ser_fotografia)"]
     }
   ]
 }
