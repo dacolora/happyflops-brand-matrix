@@ -11,7 +11,7 @@
   "total_files_in_folder": 44,
   "known_duplicates_by_filesize": ["94.jpg = 1563.jpg (138276 bytes)", "1528.jpg = 89.jpg (104930 bytes)"],
   "cross_folder_duplicates_detected": ["68. Also_her.jpg (155274 bytes) coincide en tamaño con HAPPY-38/HAPPY-48 y con 127. Also_her.jpg en la carpeta LUZ — la misma imagen guardada en al menos 3 carpetas distintas", "91. Non-Toxic_Products...jpg (81618 bytes) coincide con HAPPY-29/HAPPY-41 — misma imagen en 2 carpetas"],
-  "batch": "3 de ~5 (33 de 44 procesadas)",
+  "batch": "COMPLETA — 44 de 44 archivos procesados",
   "references": [
     {"id": "MODELS-01", "source_file": "801. Untitled.jpg", "description": "Dos mujeres jóvenes tomando café en la calle, outfits coloridos, cabeza agachada mirando sus bebidas.", "verdict": "exemplar", "why": "Momento candid genuino, sin posar para cámara."},
     {"id": "MODELS-02", "source_file": "24. Untitled.jpg", "description": "Niña riendo mientras balancea una bolsa de red, cabello al viento.", "verdict": "exemplar", "why": "Expresión genuina y espontánea, buen ejemplo de casting infantil real."},
@@ -45,6 +45,18 @@
     {"id": "MODELS-30", "source_file": "55. Untitled.jpg", "description": "Mujer con atuendo de moda tomando jugo verde con las piernas cruzadas, pose consciente de cámara.", "verdict": "reference_only", "why": "Es una producción de moda con pose consciente, no candid — sirve como referencia de casting adulto, no de momento genuino."},
     {"id": "MODELS-31", "source_file": "88. Untitled.jpg", "description": "Idéntica a HAPPY-42 (mismo contenido, distinto ID de Drive) — mujer en banca de parque con periódico.", "verdict": "duplicate", "why": "Duplicado exacto cruzando carpetas — usar HAPPY-42 como referencia."},
     {"id": "MODELS-32", "source_file": "1054. Untitled.jpg", "description": "Niña asiática haciendo seña de paz contra un muro de ladrillo, sonrisa pícara.", "verdict": "exemplar", "why": "Expresión genuina y juguetona."},
-    {"id": "MODELS-33", "source_file": "3. Untitled.jpg", "description": "Bebé sentado en una manta de playa con sombrero de sol, sonrisa grande.", "verdict": "exemplar", "why": "Sonrisa genuina de bebé, buena composición de playa."}
-  ]
+    {"id": "MODELS-33", "source_file": "3. Untitled.jpg", "description": "Bebé sentado en una manta de playa con sombrero de sol, sonrisa grande.", "verdict": "exemplar", "why": "Sonrisa genuina de bebé, buena composición de playa."},
+    {"id": "MODELS-34", "source_file": "7. Untitled.jpg", "description": "Niña en patineta/scooter frente a un edificio clásico, expresión concentrada en movimiento.", "verdict": "exemplar", "why": "Momento candid genuino, buena luz."},
+    {"id": "MODELS-35", "source_file": "1056. Rebajas_en_El_Corte_Inglés_las_Crocs_que_triunfan_.jpg", "description": "Artículo/captura de retail sobre rebajas de Crocs (según nombre de archivo).", "verdict": "reference_only", "why": "Es contenido editorial de una nota de rebajas de retail, no evidencia de casting real."},
+    {"id": "MODELS-36", "source_file": "1562. Untitled.jpg", "description": "Dos mujeres recostadas boca abajo en un sillón verde, una leyendo un libro sobre la cara de la otra.", "verdict": "exemplar", "why": "Momento juguetón y genuino, buena luz cálida de interior."},
+    {"id": "MODELS-37", "source_file": "1006. 🍊.jpg", "description": "Mujer sentada en un umbral sonriendo suavemente, pantalón de cuadros verdes, crocs amarillos.", "verdict": "exemplar", "why": "Sonrisa genuina y cálida."},
+    {"id": "MODELS-38", "source_file": "1448. Untitled.jpg", "description": "Pareja de adultos mayores soplando burbujas juntos en una banca de jardín.", "verdict": "exemplar", "why": "Momento genuino, tierno y multigeneracional (invariante 7)."},
+    {"id": "MODELS-39", "source_file": "1064. Untitled.jpg", "description": "Grid de 4 fotos de una mujer con crocs rosados y bolso de crochet verde, estilo blog de moda.", "verdict": "reference_only", "why": "Es contenido de moda posado tipo grid de Instagram, no un momento candid único."},
+    {"id": "MODELS-40", "source_file": "1528. Untitled.jpg", "description": "Idéntica a MODELS-06 (mismo contenido, distinto ID de Drive) — mujer recostada en pasto con tenis Adidas.", "verdict": "duplicate", "why": "Duplicado exacto confirmado por tamaño de archivo — usar MODELS-06 como referencia."},
+    {"id": "MODELS-41", "source_file": "56. Untitled.jpg", "description": "Dos niños de distintas etnias cargando juntos una tabla de surf en la playa, sonriendo a cámara.", "verdict": "exemplar", "why": "Sonrisas genuinas, excelente diversidad de casting."},
+    {"id": "MODELS-42", "source_file": "1049. Untitled.jpg", "description": "Niña pequeña con gorra amarilla y playera rosa 'LES ORANGES', sonrisa grande.", "verdict": "exemplar", "why": "Alegría genuina."},
+    {"id": "MODELS-43", "source_file": "1558. Untitled.jpg", "description": "Mujer haciendo el pino en un campo, otra mujer con sombrero de flores en primer plano.", "verdict": "exemplar", "why": "Momento genuino y juguetón, buena composición con dos generaciones de energía distinta."},
+    {"id": "MODELS-44", "source_file": "1426. Untitled.jpg", "description": "Dos niños montando juntos un triciclo antiguo en un campo de girasoles, sonriendo.", "verdict": "exemplar", "why": "Sonrisas genuinas y compartidas, buena luz natural."}
+  ],
+  "final_tally_note": "44 archivos totales: 2 duplicados internos (MODELS-12, MODELS-40), 2 duplicados cruzando carpetas hacia HAPPY (MODELS-14, MODELS-16, MODELS-22, MODELS-24, MODELS-31 — 5 en total), y el resto mayormente ejemplares fuertes de casting diverso y genuino. Carpeta MODELS completa."
 }
