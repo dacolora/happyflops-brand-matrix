@@ -1,0 +1,94 @@
+{
+  "_note": "Borrador de trabajo, NO validado contra schema.json. Ver docs/trunk_reference_taxonomy.md. La carpeta '1 HAPPY' tiene 87 imágenes en total — este archivo cubre la primera tanda de 10, procesamiento en curso.",
+  "source_type": "third_party_inspiration",
+  "source_type_note": "NINGUNA de estas imágenes es producto Happy Flops. Es inspiración/moodboard de otras marcas y personas — sirve para tono, luz y emoción, nunca como referencia de producto propio.",
+  "bank": "trunk",
+  "trunk": "felicidad",
+  "applies_to": ["lifestyle", "photoshoot"],
+  "drive_folder": "1 HAPPY",
+  "drive_folder_id": "1wMUL4X_zMX_a9hDQmDH2KEj2bFThhnh0",
+  "total_images_in_folder": 87,
+  "batch": "1 de ~9 (10 imágenes por tanda)",
+  "references": [
+    {
+      "id": "HAPPY-01",
+      "source_file": "69. Untitled.jpg",
+      "description": "Mujer con suéter amarillo texturizado posando junto a un letrero de 'TAKSI' en una plaza tipo Estambul, zapatos rojos mary-jane, bolso rojo.",
+      "verdict": "rejected",
+      "why": "Tiene texto/señalización real de calle claramente legible ('TAKSI') dentro del encuadre — viola invariante 5. Además la pose es muy editorial/consciente de cámara, no 'unposed' (invariante 7).",
+      "invariant_flags": ["5_no_generated_text"]
+    },
+    {
+      "id": "HAPPY-02",
+      "source_file": "86. ♡︎.jpg",
+      "description": "Mujer mordiendo un helado con chispas de colores frente al menú de una heladería ('The Juice Bar').",
+      "verdict": "rejected",
+      "why": "El menú de la tienda es texto legible de fondo — viola invariante 5. También tiene esmalte de uñas visible en las manos, que está explícitamente en el negative_prompt actual.",
+      "invariant_flags": ["5_no_generated_text", "11_hands_nail_polish"]
+    },
+    {
+      "id": "HAPPY-03",
+      "source_file": "1553. setting_sail.jpg",
+      "description": "Dos mujeres riendo juntas en la cubierta de un velero, luz dorada de atardecer.",
+      "verdict": "exemplar",
+      "why": "Felicidad genuina entre amigas, sin texto, luz cálida perfecta (invariante 1). Uno de los mejores ejemplares de la carpeta.",
+      "invariant_flags": []
+    },
+    {
+      "id": "HAPPY-04",
+      "source_file": "1444. Untitled.jpg",
+      "description": "Dos niñas comiendo helado de chocolate, con la cara manchada, expresión genuina.",
+      "verdict": "exemplar",
+      "why": "Momento real y desordenado, sin pose, sin texto. Ilustra felicidad + imperfección (mancha de chocolate = 'feeling over perfection').",
+      "invariant_flags": []
+    },
+    {
+      "id": "HAPPY-05",
+      "source_file": "121. Kid´s_Clothes.jpg",
+      "description": "Niño gritando de alegría mientras rocía agua con manguera sobre sandías, jardín soleado.",
+      "verdict": "reference_only",
+      "why": "Buena energía, pero es claramente una producción editorial de moda infantil (nombre de archivo 'Kid's_Clothes'), muy dirigida — no candid puro.",
+      "invariant_flags": []
+    },
+    {
+      "id": "HAPPY-06",
+      "source_file": "1093. Roarsome_Photographer_of_the_Year_2024.jpg",
+      "description": "Tres niños sentados en un muro con patinetas, uno con playera que dice 'ROARSOME ADVENTURE CLUB'.",
+      "verdict": "rejected",
+      "why": "El texto de marca está impreso en la ropa del niño, legible dentro del encuadre — mismo problema del invariante 5 en su variante 'texto en prenda' en vez de overlay o señalización.",
+      "invariant_flags": ["5_no_generated_text"]
+    },
+    {
+      "id": "HAPPY-07",
+      "source_file": "1434. Untitled.jpg",
+      "description": "Pareja de adultos mayores abrazándose con flores, efecto de movimiento/motion blur intencional.",
+      "verdict": "exemplar",
+      "why": "Excelente ejemplo cruzado: felicidad genuina + casting multigeneracional (invariante 7, adultos mayores) + el trunk de calidad transversal 'imperfecciones' (movimiento real, no perfecto). Sin texto.",
+      "invariant_flags": []
+    },
+    {
+      "id": "HAPPY-08",
+      "source_file": "635. Untitled.jpg",
+      "description": "Niño con gorra y overol haciendo hula-hoop en un campo de flores amarillas.",
+      "verdict": "reference_only",
+      "why": "Colores y luz muy buenos, pero es una producción de moda infantil muy dirigida (pose de salto compuesta), no un momento candid.",
+      "invariant_flags": []
+    },
+    {
+      "id": "HAPPY-09",
+      "source_file": "1430. Untitled.jpg",
+      "description": "Madre cargando a su hijo en una caminata, mochila de trekking, momento juguetón sacando la lengua.",
+      "verdict": "exemplar",
+      "why": "Felicidad genuina y espontánea, sin texto, buena luz natural de bosque. Buen ejemplo de invariante 7 (real, sin pose).",
+      "invariant_flags": []
+    },
+    {
+      "id": "HAPPY-10",
+      "source_file": "1437. Untitled.jpg",
+      "description": "Niña con gorro de crochet y vestido de lunares verdes comiendo un helado frente a un seto.",
+      "verdict": "reference_only",
+      "why": "Buena luz y color, pero es una producción de moda editorial claramente dirigida, no candid.",
+      "invariant_flags": []
+    }
+  ]
+}
