@@ -9,7 +9,8 @@
   "drive_folder": "1 HAPPY",
   "drive_folder_id": "1wMUL4X_zMX_a9hDQmDH2KEj2bFThhnh0",
   "total_images_in_folder": 87,
-  "batch": "8 de ~9 completada (80 de 87 imágenes procesadas)",
+  "batch": "9 completada (90 de 100 imágenes procesadas — la carpeta tiene 100, no 87 como se pensó al inicio)",
+  "total_images_in_folder_corrected": 100,
   "references": [
     {"id": "HAPPY-01", "source_file": "69. Untitled.jpg", "description": "Mujer con suéter amarillo riendo junto a un letrero de 'TAKSI' en una plaza tipo Estambul.", "verdict": "exemplar", "why": "Risa grande y genuina, buena luz. El letrero de fondo es ruido de calle, no importa.", "source_note": "letrero 'TAKSI' visible de fondo, irrelevante"},
     {"id": "HAPPY-02", "source_file": "86. ♡︎.jpg", "description": "Mujer mordiendo un helado con chispas de colores frente al menú de una heladería.", "verdict": "exemplar", "why": "Mordida genuina, sonrisa real, buena luz de día.", "source_note": "menú de heladería de fondo, irrelevante"},
@@ -90,6 +91,16 @@
     {"id": "HAPPY-77", "source_file": "123. Untitled.jpg", "description": "Tres mujeres abrazadas tiernamente en una banca junto a un lago en otoño, suéteres cálidos.", "verdict": "exemplar", "why": "Uno de los mejores ejemplares — ternura genuina, muy buena luz otoñal dorada."},
     {"id": "HAPPY-78", "source_file": "120. Untitled.jpg", "description": "Dos niños de distintas etnias cargando juntos una tabla de surf en la playa, sonriendo ampliamente.", "verdict": "exemplar", "why": "Sonrisas genuinas y compartidas, buena diversidad de casting (invariante 7)."},
     {"id": "HAPPY-79", "source_file": "1070. Untitled.jpg", "description": "Selfie de espejo con texto 'cute outfit today' superpuesto, mujer posando con un conjunto a rayas.", "verdict": "reference_only", "why": "Es principalmente contenido de moda/outfit, la expresión es una sonrisa suave posada, no felicidad marcada."},
-    {"id": "HAPPY-80", "source_file": "1552. 💌_@𝐡𝐚𝐧𝐧𝐚𝐡𝐱𝐬𝐜𝐨𝐭𝐭.jpg", "description": "Tres mujeres bailando y celebrando en una terraza junto al mar al atardecer, riendo con los brazos arriba.", "verdict": "exemplar", "why": "Felicidad genuina y compartida, luz de atardecer preciosa."}
+    {"id": "HAPPY-80", "source_file": "1552. 💌_@𝐡𝐚𝐧𝐧𝐚𝐡𝐱𝐬𝐜𝐨𝐭𝐭.jpg", "description": "Tres mujeres bailando y celebrando en una terraza junto al mar al atardecer, riendo con los brazos arriba.", "verdict": "exemplar", "why": "Felicidad genuina y compartida, luz de atardecer preciosa."},
+    {"id": "HAPPY-81", "source_file": "1483. Baby_🥹🥹🌸.jpg", "description": "Madre y bebé acostados pies con pies en la arena, el bebé sonriendo directo a cámara.", "verdict": "exemplar", "why": "Sonrisa genuina de bebé, buena composición cálida."},
+    {"id": "HAPPY-82", "source_file": "1442. Untitled.jpg", "description": "Niña recibiendo un chorro de manguera en la cara, riendo/gritando de la sorpresa.", "verdict": "exemplar", "why": "Alegría genuina y espontánea, momento candid clásico de verano."},
+    {"id": "HAPPY-83", "source_file": "1436. Untitled.jpg", "description": "Papá montado cómicamente en la bicicleta pequeña de su hija, ella empujándolo desde atrás.", "verdict": "reference_only", "why": "Concepto juguetón, pero no se ve la expresión facial de ninguno de los dos — no se puede confirmar la emoción."},
+    {"id": "HAPPY-84", "source_file": "1445. Untitled.jpg", "description": "Niña saltando a través de un aspersor de jardín con los brazos abiertos, otros niños de fondo.", "verdict": "exemplar", "why": "Alegría genuina en movimiento, buena luz de verano."},
+    {"id": "HAPPY-85", "source_file": "1109. Untitled.jpg", "description": "Mujer recostada boca abajo en un campo de trébol leyendo un libro, vista desde arriba.", "verdict": "reference_only", "why": "No se ve el rostro/expresión — sirve más como referencia de tono que de felicidad genuina."},
+    {"id": "HAPPY-86", "source_file": "1087. Untitled.jpg", "description": "Cinco niños trepados en un árbol, saludando y sonriendo a la cámara.", "verdict": "exemplar", "why": "Alegría genuina y compartida, buena diversidad de casting (invariante 7)."},
+    {"id": "HAPPY-87", "source_file": "98. Untitled.jpg", "description": "Dos niñas con sombreros de paja compartiendo una sandía, mordiéndola juntas y riendo.", "verdict": "exemplar", "why": "Momento genuino y compartido, buena luz de día despejado."},
+    {"id": "HAPPY-88", "source_file": "793. Untitled.jpg", "description": "Idéntica a HAPPY-11 (mismo contenido, distinto ID de Drive) — niña en columpio con suela 'FLEX ZONE'.", "verdict": "duplicate", "why": "Duplicado exacto confirmado — usar HAPPY-11 como referencia."},
+    {"id": "HAPPY-89", "source_file": "1094. Untitled.jpg", "description": "Dos niños saltando de alegría contra un cielo azul, con texto 'More of this weather please' superpuesto.", "verdict": "exemplar", "why": "Salto y risa genuinos, buena luz."},
+    {"id": "HAPPY-90", "source_file": "1318. Untitled.jpg", "description": "Grupo de jóvenes (equipo deportivo) riendo juntos en un ambiente casual tipo vestidor.", "verdict": "exemplar", "why": "Risa grupal genuina y cálida, buena energía compartida."}
   ]
 }
