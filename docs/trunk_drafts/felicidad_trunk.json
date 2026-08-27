@@ -9,8 +9,10 @@
   "drive_folder": "1 HAPPY",
   "drive_folder_id": "1wMUL4X_zMX_a9hDQmDH2KEj2bFThhnh0",
   "total_images_in_folder": 87,
-  "batch": "9 completada (90 de 100 imágenes procesadas — la carpeta tiene 100, no 87 como se pensó al inicio)",
+  "batch": "COMPLETA — 100 de 100 imágenes procesadas",
   "total_images_in_folder_corrected": 100,
+  "final_tally": {"exemplar": 80, "reference_only": 13, "duplicate": 7},
+  "final_summary_for_laura": "Carpeta completa: 80 ejemplares fuertes de felicidad genuina, 13 de referencia solamente (expresión neutra/calmada, no descalificadas por texto/logo), 7 duplicados exactos confirmados dentro de la misma carpeta. Cobertura de felicidad es excelente en volumen y calidad una vez corregido el criterio de evaluación — el problema real de esta carpeta no es la felicidad en sí, es la limpieza (duplicados) que vale la pena resolver antes de usarla como fuente definitiva.",
   "references": [
     {"id": "HAPPY-01", "source_file": "69. Untitled.jpg", "description": "Mujer con suéter amarillo riendo junto a un letrero de 'TAKSI' en una plaza tipo Estambul.", "verdict": "exemplar", "why": "Risa grande y genuina, buena luz. El letrero de fondo es ruido de calle, no importa.", "source_note": "letrero 'TAKSI' visible de fondo, irrelevante"},
     {"id": "HAPPY-02", "source_file": "86. ♡︎.jpg", "description": "Mujer mordiendo un helado con chispas de colores frente al menú de una heladería.", "verdict": "exemplar", "why": "Mordida genuina, sonrisa real, buena luz de día.", "source_note": "menú de heladería de fondo, irrelevante"},
@@ -101,6 +103,16 @@
     {"id": "HAPPY-87", "source_file": "98. Untitled.jpg", "description": "Dos niñas con sombreros de paja compartiendo una sandía, mordiéndola juntas y riendo.", "verdict": "exemplar", "why": "Momento genuino y compartido, buena luz de día despejado."},
     {"id": "HAPPY-88", "source_file": "793. Untitled.jpg", "description": "Idéntica a HAPPY-11 (mismo contenido, distinto ID de Drive) — niña en columpio con suela 'FLEX ZONE'.", "verdict": "duplicate", "why": "Duplicado exacto confirmado — usar HAPPY-11 como referencia."},
     {"id": "HAPPY-89", "source_file": "1094. Untitled.jpg", "description": "Dos niños saltando de alegría contra un cielo azul, con texto 'More of this weather please' superpuesto.", "verdict": "exemplar", "why": "Salto y risa genuinos, buena luz."},
-    {"id": "HAPPY-90", "source_file": "1318. Untitled.jpg", "description": "Grupo de jóvenes (equipo deportivo) riendo juntos en un ambiente casual tipo vestidor.", "verdict": "exemplar", "why": "Risa grupal genuina y cálida, buena energía compartida."}
+    {"id": "HAPPY-90", "source_file": "1318. Untitled.jpg", "description": "Grupo de jóvenes (equipo deportivo) riendo juntos en un ambiente casual tipo vestidor.", "verdict": "exemplar", "why": "Risa grupal genuina y cálida, buena energía compartida."},
+    {"id": "HAPPY-91", "source_file": "1435. Untitled.jpg", "description": "Niña abrazando un montón de peluches, sonriendo ampliamente.", "verdict": "exemplar", "why": "Sonrisa genuina y grande."},
+    {"id": "HAPPY-92", "source_file": "1519. Season_MVP_The_Ditsy_Floral_Print_Tory_Daily.png", "description": "Dos mujeres saltando la cuerda juntas en un jardín, riendo, vestidos florales.", "verdict": "exemplar", "why": "Risa compartida genuina, buen movimiento y luz de jardín."},
+    {"id": "HAPPY-93", "source_file": "77. 2025_KIDS_CNY_COLLECTION.png", "description": "Niña haciendo el pino/cabeza abajo sobre una alfombra roja, riendo.", "verdict": "exemplar", "why": "Risa genuina y grande.", "source_note": "texto de marca 'BEYOND THE VINES' al pie de la imagen, irrelevante"},
+    {"id": "HAPPY-94", "source_file": "1408. Cosy_Mini_Boden_SS26_January.jpg", "description": "Niño saltando sobre un cojín gigante a rayas rosa/amarillo, brazos abiertos sonriendo.", "verdict": "exemplar", "why": "Alegría genuina y grande en movimiento."},
+    {"id": "HAPPY-95", "source_file": "76. Cosy_Mini_Boden_SS26_January.jpg", "description": "Idéntica a HAPPY-94 (mismo contenido, distinto ID de Drive).", "verdict": "duplicate", "why": "Duplicado exacto confirmado (mismo tamaño de archivo) — usar HAPPY-94 como referencia."},
+    {"id": "HAPPY-96", "source_file": "75. Untitled.png", "description": "Niña saltando en el aire contra un cielo azul, boca abierta riendo, chaqueta blanca ondeando.", "verdict": "exemplar", "why": "Alegría genuina y grande en pleno salto."},
+    {"id": "HAPPY-97", "source_file": "1214. McDonald's_highlights_its_small_prices_in_a_joyful.png", "description": "Primer plano de la mitad del rostro de una niña pecosa sonriendo ampliamente.", "verdict": "exemplar", "why": "Sonrisa genuina y cálida, muy buena luz suave en la piel.", "source_note": "precio y logo de McDonald's superpuestos, irrelevante — el nombre de archivo lo confirma como campaña real"},
+    {"id": "HAPPY-98", "source_file": "1520. Gotta_Go!｜LOOK.jpg", "description": "Dos mujeres corriendo con un perro peludo blanco con correa, riendo a carcajadas.", "verdict": "exemplar", "why": "Risa genuina y compartida, buena luz natural de bosque."},
+    {"id": "HAPPY-99", "source_file": "1100. Blue_Sky_Mini_Boden_SS26_January.jpg", "description": "Dos niños escalando una colina de pasto bajo un cielo azul despejado.", "verdict": "reference_only", "why": "Expresiones concentradas/calmadas, no felicidad marcada — buena referencia de aventura pero no de emoción fuerte."},
+    {"id": "HAPPY-100", "source_file": "122. Sharing_is_caring_with_Vegitalian_Delivery_Utrecht.jpg", "description": "Pareja dándose de comer pizza en un sillón de cuero, riendo, apartamento acogedor lleno de pósters.", "verdict": "exemplar", "why": "Momento genuino, cálido y juguetón entre pareja."}
   ]
 }
