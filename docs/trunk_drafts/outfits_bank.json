@@ -1,0 +1,22 @@
+{
+  "_note": "Borrador de trabajo, NO validado contra schema.json. Ver docs/trunk_reference_taxonomy.md. Carpeta '1 OUTFITS', 16 archivos totales.",
+  "source_type": "third_party_inspiration",
+  "source_type_note": "NINGUNA de estas imágenes es producto Happy Flops. Es inspiración de estilismo/paleta de otras personas, nunca referencia de producto propio.",
+  "evaluation_criteria": "Cada referencia se evalúa por qué tan buena es como ejemplo de la variable libre 'styling' — combinación de color, variedad, que no compita con el producto — no por texto/logo visible.",
+  "bank": "free_variable",
+  "variable": "styling",
+  "drive_folder": "1 OUTFITS",
+  "drive_folder_id": "1Nx6uUc46VNN6NWnm-lf0DFtvVkgFd6IU",
+  "total_files_in_folder": 16,
+  "batch": "1 de 2 (8 de 16 procesadas)",
+  "references": [
+    {"id": "OUTFITS-01", "source_file": "1084. Untitled.jpg", "description": "Mujer con blusa amarilla a rayas, pantalón beige, zapatillas rojas de red, tomando jugo verde sentada.", "verdict": "exemplar", "why": "Buena combinación de color rica pero creíble, estilismo simple sin competir con el calzado."},
+    {"id": "OUTFITS-02", "source_file": "1068. Untitled.jpg", "description": "Mujer agachada con vestido de crochet blanco con aplicaciones de colores, Crocs rosados.", "verdict": "exemplar", "why": "Buena paleta y textura, expresión genuina."},
+    {"id": "OUTFITS-03", "source_file": "1066. Untitled.jpg", "description": "Mujer con camisa blanca oversized, jeans, Crocs y bolso rosados.", "verdict": "exemplar", "why": "Estilismo simple neutro con un solo acento de color — exactamente el principio del invariante 3 aplicado a ropa."},
+    {"id": "OUTFITS-04", "source_file": "1075. Untitled.jpg", "description": "Mujer sentada en escalón con pantalón a rayas azules, top blanco de encaje, tenis Adidas Gazelle azules.", "verdict": "exemplar", "why": "Sonrisa genuina y relajada, buena paleta azul/crema."},
+    {"id": "OUTFITS-05", "source_file": "1081. Untitled.jpg", "description": "Mujer con suéter de rayas y fresas, pantalón blanco con corazones rojos, tenis rojos, bolso rojo de cabina telefónica.", "verdict": "exemplar", "why": "Sonrisa genuina y grande, paleta roja/blanca/verde alegre y coherente."},
+    {"id": "OUTFITS-06", "source_file": "1085. Untitled.jpg", "description": "Mujer caminando con flores azules, blazer amarillo, vestido blanco, zapatos mary-jane azules.", "verdict": "exemplar", "why": "Paleta suave y elegante, buen ejemplo de estilismo sin competir con el calzado."},
+    {"id": "OUTFITS-07", "source_file": "1080. Untitled.jpg", "description": "Mujer acostada tomándose selfie con la pierna levantada mostrando sandalias plataforma multicolor, conjunto a rayas amarillas y blanco/negro.", "verdict": "exemplar", "why": "Expresión juguetona genuina, mezcla de color audaz pero coherente."},
+    {"id": "OUTFITS-08", "source_file": "1076. Untitled.jpg", "description": "Mujer en aeropuerto frente a un mural 'Aloha', camisa amarilla, pantalón rosa, sandalias plataforma amarillas, maleta rosa.", "verdict": "exemplar", "why": "Buena paleta pastel coherente (amarillo + rosa), aunque es contenido de viaje/influencer.", "source_note": "texto del mural 'Aloha' y etiqueta de ubicación 'Oahu, Hawaii' visibles, irrelevante"}
+  ]
+}
