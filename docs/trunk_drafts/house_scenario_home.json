@@ -1,0 +1,113 @@
+{
+  "_note": "Borrador de trabajo, NO validado contra schema.json. Ver docs/trunk_reference_taxonomy.md. Muestra de 10 imágenes de la carpeta '1 HOUSE' (la carpeta tiene más — la paginación de Drive repitió resultados al intentar traer una segunda página, así que esta es una muestra representativa, no el conteo completo).",
+  "bank": "free_variable",
+  "variable": "scenario",
+  "value": "home",
+  "drive_folder": "1 HOUSE",
+  "drive_folder_id": "1iRxMIo8JiKyhSfMlABfT8SRdEw65qu7L",
+  "sample_size": 10,
+  "coverage_verdict": "buena en tono/luz/felicidad interior, pero 2 de 10 son tearsheets editoriales con texto de revista incrustado (mismo problema que en ARENA, forma distinta)",
+  "references": [
+    {
+      "id": "HOUSE-01",
+      "source_file": "10. Untitled.jpg",
+      "description": "Bebé sentado leyendo un libro sobre un cojín, repisa de madera con juguetes, cuarto infantil cálido y neutro.",
+      "light": "Suave, cálida, direccional — buena.",
+      "feet": "Descalzo, pies naturales visibles.",
+      "verdict": "exemplar",
+      "why": "Momento real, sin texto, buena luz, feliz sin ser posado. Ilustra felicidad + home.",
+      "invariant_flags": []
+    },
+    {
+      "id": "HOUSE-02",
+      "source_file": "8. Untitled.jpg",
+      "description": "Madre e hijo abrazados en un sillón, apartamento blanco luminoso, canasta de juguetes.",
+      "light": "Suave, natural, ventana grande — buena.",
+      "feet": "Adulto descalzo con zapato plano visible (no sandalia).",
+      "verdict": "exemplar",
+      "why": "Momento tierno, casual, sin texto. Buen ejemplo de casting real (invariante 7).",
+      "invariant_flags": []
+    },
+    {
+      "id": "HOUSE-03",
+      "source_file": "19. Untitled.jpg",
+      "description": "Niña boca abajo sobre un sillón puff naranja saturado, descalza, jugando.",
+      "light": "Suave, cálida — buena, aunque el naranja está muy saturado.",
+      "feet": "Descalza, pies naturales.",
+      "verdict": "exemplar",
+      "why": "Energía y alegría genuina, sin pose. Buen ejemplo de invariante 2 (color rico pero creíble) — está en el límite superior de saturación aceptable.",
+      "invariant_flags": []
+    },
+    {
+      "id": "HOUSE-04",
+      "source_file": "6. Untitled.jpg",
+      "description": "Madre midiendo la altura de su hija con un libro contra la pared, pasillo de madera.",
+      "light": "Cálida, dorada, buena calidad de luz.",
+      "feet": "Niña con tenis puestos (logo pequeño de marca visible), no sandalias.",
+      "verdict": "rejected",
+      "why": "Tiene el watermark de 'Harper's BAZAAR' incrustado en la parte inferior de la imagen — es un tearsheet editorial guardado, no una foto candada. Viola invariante 5 (texto/signage nunca).",
+      "invariant_flags": ["5_no_generated_text"]
+    },
+    {
+      "id": "HOUSE-05",
+      "source_file": "20. Untitled.jpg",
+      "description": "Niña haciendo el pino sobre un puf a cuadros en una sala colorida con repisas y arte.",
+      "light": "Buena, natural.",
+      "feet": "Descalza.",
+      "verdict": "rejected",
+      "why": "Tiene texto overlay 'NOBODINOZ TALKS No. 23 — Paula Amenta' — otro tearsheet editorial/de marca de muebles, no foto orgánica. Mismo problema que HOUSE-04.",
+      "invariant_flags": ["5_no_generated_text"]
+    },
+    {
+      "id": "HOUSE-06",
+      "source_file": "196. Untitled.jpg",
+      "description": "Pies de bebé asomando bajo un sofá, con sandalias tipo jelly de plástico transparente y ropa a cuadros rojos.",
+      "light": "Neutra, suave, buena.",
+      "feet": "Con sandalia jelly (no thong/flip-flop), pies pequeños visibles.",
+      "verdict": "reference_only",
+      "why": "Buena textura y composición casual, pero la sandalia no es una silueta comparable a un flip-flop de HF.",
+      "invariant_flags": []
+    },
+    {
+      "id": "HOUSE-07",
+      "source_file": "13. Untitled.jpg",
+      "description": "Madre acostada en cama jugando con su hija, levantando las piernas juntas, luz de mañana.",
+      "light": "Suave, cálida, buena — luz de mañana clásica.",
+      "feet": "Adulto descalzo, pies prominentes en el encuadre.",
+      "verdict": "exemplar",
+      "why": "Momento genuino, sin texto, feliz, casero. Muy buen ejemplo de felicidad + home + pies naturales (invariante 4).",
+      "invariant_flags": []
+    },
+    {
+      "id": "HOUSE-08",
+      "source_file": "14. Untitled.jpg",
+      "description": "Tres niños jugando dentro de un fuerte de cobijas con estrellas, descalzos, riendo.",
+      "light": "Cálida, con parches de luz solar directa — buena.",
+      "feet": "Descalzos.",
+      "verdict": "exemplar",
+      "why": "Alegría genuina multigeneracional (niños de distintas edades), sin texto. Buen ejemplo de casting (invariante 7) y felicidad.",
+      "invariant_flags": []
+    },
+    {
+      "id": "HOUSE-09",
+      "source_file": "2. Untitled.jpg",
+      "description": "Niño de espaldas jugando en una cocina de juguete de madera, cuarto minimalista escandinavo.",
+      "light": "Suave, difusa, buena.",
+      "feet": "No visibles (pantalón largo).",
+      "verdict": "reference_only",
+      "why": "Excelente referencia de estética 'home' escandinava y paleta neutra, pero sin evidencia de pies/producto.",
+      "invariant_flags": []
+    },
+    {
+      "id": "HOUSE-10",
+      "source_file": "18. Untitled.jpg",
+      "description": "Hombre leyendo un libro en un puf a rayas junto a una cortina translúcida, luz de ventana fuerte.",
+      "light": "Muy buena — luz direccional suave a través de cortina, invariante 1 casi de manual.",
+      "feet": "Con tenis de trekking (marca Salomon con logo visible en el calzado), no sandalias.",
+      "verdict": "reference_only",
+      "why": "La luz es un ejemplar casi perfecto del invariante 1, pero el calzado es de otra marca con logo visible en el producto mismo — no usar tal cual, solo como referencia de luz.",
+      "invariant_flags": ["9_no_third_party_ip (calzado, no logo pegado)"]
+    }
+  ],
+  "summary_for_laura": "De las 10: 5 son ejemplares fuertes de felicidad+home+luz (01,02,03,07,08), 3 son referencia de tono sin evidencia de producto (06,09,10), y 2 son tearsheets editoriales con texto de revista/marca incrustado — mismo problema estructural que ARENA, pero aquí es texto de PUBLICACIÓN (Harper's Bazaar, Nobodinoz) en vez de texto físico en la escena. Patrón repetido: varias de las imágenes guardadas no son fotos candidas sino capturas de contenido editorial/publicitario ya publicado, con su propio branding pegado encima. Vale la pena aplicar este mismo filtro (¿tiene texto o logo de publicación/marca ajena pegado encima?) a todas las carpetas restantes, no solo revisarlo caso por caso."
+}
