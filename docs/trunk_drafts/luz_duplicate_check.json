@@ -1,0 +1,11 @@
+{
+  "_note": "LUZ ya está documentado a fondo en Notion (37 referencias con análisis campo por campo) — no se re-analiza aquí. Este archivo solo registra la revisión de duplicados en la carpeta de Drive '1 LIGHTNING', hecha por tamaño de archivo sin necesidad de descargar cada imagen.",
+  "drive_folder": "1 LIGHTNING",
+  "drive_folder_id": "1ESC7mzITteTyqjM4YenOvWMMtDYKZl5e",
+  "total_files_in_folder": 38,
+  "duplicates_found": [
+    "47. Untitled.jpg = 527. Untitled.jpg (230928 bytes, duplicado interno)",
+    "127. Also_her.jpg (155274 bytes) coincide en tamaño con HAPPY-38/48 y MODELS-22 — la misma imagen guardada en al menos 3 carpetas distintas de la organización de Drive"
+  ],
+  "conclusion": "LUZ está en buen estado — solo 1 duplicado interno detectado en 38 archivos, mucho más limpio que HAPPY (100 archivos, 7 duplicados) o MODELS (44 archivos, 7 duplicados incluyendo cruces de carpeta). Consistente con que LUZ fue la primera colección que Laura trabajó con más cuidado."
+}
