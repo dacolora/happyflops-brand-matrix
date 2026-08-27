@@ -8,7 +8,7 @@
   "drive_folder": "1 HAPPY",
   "drive_folder_id": "1wMUL4X_zMX_a9hDQmDH2KEj2bFThhnh0",
   "total_images_in_folder": 87,
-  "batch": "1 de ~9 (10 imágenes por tanda)",
+  "batch": "2 de ~9 completada (20 de 87 imágenes procesadas)",
   "references": [
     {
       "id": "HAPPY-01",
@@ -89,6 +89,86 @@
       "verdict": "reference_only",
       "why": "Buena luz y color, pero es una producción de moda editorial claramente dirigida, no candid.",
       "invariant_flags": []
+    },
+    {
+      "id": "HAPPY-11",
+      "source_file": "1420. Untitled.jpg",
+      "description": "Niña riendo en un columpio, otra niña de fondo, suela del tenis hacia la cámara con texto de marca ('FLEX ZONE') impreso y legible.",
+      "verdict": "rejected",
+      "why": "Texto de marca legible en la suela del calzado, en primer plano — viola invariante 5. También se siente muy tipo stock photo genérico.",
+      "invariant_flags": ["5_no_generated_text"]
+    },
+    {
+      "id": "HAPPY-12",
+      "source_file": "1091. Dino_Diaries_#2.jpg",
+      "description": "Dos niñas en conjuntos deportivos a juego (rosa y amarillo) con parche de marca visible en el pecho, señalando hacia el horizonte en dunas de arena.",
+      "verdict": "rejected",
+      "why": "Parche/etiqueta de marca legible en la ropa — invariante 5. Además es campaña de moda infantil claramente coordinada (outfits a juego), no candid.",
+      "invariant_flags": ["5_no_generated_text"]
+    },
+    {
+      "id": "HAPPY-13",
+      "source_file": "1071. Untitled.jpg",
+      "description": "Mujer posando en un balcón ornamentado con playera de texto grande ('SØNDERHAUS FARMS — FOR SLOW AND TENDER LIVING').",
+      "verdict": "rejected",
+      "why": "Texto grande y legible en la playera — invariante 5. Esmalte de uñas y anillos visibles en las manos — mismo problema que HAPPY-02.",
+      "invariant_flags": ["5_no_generated_text", "11_hands_nail_polish"]
+    },
+    {
+      "id": "HAPPY-14",
+      "source_file": "1086. Untitled.jpg",
+      "description": "Cuatro niños saltando con los brazos en alto sobre césped, estilo foto de stock genérica.",
+      "verdict": "reference_only",
+      "why": "Sin texto, pero es un salto sincronizado tipo catálogo/stock muy artificial — justo lo que el invariante 7 busca evitar ('real, unposed', no 'catalog pose'). Útil solo como advertencia de qué NO imitar en composición.",
+      "invariant_flags": []
+    },
+    {
+      "id": "HAPPY-15",
+      "source_file": "632. —_ዙow_feℯls_to_be_ɐlℴnℯ_Ẅẅ_❦.jpg",
+      "description": "Niña saltando en una cama, con estrellas de colores dibujadas/agregadas digitalmente sobre la foto.",
+      "verdict": "rejected",
+      "why": "No es una fotografía pura — tiene un efecto gráfico ilustrado superpuesto (estrellas). El invariante 2 exige que el resultado siga siendo creíble como fotografía; esto ya cruzó a ilustración/edición.",
+      "invariant_flags": ["2_colour_richness (deja_de_ser_fotografia)"]
+    },
+    {
+      "id": "HAPPY-16",
+      "source_file": "1457. Future_kid_stock_image._Image_of_children,_kiddy,_.jpg",
+      "description": "Niña corriendo descalza en la orilla de la playa, con reflejo en la arena mojada.",
+      "verdict": "rejected",
+      "why": "Tiene marca de agua de banco de imágenes (tipo Dreamstime) diagonal sobre toda la foto — viola invariante 5 directamente y además confirma que es contenido con licencia restringida, no libre para inspiración de composición final.",
+      "invariant_flags": ["5_no_generated_text"]
+    },
+    {
+      "id": "HAPPY-17",
+      "source_file": "1433. Untitled.jpg",
+      "description": "Niña en overol mordiendo un cono de helado gigante de varios sabores, frente a un auto.",
+      "verdict": "exemplar",
+      "why": "Momento candid genuino, sin texto legible, buena luz de día. Buen ejemplo de felicidad espontánea.",
+      "invariant_flags": []
+    },
+    {
+      "id": "HAPPY-18",
+      "source_file": "145. Untitled.jpg",
+      "description": "Mujer acostada en un campo de flores silvestres mirando el cielo al atardecer, descalza.",
+      "verdict": "exemplar",
+      "why": "Felicidad tranquila y genuina ('quiet warmth'), sin texto, buena luz de atardecer, pies naturales visibles.",
+      "invariant_flags": []
+    },
+    {
+      "id": "HAPPY-19",
+      "source_file": "1379. Untitled.jpg",
+      "description": "Niño riendo con los brazos arriba en un tobogán amarillo, con sandalias tipo slide de tiburón.",
+      "verdict": "exemplar",
+      "why": "Alegría genuina y espontánea, sin texto. El calzado no es HF pero la escena en sí es un buen ejemplo de felicidad + producto en los pies en movimiento.",
+      "invariant_flags": []
+    },
+    {
+      "id": "HAPPY-20",
+      "source_file": "74. Coca-Cola_x_Real_Magic.jpg",
+      "description": "Dos personas jugando con un carrito de supermercado en una azotea, uno sosteniendo una botella de Coca-Cola con el logo visible.",
+      "verdict": "rejected",
+      "why": "Es literalmente una campaña publicitaria de Coca-Cola (nombre de archivo lo confirma) — logo de marca de terceros legible en el producto. Viola invariante 5 e invariante 9, y es una producción de anuncio, no candid.",
+      "invariant_flags": ["5_no_generated_text", "9_no_third_party_ip"]
     }
   ]
 }
