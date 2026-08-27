@@ -8,7 +8,7 @@
   "drive_folder": "1 HAPPY",
   "drive_folder_id": "1wMUL4X_zMX_a9hDQmDH2KEj2bFThhnh0",
   "total_images_in_folder": 87,
-  "batch": "2 de ~9 completada (20 de 87 imágenes procesadas)",
+  "batch": "3 de ~9 completada (30 de 87 imágenes procesadas)",
   "references": [
     {
       "id": "HAPPY-01",
@@ -169,6 +169,86 @@
       "verdict": "rejected",
       "why": "Es literalmente una campaña publicitaria de Coca-Cola (nombre de archivo lo confirma) — logo de marca de terceros legible en el producto. Viola invariante 5 e invariante 9, y es una producción de anuncio, no candid.",
       "invariant_flags": ["5_no_generated_text", "9_no_third_party_ip"]
+    },
+    {
+      "id": "HAPPY-21",
+      "source_file": "1518. FATHER’S_DAY_RESERVED.jpg",
+      "description": "Niña recostada en el pasto riendo, con la suela de su tenis prominente en primer plano, flores silvestres alrededor.",
+      "verdict": "exemplar",
+      "why": "Sin texto legible, momento genuinamente feliz y espontáneo, buena luz natural. El nombre de archivo indica que es para una campaña (Father's Day) pero la imagen en sí no viola ningún invariante.",
+      "invariant_flags": []
+    },
+    {
+      "id": "HAPPY-22",
+      "source_file": "89. Untitled.jpg",
+      "description": "Mujer recostada en el pasto con un tenis vintage visible, ícono de 'silenciado' de video en la esquina inferior.",
+      "verdict": "rejected",
+      "why": "Tiene un ícono de interfaz (mute/sin audio) superpuesto — es una captura de video, no una fotografía limpia. Cuenta como elemento gráfico ajeno a la escena, mismo espíritu que el invariante 5.",
+      "invariant_flags": ["5_no_generated_text (icono de UI)"]
+    },
+    {
+      "id": "HAPPY-23",
+      "source_file": "470. IG_rebeccamanzat.jpg",
+      "description": "Mujer riendo tapándose la cara, acostada en el pasto con botas de lluvia rojas con corazones.",
+      "verdict": "exemplar",
+      "why": "Sin texto en la imagen (el nombre de archivo referencia Instagram pero no hay overlay), risa genuina, buena luz. Outfit muy de moda pero no rompe ningún invariante.",
+      "invariant_flags": []
+    },
+    {
+      "id": "HAPPY-24",
+      "source_file": "400. Untitled.jpg",
+      "description": "Niña con gorra roja y chaqueta azul de fresas haciendo señal de paz contra un fondo ondulado naranja/rojo muy saturado.",
+      "verdict": "reference_only",
+      "why": "Sin texto, pero el fondo es un mural/backdrop de marca muy intenso — al límite de invariante 2 (rico pero creíble). Es claramente una producción de moda, no candid.",
+      "invariant_flags": []
+    },
+    {
+      "id": "HAPPY-25",
+      "source_file": "1105. Untitled.jpg",
+      "description": "Papá con su hija en los hombros, ambos con postre/crema en la cara, cocina blanca con tazas con letras decorativas (C, J, G).",
+      "verdict": "exemplar",
+      "why": "Momento genuinamente feliz y desordenado ('feeling over perfection'), buen ejemplo multigeneracional. Las tazas con letras sueltas son decorativas, no forman palabras — no se cuenta como violación real de invariante 5, pero vale la pena vigilar el patrón.",
+      "invariant_flags": []
+    },
+    {
+      "id": "HAPPY-26",
+      "source_file": "1429. Untitled.jpg",
+      "description": "Madre cargando a un niño mientras otro corre a su lado, pradera de montaña.",
+      "verdict": "exemplar",
+      "why": "Momento familiar genuino, sin texto, buena luz natural de montaña. Buen ejemplo de invariante 7.",
+      "invariant_flags": []
+    },
+    {
+      "id": "HAPPY-27",
+      "source_file": "112. Untitled.jpg",
+      "description": "Mujer con turbante de toalla comiendo sandía en una cocina rústica llena de fruta fresca, descalza.",
+      "verdict": "reference_only",
+      "why": "Sin texto, buena luz, pero es claramente una producción editorial de estilo de vida (food styling), no un momento candid.",
+      "invariant_flags": []
+    },
+    {
+      "id": "HAPPY-28",
+      "source_file": "1547. Untitled.jpg",
+      "description": "Madre soplando una burbuja de jabón para su hija en la calle, la niña con botas de lluvia verdes.",
+      "verdict": "exemplar",
+      "why": "Momento tierno y genuino, sin texto, buena luz de calle. Buen ejemplo de felicidad cotidiana.",
+      "invariant_flags": []
+    },
+    {
+      "id": "HAPPY-29",
+      "source_file": "91. Non-Toxic_Products_What_Clean_Really_Means_to_Me.jpg",
+      "description": "Madre e hija jugando boca abajo/de cabeza, riendo, luz cálida de interior. Esmalte de uñas rosado visible en los pies de la madre.",
+      "verdict": "reference_only",
+      "why": "Buen momento genuino, pero el esmalte de uñas en los pies choca con el invariante 4 ('bare neutral nails'). Sirve como referencia de luz/felicidad, no de pies.",
+      "invariant_flags": ["4_feet_nail_polish"]
+    },
+    {
+      "id": "HAPPY-30",
+      "source_file": "1543. Untitled.jpg",
+      "description": "Cinco mujeres corriendo tomadas de la mano por un campo, todas con el mismo estilo de botas cafés y sudaderas a juego de distintos colores.",
+      "verdict": "reference_only",
+      "why": "Sin texto, buena energía, pero es evidentemente una campaña de moda coordinada (mismo calzado, mismo corte de sudadera) — no candid, aunque es un buen ejemplo de qué tan producido puede verse todavía creíble.",
+      "invariant_flags": []
     }
   ]
 }
