@@ -8,7 +8,7 @@
   "drive_folder": "1 HAPPY",
   "drive_folder_id": "1wMUL4X_zMX_a9hDQmDH2KEj2bFThhnh0",
   "total_images_in_folder": 87,
-  "batch": "4 de ~9 completada (40 de 87 imágenes procesadas)",
+  "batch": "5 de ~9 completada (50 de 87 imágenes procesadas)",
   "references": [
     {
       "id": "HAPPY-01",
@@ -329,6 +329,86 @@
       "verdict": "rejected",
       "why": "El nombre de archivo confirma que es una campaña co-branded (Hering Kids + D.P.A.). Los stickers son elementos gráficos diseñados aplicados sobre la piel — deja de ser fotografía natural, cruza a concepto de campaña ilustrada.",
       "invariant_flags": ["2_colour_richness (deja_de_ser_fotografia)"]
+    },
+    {
+      "id": "HAPPY-41",
+      "source_file": "1549. Non-Toxic_Products_What_Clean_Really_Means_to_Me.jpg",
+      "description": "Idéntica a HAPPY-29 (mismo nombre de archivo, mismo contenido) — madre e hija jugando de cabeza.",
+      "verdict": "duplicate",
+      "why": "Confirmado: es un duplicado exacto de HAPPY-29 guardado con un ID de Drive distinto. Vale la pena que Laura sepa que su carpeta tiene copias repetidas, no solo esta.",
+      "invariant_flags": ["4_feet_nail_polish (heredado de HAPPY-29)"]
+    },
+    {
+      "id": "HAPPY-42",
+      "source_file": "1523. Untitled.jpg",
+      "description": "Mujer sentada en una banca de parque leyendo un periódico y tomando una caja de jugo, tenis Converse blancos.",
+      "verdict": "rejected",
+      "why": "El titular del periódico es legible, la sudadera tiene texto parcial visible, y el logo de estrella de Converse es legible en el tenis — varias violaciones del invariante 5 a la vez.",
+      "invariant_flags": ["5_no_generated_text"]
+    },
+    {
+      "id": "HAPPY-43",
+      "source_file": "1101. 000.jpg",
+      "description": "Retrato de una niña con gorra, rodeada de elementos gráficos 3D flotantes (arcoíris, letra 'A' con cuernos, flor, balón), texto de marca en la gorra.",
+      "verdict": "rejected",
+      "why": "Es un composite gráfico/CGI de campaña publicitaria, no fotografía — incluye una letra suelta como elemento de diseño y texto de marca en la gorra. Rechazo fuerte: ni siquiera es fotografía real.",
+      "invariant_flags": ["2_colour_richness (no_es_fotografia)", "5_no_generated_text"]
+    },
+    {
+      "id": "HAPPY-44",
+      "source_file": "85. Untitled.jpg",
+      "description": "Niña dormida sobre una manta de picnic junto a una muñeca, luz moteada de tarde entre árboles, chaqueta de mezclilla.",
+      "verdict": "exemplar",
+      "why": "Momento genuino y tierno, pies descalzos naturales, luz preciosa. Tiene una etiqueta pequeña roja de mezclilla (tipo Levi's) pero es minúscula e ilegible como texto — no se cuenta como violación real.",
+      "invariant_flags": []
+    },
+    {
+      "id": "HAPPY-45",
+      "source_file": "1092. Top_Tips_for_a_Roarsome_Night’s_Sleep.png",
+      "description": "Dos niños sentados sobre bolsas de dormir enrolladas con el logo 'Bundle Beds' impreso, en un bosque de camping.",
+      "verdict": "rejected",
+      "why": "El nombre de archivo confirma que es contenido de blog/campaña de una marca de ropa de cama para acampar, con su logo legible en el producto — invariante 5.",
+      "invariant_flags": ["5_no_generated_text"]
+    },
+    {
+      "id": "HAPPY-46",
+      "source_file": "1534. Untitled.jpg",
+      "description": "Dos amigas tomadas de la mano posando frente a un mural de zuecos holandeses en forma de corazón, con zuecos gigantes de utilería.",
+      "verdict": "exemplar",
+      "why": "Momento genuino de amistad, sin texto legible (el mural es arte folclórico, no palabras), buena luz de día.",
+      "invariant_flags": []
+    },
+    {
+      "id": "HAPPY-47",
+      "source_file": "111. Untitled.jpg",
+      "description": "Persona de espaldas en una silla de playa a rayas, leyendo un libro frente al mar, cabeza envuelta en toalla.",
+      "verdict": "exemplar",
+      "why": "Muy buena luz direccional (invariante 1 casi de manual), sin texto legible relevante (el libro se ve como textura, no se lee), momento de quietud genuina.",
+      "invariant_flags": []
+    },
+    {
+      "id": "HAPPY-48",
+      "source_file": "1545. Untitled.jpg",
+      "description": "Idéntica a HAPPY-36 (mismo archivo '90. Untitled.jpg' en otro ID) — papá con su hija en los hombros.",
+      "verdict": "duplicate",
+      "why": "Otro duplicado exacto confirmado dentro de la misma carpeta.",
+      "invariant_flags": []
+    },
+    {
+      "id": "HAPPY-49",
+      "source_file": "51. Blossom_🌼🌼.jpg",
+      "description": "Mujer corriendo por un campo de flores amarillas con suéter de rayas de colores, efecto de movimiento intencional.",
+      "verdict": "exemplar",
+      "why": "Felicidad genuina en movimiento, sin texto, buen ejemplo cruzado con el trunk de calidad 'imperfecciones' (motion blur real).",
+      "invariant_flags": []
+    },
+    {
+      "id": "HAPPY-50",
+      "source_file": "1095. Dino_Diaries_#2.jpg",
+      "description": "Cuatro niños de distintas etnias corriendo en una duna de playa, cada uno con un jumpsuit de color distinto (amarillo, lila, naranja, rosa) de la misma marca, con parche de logo visible en el pecho.",
+      "verdict": "rejected",
+      "why": "Es la misma serie de campaña que HAPPY-12 ('Dino Diaries') — parche de marca legible en la ropa de los 4 niños. Buena diversidad de casting (invariante 7) pero rechazada por invariante 5.",
+      "invariant_flags": ["5_no_generated_text"]
     }
   ]
 }
