@@ -8,7 +8,7 @@
   "drive_folder": "1 OUTFITS",
   "drive_folder_id": "1Nx6uUc46VNN6NWnm-lf0DFtvVkgFd6IU",
   "total_files_in_folder": 16,
-  "batch": "1 de 2 (8 de 16 procesadas)",
+  "batch": "COMPLETA — 16 de 16 procesadas",
   "references": [
     {"id": "OUTFITS-01", "source_file": "1084. Untitled.jpg", "description": "Mujer con blusa amarilla a rayas, pantalón beige, zapatillas rojas de red, tomando jugo verde sentada.", "verdict": "exemplar", "why": "Buena combinación de color rica pero creíble, estilismo simple sin competir con el calzado."},
     {"id": "OUTFITS-02", "source_file": "1068. Untitled.jpg", "description": "Mujer agachada con vestido de crochet blanco con aplicaciones de colores, Crocs rosados.", "verdict": "exemplar", "why": "Buena paleta y textura, expresión genuina."},
@@ -17,6 +17,15 @@
     {"id": "OUTFITS-05", "source_file": "1081. Untitled.jpg", "description": "Mujer con suéter de rayas y fresas, pantalón blanco con corazones rojos, tenis rojos, bolso rojo de cabina telefónica.", "verdict": "exemplar", "why": "Sonrisa genuina y grande, paleta roja/blanca/verde alegre y coherente."},
     {"id": "OUTFITS-06", "source_file": "1085. Untitled.jpg", "description": "Mujer caminando con flores azules, blazer amarillo, vestido blanco, zapatos mary-jane azules.", "verdict": "exemplar", "why": "Paleta suave y elegante, buen ejemplo de estilismo sin competir con el calzado."},
     {"id": "OUTFITS-07", "source_file": "1080. Untitled.jpg", "description": "Mujer acostada tomándose selfie con la pierna levantada mostrando sandalias plataforma multicolor, conjunto a rayas amarillas y blanco/negro.", "verdict": "exemplar", "why": "Expresión juguetona genuina, mezcla de color audaz pero coherente."},
-    {"id": "OUTFITS-08", "source_file": "1076. Untitled.jpg", "description": "Mujer en aeropuerto frente a un mural 'Aloha', camisa amarilla, pantalón rosa, sandalias plataforma amarillas, maleta rosa.", "verdict": "exemplar", "why": "Buena paleta pastel coherente (amarillo + rosa), aunque es contenido de viaje/influencer.", "source_note": "texto del mural 'Aloha' y etiqueta de ubicación 'Oahu, Hawaii' visibles, irrelevante"}
-  ]
+    {"id": "OUTFITS-08", "source_file": "1076. Untitled.jpg", "description": "Mujer en aeropuerto frente a un mural 'Aloha', camisa amarilla, pantalón rosa, sandalias plataforma amarillas, maleta rosa.", "verdict": "exemplar", "why": "Buena paleta pastel coherente (amarillo + rosa), aunque es contenido de viaje/influencer.", "source_note": "texto del mural 'Aloha' y etiqueta de ubicación 'Oahu, Hawaii' visibles, irrelevante"},
+    {"id": "OUTFITS-09", "source_file": "1067. Untitled.jpg", "description": "Mujer sentada en manta de playa con cárdigan crema floral, falda rosa con volantes, Crocs plataforma morados con charms.", "verdict": "exemplar", "why": "Buena paleta pastel coherente, textura interesante."},
+    {"id": "OUTFITS-10", "source_file": "1069. crocs_summer_outfit_aesthetic.jpg", "description": "Mujer con camisa a rayas azul abierta sobre top rosa, shorts de mezclilla, Crocs blancos con charms.", "verdict": "exemplar", "why": "Estilismo casual de verano bien balanceado."},
+    {"id": "OUTFITS-11", "source_file": "1061. Untitled.jpg", "description": "Mujer con top y pantalón a rayas en direcciones opuestas, bolso rojo de pompones, collar azul, lentes de sol.", "verdict": "exemplar", "why": "Mezcla audaz de patrones pero con paleta acotada (blanco/negro + un acento rojo/azul)."},
+    {"id": "OUTFITS-12", "source_file": "1077. Untitled.jpg", "description": "Mujer aplicándose brillo labial, camisa amarilla, pantalón rosa a rayas, sandalias slide amarillas, maleta rosa.", "verdict": "exemplar", "why": "Paleta pastel coherente, buena luz natural de aeropuerto."},
+    {"id": "OUTFITS-13", "source_file": "1083. Untitled.jpg", "description": "Mujer tomando café con playera gráfica blanca, falda de encaje, sandalias tipo flip-flop negras, bolso de paja.", "verdict": "exemplar", "why": "Estilismo neutro casual, y muestra una sandalia de correa tipo flip-flop real en uso — referencia directa de silueta."},
+    {"id": "OUTFITS-14", "source_file": "1082. Green,_pink_and_polka_dot_spring_aesthetic_outfit.jpg", "description": "Mujer con chaqueta verde, bufanda y gorra rosa, falda de lunares, tenis rosa Adidas Samba.", "verdict": "exemplar", "why": "Combinación de color audaz y coherente (verde + rosa)."},
+    {"id": "OUTFITS-15", "source_file": "1078. Untitled.jpg", "description": "Mujer sentada en un ventanal con suéter rosa, pantalón de cuadros verdes, tenis rosa Adidas Samba.", "verdict": "exemplar", "why": "Muy buena combinación rosa + verde, luz natural de ventana."},
+    {"id": "OUTFITS-16", "source_file": "1079. Untitled.png", "description": "Selfie de espejo: playera gráfica azul claro, shorts a rayas verdes, gorra verde, tenis verdes Adidas Samba.", "verdict": "exemplar", "why": "Buena combinación azul + verde.", "source_note": "texto 'TULUM MEXICO' en la playera, irrelevante"}
+  ],
+  "final_tally_note": "16 de 16 completas. Carpeta consistentemente fuerte como banco de referencia de 'styling' — buenas combinaciones de color coherentes (invariante 2/3 aplicado a ropa), sin duplicados detectados. Ningún rechazo."
 }
