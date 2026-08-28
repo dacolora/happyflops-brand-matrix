@@ -1,0 +1,24 @@
+{
+  "_note": "Borrador de trabajo, NO validado contra schema.json. Ver docs/trunk_reference_taxonomy.md. Carpeta '1 WINTER', 27 archivos totales.",
+  "source_type": "third_party_inspiration",
+  "source_type_note": "NINGUNA de estas imágenes es producto Happy Flops. Es inspiración de otras personas para tono/luz de temporada, nunca referencia de producto propio.",
+  "evaluation_criteria": "Cada referencia se evalúa por qué tan bien ilustra el escenario de invierno (winter_outdoor o winter_indoor) — no por texto/logo visible.",
+  "bank": "free_variable",
+  "variable": "season",
+  "drive_folder": "1 WINTER",
+  "drive_folder_id": "1YcfMPKBCMZCDH2sEEPGEInqOPWFMLFtk",
+  "total_files_in_folder": 27,
+  "batch": "1 de 3 (9 de 27 procesadas)",
+  "important_finding": "WINTER-02 y WINTER-03 son evidencia real de winter_indoor — LUZ (Notion) documenta que winter_indoor tiene CERO evidencia de luz en 37 referencias. Estas no reemplazan esa necesidad (son de otro trunk, no de luz), pero si Laura tiene más fotos de interior de invierno en esta carpeta, vale la pena que Daniel las cruce contra el hueco de LUZ.",
+  "references": [
+    {"id": "WINTER-01", "source_file": "1135. Untitled.jpg", "description": "Mujer haciendo 'ángel de nieve' riendo, abrigo de pelo color crema, nieve fresca.", "verdict": "exemplar", "season_match": "winter_outdoor", "why": "Alegría genuina, buena evidencia de nieve real."},
+    {"id": "WINTER-02", "source_file": "1146. Untitled.jpg", "description": "Dos mujeres en sillas de porche con chocolate caliente, suéteres, botas de piel, tapetes de borrego.", "verdict": "exemplar", "season_match": "winter_indoor", "why": "Excelente evidencia de HappyCozy / interior de invierno — justo el hueco que LUZ tiene vacío."},
+    {"id": "WINTER-03", "source_file": "1142. Untitled.jpg", "description": "Dos mujeres en pelea de almohadas en piyama sobre un sillón, luces cálidas de cabaña.", "verdict": "exemplar", "season_match": "winter_indoor", "why": "Momento genuino y juguetón, buena evidencia de interior acogedor."},
+    {"id": "WINTER-04", "source_file": "1145. Untitled.jpg", "description": "Dos mujeres sentadas en sillas de madera junto a un lago con vino, paisaje verde sin nieve.", "verdict": "reference_only", "season_match": "ninguno — parece verano/otoño temprano", "why": "No hay evidencia visual de invierno (sin nieve, follaje verde) — probablemente mal archivada."},
+    {"id": "WINTER-05", "source_file": "1155. Winter_living.jpg", "description": "Tres personas en camastros sobre la nieve, tomando sol con lentes oscuros, montañas nevadas.", "verdict": "exemplar", "season_match": "winter_outdoor", "why": "Alegría genuina, buena luz de nieve brillante."},
+    {"id": "WINTER-06", "source_file": "1156. Ski_Collection.jpg", "description": "Niña en un teleférico con las botas hacia la cámara, suéter de patrón nórdico, montañas nevadas.", "verdict": "exemplar", "season_match": "winter_outdoor", "why": "Expresión juguetona genuina, buena evidencia de calzado de nieve."},
+    {"id": "WINTER-07", "source_file": "1136. Untitled.jpg", "description": "Mujer trotando con chamarra inflable, paisaje de otoño con árboles amarillos, sin nieve.", "verdict": "reference_only", "season_match": "otoño, no invierno", "why": "Mal archivada — es evidencia de otoño, no de invierno."},
+    {"id": "WINTER-08", "source_file": "1139. cozy_fall_outfits.jpg", "description": "Mujer junto a una fogata con copa de vino, suéter y jeans, bosque de otoño.", "verdict": "reference_only", "season_match": "otoño, no invierno", "why": "El nombre de archivo mismo confirma que es 'fall' (otoño), no invierno — mal archivada."},
+    {"id": "WINTER-09", "source_file": "1148. Untitled.jpg", "description": "Tres amigas abrazadas en una banca junto a un lago con follaje naranja de otoño.", "verdict": "reference_only", "season_match": "otoño, no invierno", "why": "Follaje de otoño claro, sin nieve — mal archivada, aunque es un buen ejemplo de felicidad genuina."}
+  ]
+}
