@@ -1,0 +1,25 @@
+{
+  "_note": "Borrador de trabajo, NO validado contra schema.json. Ver docs/trunk_reference_taxonomy.md. CORRECCIÓN a la taxonomía anterior: se había asumido que '1 POSES' era de poses corporales de modelos y 'Z POSES' era de poses de producto. El contenido real de '1 POSES' es casi 100% poses de PRODUCTO (pies/calzado en ángulos dinámicos), igual que Z POSES. Hay que revisar con Laura si son el mismo trunk o si '1 POSES' tiene un enfoque distinto (más publicitario/comercial) que Z POSES.",
+  "source_type": "third_party_inspiration",
+  "source_type_note": "NINGUNA de estas imágenes es producto Happy Flops. Es inspiración de cómo se ve el calzado en movimiento/ángulos — nunca referencia de producto propio.",
+  "evaluation_criteria": "Cada referencia se evalúa por qué tan bien ilustra una pose/ángulo dinámico del producto en el pie (invariante 4 — pies limpios, naturales, sin ser el foco) — no por texto/logo visible.",
+  "bank": "trunk",
+  "trunk": "poses (product_poses)",
+  "applies_to": ["lifestyle", "photoshoot", "render_3d"],
+  "drive_folder": "1 POSES",
+  "drive_folder_id": "19Uoe-v-suLDSmEa52HqufB77VxCvLwF1",
+  "total_files_in_folder": "100+ (la carpeta pasó de 100, pendiente contar el resto)",
+  "batch": "1 de ~10+ (10 procesadas)",
+  "references": [
+    {"id": "POSES-01", "source_file": "57. Bobo_Choses_Clothing_&_Accessories_-_Official_Onli.jpg", "description": "Cuatro niños sentados en fila, pies colgando con tenis y calcetines de colores variados.", "verdict": "exemplar", "why": "Buena referencia de pies en fila, ángulos naturales, diversidad de calzado."},
+    {"id": "POSES-02", "source_file": "188. Untitled.jpg", "description": "Mano sosteniendo una sandalia slide mostrando la suela con diseño, otro pie calzándose la pareja.", "verdict": "exemplar", "why": "Excelente ejemplo de 'voltear' el producto para mostrar la suela — justo lo que Laura pidió."},
+    {"id": "POSES-03", "source_file": "480. 87088cac-5056-4828-af27-d664125cf66a.jpg_Are.na.jpg", "description": "Pierna levantada en alto mostrando la suela y lateral de un tenis verde, cielo de fondo.", "verdict": "exemplar", "why": "Pose dinámica de patada, muestra el producto desde ángulo poco común."},
+    {"id": "POSES-04", "source_file": "748. Untitled.jpg", "description": "Niña sentada mirando hacia sus tenis rosados, pose natural y curiosa.", "verdict": "exemplar", "why": "Momento genuino, buen ángulo de producto puesto."},
+    {"id": "POSES-05", "source_file": "54. Untitled.jpg", "description": "Mujer pateando hacia atrás mostrando la suela de un tenis amarillo, pantalón a rayas.", "verdict": "exemplar", "why": "Pose de 'voltear' el pie, dinámica y natural."},
+    {"id": "POSES-06", "source_file": "547. The_Most_Comfortable_Running_Socks.jpg", "description": "Dos personas con la rodilla doblada mostrando calcetines deportivos de marca.", "verdict": "reference_only", "why": "Es un anuncio de calcetines — sirve como referencia de ángulo de rodilla doblada, no más.", "source_note": "logos de marca (Bombas, Sotec) visibles, irrelevante"},
+    {"id": "POSES-07", "source_file": "33. Untitled.jpg", "description": "Tenis alto con bordado de abejas, piernas cruzadas a media zancada.", "verdict": "exemplar", "why": "Buena pose dinámica de caminata."},
+    {"id": "POSES-08", "source_file": "544. SS23.jpg", "description": "Zapato de hiking salpicando en un arroyo, splash de agua congelado en el aire.", "verdict": "exemplar", "why": "Excelente pose de acción — producto en movimiento, agua real."},
+    {"id": "POSES-09", "source_file": "583. Untitled.jpg", "description": "Mano sosteniendo una sandalia slide azul mostrando el interior, otro pie con calcetín blanco puesto.", "verdict": "exemplar", "why": "Buen ángulo de producto sostenido en mano."},
+    {"id": "POSES-10", "source_file": "546. Embroidered_Socks_–_Cozy_&_Stylish_Must-Have.jpg", "description": "Persona sentada con las piernas cruzadas, tenis blancos y calcetines bordados con abejas.", "verdict": "reference_only", "why": "Buena pose sentada, pero es claramente un anuncio de calcetines/tenis de marca.", "source_note": "logo Nike visible, irrelevante"}
+  ]
+}
