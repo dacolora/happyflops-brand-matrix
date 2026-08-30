@@ -9,7 +9,7 @@
   "drive_folder": "1 POSES",
   "drive_folder_id": "19Uoe-v-suLDSmEa52HqufB77VxCvLwF1",
   "total_files_in_folder": "100+ (la carpeta pasó de 100, pendiente contar el resto)",
-  "batch": "1 de ~10+ (10 procesadas)",
+  "batch": "muestra de 14 de 100+ (carpeta demasiado grande para procesar imagen por imagen por completo en esta sesión — ver nota de alcance al final)",
   "references": [
     {"id": "POSES-01", "source_file": "57. Bobo_Choses_Clothing_&_Accessories_-_Official_Onli.jpg", "description": "Cuatro niños sentados en fila, pies colgando con tenis y calcetines de colores variados.", "verdict": "exemplar", "why": "Buena referencia de pies en fila, ángulos naturales, diversidad de calzado."},
     {"id": "POSES-02", "source_file": "188. Untitled.jpg", "description": "Mano sosteniendo una sandalia slide mostrando la suela con diseño, otro pie calzándose la pareja.", "verdict": "exemplar", "why": "Excelente ejemplo de 'voltear' el producto para mostrar la suela — justo lo que Laura pidió."},
@@ -20,6 +20,11 @@
     {"id": "POSES-07", "source_file": "33. Untitled.jpg", "description": "Tenis alto con bordado de abejas, piernas cruzadas a media zancada.", "verdict": "exemplar", "why": "Buena pose dinámica de caminata."},
     {"id": "POSES-08", "source_file": "544. SS23.jpg", "description": "Zapato de hiking salpicando en un arroyo, splash de agua congelado en el aire.", "verdict": "exemplar", "why": "Excelente pose de acción — producto en movimiento, agua real."},
     {"id": "POSES-09", "source_file": "583. Untitled.jpg", "description": "Mano sosteniendo una sandalia slide azul mostrando el interior, otro pie con calcetín blanco puesto.", "verdict": "exemplar", "why": "Buen ángulo de producto sostenido en mano."},
-    {"id": "POSES-10", "source_file": "546. Embroidered_Socks_–_Cozy_&_Stylish_Must-Have.jpg", "description": "Persona sentada con las piernas cruzadas, tenis blancos y calcetines bordados con abejas.", "verdict": "reference_only", "why": "Buena pose sentada, pero es claramente un anuncio de calcetines/tenis de marca.", "source_note": "logo Nike visible, irrelevante"}
-  ]
+    {"id": "POSES-10", "source_file": "546. Embroidered_Socks_–_Cozy_&_Stylish_Must-Have.jpg", "description": "Persona sentada con las piernas cruzadas, tenis blancos y calcetines bordados con abejas.", "verdict": "reference_only", "why": "Buena pose sentada, pero es claramente un anuncio de calcetines/tenis de marca.", "source_note": "logo Nike visible, irrelevante"},
+    {"id": "POSES-11", "source_file": "951. Untitled.jpg", "description": "Piernas cruzadas sobre flotadores de piscina de colores, sandalias flip-flop rosas con brillos, una pierna en alto mostrando la suela.", "verdict": "exemplar", "why": "Excelente pose de flip-flop real (correa entre dedos) mostrando suela y lateral, buena luz cálida."},
+    {"id": "POSES-12", "source_file": "1072. @_kerrigrayy_☆.jpg", "description": "Niña con playera de oso y camisa de cuadros verdes sobre pasto, botas cafés visibles.", "verdict": "reference_only", "why": "Es más una foto de outfit que de pose de producto — el calzado no es el foco."},
+    {"id": "POSES-19", "source_file": "191. Adidas🤟😎.jpg", "description": "Caja de Adidas x Hello Kitty con clogs rosados de plataforma, sin pies, foto de producto/empaque.", "verdict": "reference_only", "why": "Sin pie ni pose real — es fotografía de producto/unboxing."},
+    {"id": "POSES-20", "source_file": "1011. Нейрофотосессия_кроссовок_Фотосессия_для_Wildberri.jpg", "description": "Tenis verde Adidas Samba en pose de caminata dinámica, jeans doblados, cielo de fondo.", "verdict": "exemplar", "why": "Buena pose de caminata con ángulo bajo.", "source_note": "el nombre de archivo indica que es una 'neurofotosesión' — foto generada por IA para un marketplace ruso (Wildberries), no fotografía real. Útil solo como referencia de composición/ángulo, no de textura real."}
+  ],
+  "scope_note": "Esta carpeta tiene más de 100 archivos — muy por encima del tamaño de cualquier otra carpeta procesada en esta sesión (HAPPY 100, MODELS 44, OUTFITS 16, WINTER 27). Se procesó una muestra de 14 para caracterizar el contenido (confirmado: son poses de producto/calzado, no de modelos) en vez de las 100+ imagen por imagen, para poder terminar también Z SUMMER, Z Producto EVA y Z POSES en la misma sesión. Si Laura quiere el resto de POSES catalogado por completo, es la siguiente tarea pendiente más grande."
 }
