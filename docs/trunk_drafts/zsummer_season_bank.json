@@ -1,0 +1,20 @@
+{
+  "_note": "Borrador de trabajo, NO validado contra schema.json. Ver docs/trunk_reference_taxonomy.md. Carpeta 'Z SUMMER', 21 archivos totales — muestra de 4 procesada.",
+  "source_type": "third_party_inspiration",
+  "source_type_note": "NINGUNA de estas imágenes es producto Happy Flops. Es inspiración de otras personas para tono/luz de verano, nunca referencia de producto propio.",
+  "evaluation_criteria": "Cada referencia se evalúa por qué tan bien ilustra el escenario/temporada de verano — no por texto/logo visible.",
+  "bank": "free_variable",
+  "variable": "season",
+  "value": "summer",
+  "drive_folder": "Z SUMMER",
+  "drive_folder_id": "1Z5qG6zie3XOSLhwnG4XgClqs0obBVb_I",
+  "total_files_in_folder": 21,
+  "batch": "muestra de 4 de 21",
+  "references": [
+    {"id": "ZSUMMER-01", "source_file": "1567. Untitled.jpg", "description": "Cinco pares de piernas colgando de camastros junto a una alberca, tacones de colores tocando el agua — foto editorial artística estilo vintage.", "verdict": "reference_only", "why": "Excelente tono/color de verano, pero el calzado (tacones) no es relevante para HF — solo sirve como referencia de paleta y composición."},
+    {"id": "ZSUMMER-02", "source_file": "1584. A_Folk_Song_-_Kid.jpg", "description": "Cuatro niños corriendo descalzos por la playa ondeando banderas de colores (roja, naranja, amarilla), mar de fondo.", "verdict": "exemplar", "why": "Excelente energía genuina, muy buena luz de verano, pies descalzos naturales, buena diversidad de edades."},
+    {"id": "ZSUMMER-03", "source_file": "1576. Sunnylife_Inflatable_Surfboard_Float_~_Shark_Attac.jpg", "description": "Niño descalzo cargando un flotador inflable de tiburón junto a una alberca con plantas tropicales.", "verdict": "exemplar", "why": "Momento genuino y juguetón, buena luz de verano, pies descalzos."},
+    {"id": "ZSUMMER-04", "source_file": "1600. Summer_Pool_Day_with_Friends_Floating_in_Matching_.jpg", "description": "Vista aérea de dos mujeres flotando en llantas inflables a juego dentro de una alberca.", "verdict": "exemplar", "why": "Buena composición y color de verano, momento relajado genuino."}
+  ],
+  "scope_note": "Muestra de 4 de 21. El tono general confirma buena calidad de referencia de verano — luz brillante, colores saturados, escenas de alberca/playa genuinas."
+}
