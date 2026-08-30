@@ -1,0 +1,20 @@
+{
+  "_note": "Borrador de trabajo, NO validado contra schema.json. Ver docs/trunk_reference_taxonomy.md. Carpeta 'Z Producto EVA', 62 archivos totales (catálogo de sandalias/slides de EVA de otras marcas, en su mayoría fotos de producto puro de e-commerce en varios idiomas — portugués, húngaro, coreano, indonesio, inglés). Muestra de 4 procesada.",
+  "source_type": "third_party_inspiration",
+  "source_type_note": "NINGUNA de estas imágenes es producto Happy Flops. Es catálogo de referencia de cómo se comporta/luce el material EVA en otras marcas — exactamente lo que Laura describió: 'ver cómo se comporta, qué tan flexible es, cómo se ve, cómo lo ponen'.",
+  "evaluation_criteria": "Cada referencia se evalúa por qué tan bien ilustra el comportamiento del material EVA (textura, flexibilidad, grosor, moldeado) — no por texto/logo visible.",
+  "bank": "trunk",
+  "trunk": "material",
+  "applies_to": ["lifestyle", "photoshoot", "render_3d"],
+  "drive_folder": "Z Producto EVA",
+  "drive_folder_id": "1qWf7uTL0iXadDgSLP-6cXt1V3An_nEsm",
+  "total_files_in_folder": 62,
+  "batch": "muestra de 4 de 62",
+  "references": [
+    {"id": "MATERIAL-01", "source_file": "1663. MAYZE_STACK_INJEX_Women.jpg", "description": "Primer plano extremo de una slide verde menta, mostrando la textura porosa del EVA, el grosor de la suela tipo plataforma y el molde del logo en relieve.", "verdict": "exemplar", "why": "Excelente referencia de cómo se ve y se moldea el EVA de cerca — textura mate, grosor real de plataforma.", "source_note": "logo Puma en relieve, irrelevante"},
+    {"id": "MATERIAL-02", "source_file": "1631. Cloud_Sandals_for_your_comfort.png", "description": "Pie calzando una slide naranja con hebillas ajustables, mostrando cómo se dobla el material en el tobillo al caminar.", "verdict": "exemplar", "why": "Buena referencia de flexibilidad real del EVA en movimiento — se ve cómo se pliega la correa."},
+    {"id": "MATERIAL-03", "source_file": "1660. Open_Toe_Chunky_Footbed_Slippers_-_8_Beige.jpg", "description": "Par de slides color beige/arena sobre un sillón amarillo, plataforma gruesa tipo 'nube'.", "verdict": "exemplar", "why": "Buena referencia de volumen y acabado mate del EVA tipo 'cloud'."},
+    {"id": "MATERIAL-04", "source_file": "1717. Crocs_CLASSIC_-_Pantoletai_-_yellow_light.jpg", "description": "Primer plano macro de la correa trasera de un Crocs amarillo, mostrando la textura porosa y los orificios de ventilación característicos del material.", "verdict": "exemplar", "why": "Excelente detalle macro de la textura porosa/perforada del EVA — muy útil como referencia de material.", "source_note": "logo 'Crocs' en relieve, irrelevante"}
+  ],
+  "scope_note": "Muestra de 4 de 62. Confirma que esta carpeta es exactamente lo que Laura describió: catálogo de referencia de comportamiento del material EVA de otras marcas, no de producto propio ni de personas/poses. Alta calidad y consistencia en las 4 muestras."
+}
