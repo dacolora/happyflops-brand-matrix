@@ -1,0 +1,23 @@
+{
+  "_note": "Borrador de trabajo, NO validado contra schema.json. Ver docs/trunk_reference_taxonomy.md. Carpeta 'Z POSES', 11 archivos totales — muestra de 6 procesada.",
+  "source_type": "third_party_inspiration",
+  "source_type_note": "NINGUNA de estas imágenes es producto Happy Flops. Es inspiración de poses de calzado de otras marcas, nunca referencia de producto propio.",
+  "evaluation_criteria": "Cada referencia se evalúa por qué tan bien ilustra una pose/ángulo de producto en el pie — no por texto/logo visible.",
+  "bank": "trunk",
+  "trunk": "poses (product_poses)",
+  "applies_to": ["lifestyle", "photoshoot", "render_3d"],
+  "drive_folder": "Z POSES",
+  "drive_folder_id": "1XZ75tQYHSlhSdAl66aHDsPgbExNCZEcW",
+  "total_files_in_folder": 11,
+  "batch": "muestra de 6 de 11",
+  "confirmation": "Confirma lo mismo que 1 POSES: esta carpeta también es 100% poses de producto (calzado tipo slide/sandalia), no poses corporales de modelos. Refuerza la corrección de taxonomía ya anotada en poses_trunk.json — ambas carpetas parecen ser el mismo trunk, no dos enfoques distintos.",
+  "references": [
+    {"id": "ZPOSES-01", "source_file": "1759. Men_Minimalist_Single_Band_Slides.jpg", "description": "Mano sosteniendo una sandalia slide blanca en el aire, otro pie calzándose la pareja con calcetín negro.", "verdict": "exemplar", "why": "Excelente pose de producto sostenido en mano, mostrando el interior y la textura."},
+    {"id": "ZPOSES-02", "source_file": "1769. FEATURE_CABANA_SLIDES.jpg", "description": "Persona sentada con pies calzados con slide verde, otras dos slides (negra y café) junto a los pies, calcetín blanco visible.", "verdict": "exemplar", "why": "Buena composición mostrando varios colores/ángulos del mismo producto juntos.", "source_note": "logo de marca 'FEATURE' visible, irrelevante"},
+    {"id": "ZPOSES-03", "source_file": "1784. Womens_Chunky_Sole_Detail_Slides_-_Green_-_5.jpg", "description": "Pierna en pose de caminata mostrando una slide verde de suela gruesa, calcetín blanco.", "verdict": "exemplar", "why": "Buena pose dinámica de caminata mostrando el volumen de la suela."},
+    {"id": "ZPOSES-04", "source_file": "1736. Pilates_Muse-_Grip_Socks_–_Blush_Pink.jpg", "description": "Piernas levantadas en el aire mostrando las suelas de unos calcetines antiderrapantes rosados.", "verdict": "exemplar", "why": "Excelente pose de 'voltear' mostrando la suela directamente a cámara.", "source_note": "texto de marca en la suela, irrelevante"},
+    {"id": "ZPOSES-05", "source_file": "1684. Untitled.jpg", "description": "Pies metidos en una alberca con sandalias plataforma rosas, anuncio brasileño con texto superpuesto.", "verdict": "reference_only", "why": "Es un anuncio con mucho texto superpuesto — la pose en sí (pies entrando al agua) es utilizable, pero el diseño gráfico domina la imagen.", "source_note": "texto publicitario 'vai com tudo férias' y logo 'sapatella', irrelevante"},
+    {"id": "ZPOSES-06", "source_file": "1753. Untitled.jpg", "description": "Piernas cruzadas en el tobillo con Crocs amarillos contra un fondo amarillo liso, anuncio de espectacular.", "verdict": "exemplar", "why": "Composición minimalista y pose de tobillos cruzados muy limpia — buen ejemplo de fondo de un solo tono con el producto como protagonista (invariante 3).", "source_note": "logo Crocs y texto 'Mellow Yellow', irrelevante"}
+  ],
+  "scope_note": "Muestra de 6 de 11. Confirma que Z POSES y 1 POSES son esencialmente el mismo tipo de contenido (poses de calzado, no de modelos)."
+}
